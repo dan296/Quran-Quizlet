@@ -499,13 +499,13 @@ footer {
   overflow-y: scroll;
   width: 100%;
   height: 276px;
+  display: none;
 }
 #answer-full .anscont{
   position: absolute;
   top: 0;
   bottom: 0;
   height: max-content;
-  display: none;
 }
 .low {
   border-color: #f94f4f;
