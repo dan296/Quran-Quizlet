@@ -426,7 +426,7 @@ function nextFlashCard() {
   } else {
       alert("Flash Card Settings are invalid!")
   }
-  $('#answer1, #answer2, #answer-full').html("");
+  $('.anscont').html("");
   if (cases == 1) {
     $("#flashcard #questcont").html(thisCard.ayah);
     $("#flashcard #answer1 .anscont").html(thisCard.translation);
