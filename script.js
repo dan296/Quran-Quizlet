@@ -69,7 +69,7 @@ function getWordfromAyah(chapter, ayahnum){
     $.getJSON("https://api.quran.com/api/v4/verses/by_key/"+chapter+":"+ayahnum+"?language=en&words=true&word_fields=text_uthmani", function(data){
         gvrs = data;
         var words = data.verse.words;
-        randWord = words[Math.floor(Math.random()*words.length)];
+        randWord = words[Math.floor(Math.random()*(words.length-1))];
     })
     $.ajaxSetup({
         async: true
