@@ -160,10 +160,11 @@ input:checked + .slider:before {
   right: 0;
   margin: 0;
   background: linear-gradient(45deg, #000000, #5d4d3d);
+  background: #1d1d1d;
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-image: url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  /*background-image: url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   /*background: radial-gradient(#b69c4f, #7b672b, #483910);*/
   background-size: cover;
 }
