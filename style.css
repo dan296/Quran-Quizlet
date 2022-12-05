@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
     height: 100%;
     position: fixed;
     top: 0;
-    right: -200px;
+    right: -250px;
     box-shadow: 0px 0px 10px 0px black;
     transition: 0.2s ease-in-out;
     padding: 10px;
@@ -136,7 +136,7 @@ input:checked + .slider:before {
 }
 .setting-input{text-align: center;}
 .num-input{
-    width: 35%;
+    width: 40%;
     padding: 0;
     margin-right: 4px;
     margin-left: 5px;
@@ -144,6 +144,7 @@ input:checked + .slider:before {
     border: none;
     border-bottom: 1px solid;
     background: transparent;
+    text-align: center;
 }
 /*End Settings*/
 
@@ -649,7 +650,7 @@ footer {
 
 .surahname {
   font-size: 16px;
-  line-height: 42px;
+  line-height: 40px;
   height: 100%;
   font-weight: 200;
 }
