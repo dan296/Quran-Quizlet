@@ -80,7 +80,7 @@ for(var i = 1; i <= 114; i++){
     getIndWords(i);
 }
 
-$.getJSON("https://api.alquran.cloud/quran/en.pickthall", function(engdata) {
+$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
   endata = engdata.data.surahs;
   if ($(".my-new-list").html()) {
     $("#loadingpage").fadeOut();
