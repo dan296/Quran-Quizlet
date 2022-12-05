@@ -89,7 +89,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
   }
 });
 
-$.getJSON("https://api.alquran.cloud/quran/quran-uthmani", function(data) {
+$.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
   if (endata && versesindiv.length == 115) {
     $("#loadingpage").fadeOut();
     count = false;
