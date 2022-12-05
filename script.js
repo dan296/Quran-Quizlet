@@ -76,7 +76,7 @@ function getWordfromAyah(chapter, ayahnum){
     });
 }
 
-for(var i = 0; i <= 114; i++){
+for(var i = 1; i <= 114; i++){
     getIndWords(i);
 }
 
