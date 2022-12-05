@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
     height: 100%;
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -260px;
     box-shadow: 0px 0px 10px 0px black;
     transition: 0.2s ease-in-out;
     padding: 10px;
