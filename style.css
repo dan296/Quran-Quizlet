@@ -505,6 +505,7 @@ footer {
   top: 0;
   bottom: 0;
   height: max-content;
+  display: none;
 }
 .low {
   border-color: #f94f4f;
