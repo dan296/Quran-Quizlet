@@ -460,9 +460,6 @@ footer {
   font-size: 20pt;
   padding: 30px;
 }
-#answer-full .anscont{
-  padding-top: 60px;
-}
 #answercontainer {
   height: 0%;
 }
@@ -496,9 +493,8 @@ footer {
   overflow-y: scroll;
 }
 #answer-full{
-  height: 100%;
   position: absolute;
-  top: 0;
+  top: 25%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
