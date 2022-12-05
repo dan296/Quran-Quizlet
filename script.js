@@ -426,6 +426,7 @@ function nextFlashCard() {
   } else {
       alert("Flash Card Settings are invalid!")
   }
+  $('#answer1, #answer2, #answer-full').html("");
   if (cases == 1) {
     $("#flashcard #questcont").html(thisCard.ayah);
     $("#flashcard #answer1 .anscont").html(thisCard.translation);
@@ -475,10 +476,10 @@ function nextFlashCard() {
         "<br/>"
     );
   } else if (cases == 4) {
-    $("#flashcard #answer1 .anscont").html(thisCard.englishWord);
+    $("#flashcard #answer-full .anscont").html(thisCard.englishWord);
     $("#flashcard #questcont").html(thisCard.arabicWord);
   } else if (cases == 5) {
-    $("#flashcard #answer1 .anscont").html(thisCard.arabicWord);
+    $("#flashcard #answer-full .anscont").html(thisCard.arabicWord);
     $("#flashcard #questcont").html(thisCard.englishWord);
   }
   
