@@ -237,6 +237,9 @@ setInterval(function() {
     loadingcapindex++;
     newLoadingCaption(loadingcapindex);
   }
+  if(counter > 10){
+  	location.reload();
+  }
 }, 1000);
 
 window.addEventListener(
