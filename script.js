@@ -81,6 +81,7 @@ for(var i = 1; i <= 114; i++){
 }
 
 $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
+	console.log("running...");
   endata = engdata.data.surahs;
   if ($(".my-new-list").html()) {
     $("#loadingpage").fadeOut();
