@@ -76,10 +76,6 @@ function getWordfromAyah(chapter, ayahnum){
     });
 }
 
-for(var i = 1; i <= 114; i++){
-    getIndWords(i);
-}
-
 $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
 	console.log("running...");
   endata = engdata.data.surahs;
@@ -88,7 +84,25 @@ $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
     count = false;
     console.log("It took " + counter + " seconds to load this page!");
   }
-});
+}).done(function() {
+	console.log(endata);
+    for(var i = 1; i <= 114; i++){
+	    getIndWords(i);
+	}
+  })
+
+
+/*
+moved earlier
+$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
+	console.log("running...");
+  endata = engdata.data.surahs;
+  if ($(".my-new-list").html()) {
+    $("#loadingpage").fadeOut();
+    count = false;
+    console.log("It took " + counter + " seconds to load this page!");
+  }
+})*/
 
 $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
   if (endata && versesindiv.length == 115) {
