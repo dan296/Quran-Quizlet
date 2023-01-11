@@ -241,7 +241,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         var minVerseRange = parseInt($('#verseMin').val()); //0
         if (!remove) {
           // Using this for min and max attributes of verse range
-          ayahLengths.push({thisid: data[thisid].ayahs.length});
+          ayahLengths.push({id: thisid, length: data[thisid].ayahs.length});
 
           for (var k = minVerseRange; k < maxVerseRange; k++) {
           
