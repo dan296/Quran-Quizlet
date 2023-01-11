@@ -710,10 +710,14 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
     }
 })    
 
-$('.num-input').change(function() {
-  // max handling
-  var last_val = $(this).val();
+var last_val = 1;
 
+$('.num-input').keydown(function(){
+  last_val = $(this).val();
+})
+
+$('.num-input').change(function() {
+  
   var max = parseInt($(this).attr('max'));
   if (parseInt($(this).val()) > max) {
       $(this).val(max); 
