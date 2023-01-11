@@ -207,6 +207,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         var remove = false;
         var surah = data[thisid].englishNameTranslation;
         console.log(surah);
+        console.log(flashCards);
         flashCards = flashCards.filter(function(el) {
           if (el.surahEngName != surah) {
             return el;
