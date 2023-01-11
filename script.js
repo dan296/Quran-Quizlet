@@ -228,7 +228,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         });
 
         if(remove){
-          removeObjectWithId(arrayLengths, thisid);
+          removeObjectWithId(ayahLengths, thisid);
         }
 
         console.log(flashCards);
