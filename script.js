@@ -217,8 +217,6 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         filteredFlashCards = undefined;
         var remove = false;
         var surah = data[thisid].englishNameTranslation;
-        console.log(surah);
-        console.log(flashCards);
         flashCards = flashCards.filter(function(el) {
           if (el.surahEngName != surah) {
             return el;
@@ -227,11 +225,12 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
           }
         });
 
+        console.log(ayahLengths);
         if(remove){
           removeObjectWithId(ayahLengths, thisid);
         }
+        console.log(ayahLengths);
 
-        console.log(flashCards);
         var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
         if(maxVerseRange > data[thisid].ayahs.length){
             maxVerseRange = data[thisid].ayahs.length;
