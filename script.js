@@ -710,7 +710,7 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
     }
 })    
 
-$('.num-input').keyup(function() {
+$('.num-input').change(function() {
   // max handling
   var max = parseInt($(this).attr('max'));
   if (parseInt($(this).val()) > max) {
