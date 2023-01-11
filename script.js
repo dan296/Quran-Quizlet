@@ -13,6 +13,17 @@ var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", 
 var loadingcapindex = 0;
 var ayahLengths = [];
 
+//used for ayah lengths
+function removeObjectWithId(arr, id) {
+  const objWithIdIndex = arr.findIndex((obj) => obj.id === id);
+
+  if (objWithIdIndex > -1) {
+    arr.splice(objWithIdIndex, 1);
+  }
+
+  return arr;
+}
+
 function newLoadingCaption(index){
   $('#loadingcaps').fadeOut(function(){
     if(index > loadingcaps.length - 1){
@@ -216,6 +227,10 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
           }
         });
 
+        if(remove){
+          removeObjectWithId(arrayLengths, thisid);
+        }
+
         console.log(flashCards);
         var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
         if(maxVerseRange > data[thisid].ayahs.length){
@@ -226,7 +241,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         var minVerseRange = parseInt($('#verseMin').val()); //0
         if (!remove) {
           // Using this for min and max attributes of verse range
-          ayahLengths.push(data[thisid].ayahs.length);
+          ayahLengths.push({thisid: data[thisid].ayahs.length});
 
           for (var k = minVerseRange; k < maxVerseRange; k++) {
           
