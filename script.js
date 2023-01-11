@@ -743,8 +743,20 @@ var last_verse_diff = 0;
 // Still not coded in * 1/11/2023
 
 $("#verseMin").change(function(){
-    if(parseInt($(this).val())>parseInt($("#verseMax").val())){
-        $("#verseMax").prop('value',parseInt($(this).val()));
+    var max = parseInt($(this).attr('max'));
+    var val = parseInt($(this).val());
+    var verse_max_max = parseInt($("#verseMax").attr('max'));
+    var verse_max_val = parseInt($("#verseMax").val());
+    if(val > verse_max_val){
+
+      if(val + last_verse_diff <= verse_max_max){
+        $("#verseMax").prop('value', val + last_verse_diff);
+      }else{
+        $("#verseMax").prop('value', verse_max_max);
+      }
+
+
+        //$("#verseMax").prop('value', val);
     }
     last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
