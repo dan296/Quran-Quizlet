@@ -730,12 +730,12 @@ var last_verse_diff = 0; // Use this to maintain the difference between the min 
 // Still not coded in * 1/11/2023
 
 $("#verseMin").change(function(){
-    if(parseInt($(this).val())>=parseInt($("#verseMax").val())){
+    if(parseInt($(this).val())>parseInt($("#verseMax").val())){
         $("#verseMax").prop('value',parseInt($(this).val())+1);
     }
 })
 $("#verseMax").change(function(){
-    if(parseInt($(this).val()) <= parseInt($("#verseMin").val())){
+    if(parseInt($(this).val()) < parseInt($("#verseMin").val())){
         $("#verseMin").prop('value',parseInt($(this).val())-1);
     }
 })
