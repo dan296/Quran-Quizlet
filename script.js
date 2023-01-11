@@ -769,9 +769,9 @@ $("#verseMax").change(function(){
 
     if(val < verse_min_val){
       if(val - last_verse_diff >= verse_min_min){
-        $("#verseMax").prop('value', val - last_verse_diff);
+        $("#verseMin").prop('value', val - last_verse_diff);
       }else{
-        $("#verseMax").prop('value', verse_min_min);
+        $("#verseMin").prop('value', verse_min_min);
       }
     }
 
