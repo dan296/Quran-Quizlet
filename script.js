@@ -710,10 +710,11 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
     }
 })    
 
+//Last val is used in the case the user empties the number input
 var last_val = 1;
 
 $('.num-input').keydown(function(){
-  last_val = $(this).val();
+  last_val = parseInt($(this).val());
 })
 
 $('.num-input').change(function() {
@@ -735,20 +736,23 @@ $('.num-input').change(function() {
 
 });
 
-var last_verse_diff = 0; // Use this to maintain the difference between the min verse and max verse
+var last_verse_diff = 0; 
+// Use this to maintain the difference between the min verse and max verse
 // If a user has it set to min verse as 5 and max as 10, then they adjust the min to 11, auto make the max as 16
 // Only used in the case of when a user make the min greater than max or the max less than the min
 // Still not coded in * 1/11/2023
 
 $("#verseMin").change(function(){
     if(parseInt($(this).val())>parseInt($("#verseMax").val())){
-        $("#verseMax").prop('value',parseInt($(this).val())+1);
+        $("#verseMax").prop('value',parseInt($(this).val()));
     }
+    last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
 $("#verseMax").change(function(){
     if(parseInt($(this).val()) < parseInt($("#verseMin").val())){
-        $("#verseMin").prop('value',parseInt($(this).val())-1);
+        $("#verseMin").prop('value',parseInt($(this).val()));
     }
+    last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
 
 
