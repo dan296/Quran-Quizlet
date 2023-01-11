@@ -747,23 +747,34 @@ $("#verseMin").change(function(){
     var val = parseInt($(this).val());
     var verse_max_max = parseInt($("#verseMax").attr('max'));
     var verse_max_val = parseInt($("#verseMax").val());
-    if(val > verse_max_val){
 
+    if(val > verse_max_val){
       if(val + last_verse_diff <= verse_max_max){
         $("#verseMax").prop('value', val + last_verse_diff);
       }else{
         $("#verseMax").prop('value', verse_max_max);
       }
-
-
-        //$("#verseMax").prop('value', val);
     }
+
     last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
 $("#verseMax").change(function(){
-    if(parseInt($(this).val()) < parseInt($("#verseMin").val())){
+    /*if(parseInt($(this).val()) < parseInt($("#verseMin").val())){
         $("#verseMin").prop('value',parseInt($(this).val()));
+    }*/
+    var max = parseInt($(this).attr('max'));
+    var val = parseInt($(this).val());
+    var verse_min_min = parseInt($("#verseMin").attr('min')); // should always be 1
+    var verse_min_val = parseInt($("#verseMin").val());
+
+    if(val < verse_min_val){
+      if(val - last_verse_diff >= verse_min_min){
+        $("#verseMax").prop('value', val - last_verse_diff);
+      }else{
+        $("#verseMax").prop('value', verse_min_min);
+      }
     }
+
     last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
 
