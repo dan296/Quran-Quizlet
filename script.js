@@ -710,17 +710,24 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
     }
 })    
 
-$("[type='number']").keypress(function (evt) {
-    //evt.preventDefault();
+$('.num-input').keyup(function() {
+  // max handling
+  var max = parseInt($(this).attr('max'));
+  if (parseInt($(this).val()) > max) {
+      $(this).val(max); 
+  }
+
+  // min handling
+  var min = parseInt($(this).attr('min'));
+  if (parseInt($(this).val()) < min) {
+      $(this).val(min); 
+  }
 });
 
-document.getElementsByClassName('num-input')[0].oninput = function () {
-        var max = parseInt(this.max);
-
-        if (parseInt(this.value) > max) {
-            this.value = max; 
-        }
-    }
+var last_verse_diff = 0; // Use this to maintain the difference between the min verse and max verse
+// If a user has it set to min verse as 5 and max as 10, then they adjust the min to 11, auto make the max as 16
+// Only used in the case of when a user make the min greater than max or the max less than the min
+// Still not coded in * 1/11/2023
 
 $("#verseMin").change(function(){
     if(parseInt($(this).val())>=parseInt($("#verseMax").val())){
