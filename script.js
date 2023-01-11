@@ -130,8 +130,6 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
   $("body").prepend(
     '<h1 style="text-align: center; margin-top: 0; padding-top: 20px; font-size: 20px;">Create a Deck</h1><h3 style="text-align: center; font-size: 14px;">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>'
   );
-  
-    
 
   for (var i = 0; i < 114; i++) {
     $("#" + i).click(function() {
@@ -713,7 +711,7 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
 })    
 
 $("[type='number']").keypress(function (evt) {
-    evt.preventDefault();
+    //evt.preventDefault();
 });
 
 $("#verseMin").change(function(){
