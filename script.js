@@ -714,6 +714,14 @@ $("[type='number']").keypress(function (evt) {
     //evt.preventDefault();
 });
 
+document.getElementsByClassName('num-input')[0].oninput = function () {
+        var max = parseInt(this.max);
+
+        if (parseInt(this.value) > max) {
+            this.value = max; 
+        }
+    }
+
 $("#verseMin").change(function(){
     if(parseInt($(this).val())>=parseInt($("#verseMax").val())){
         $("#verseMax").prop('value',parseInt($(this).val())+1);
