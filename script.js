@@ -11,6 +11,7 @@ var numSurahsInDeck = 0;
 var count = true;
 var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
 var loadingcapindex = 0;
+var ayahLengths = [];
 
 function newLoadingCaption(index){
   $('#loadingcaps').fadeOut(function(){
@@ -134,7 +135,8 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
   for (var i = 0; i < 114; i++) {
     $("#" + i).click(function() {
         if($("#settings").hasClass("expand-settings")){
-            //$("#settings-btn").click();
+          // had it blocked for some reason?
+            $("#settings-btn").click();
         }
       var thisid = this.id;
       if (thisid == undefined) {
@@ -144,9 +146,10 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         thisid = e.target.parentElement.parentElement.id;
       }
       console.log(thisid);
+
         if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
-            $('#verseMax').prop("value",data[thisid].ayahs.length);
-            $('#verseMin').prop("max",data[thisid].ayahs.length-1);
+            $('#verseMax').val(data[thisid].ayahs.length);
+            $('#verseMin').attr("max",data[thisid].ayahs.length);
         }
       
       var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
@@ -212,7 +215,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
           }
         });
 
-        console.log(remove);
+        console.log(flashCards);
         var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
         if(maxVerseRange > data[thisid].ayahs.length){
             maxVerseRange = data[thisid].ayahs.length;
@@ -220,9 +223,12 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             $('#verseMin').prop('max', maxVerseRange-1);
         }
         var minVerseRange = parseInt($('#verseMin').val()); //0
-        for (var k = minVerseRange; k < maxVerseRange; k++) {
-          if (remove) {
-          } else {
+        if (!remove) {
+          // Using this for min and max attributes of verse range
+          ayahLengths.push(data[thisid].ayahs.length);
+
+          for (var k = minVerseRange; k < maxVerseRange; k++) {
+          
             flashCards.push(
               createFlashCard(
                 data[thisid].ayahs[k].text,
@@ -236,7 +242,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             );
           }
         }
-        console.log(flashCards);
+        //console.log(flashCards);
       }
     });
   }
@@ -710,7 +716,7 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
     }
 })    
 
-//Last val is used in the case the user empties the number input
+//Last val is used in the case the user empties the number input, it will auto fill in the last value in that num input
 var last_val = 1;
 
 $('.num-input').keydown(function(){
@@ -736,11 +742,11 @@ $('.num-input').change(function() {
 
 });
 
-var last_verse_diff = 0; 
+
 // Use this to maintain the difference between the min verse and max verse
 // If a user has it set to min verse as 5 and max as 10, then they adjust the min to 11, auto make the max as 16
 // Only used in the case of when a user make the min greater than max or the max less than the min
-// Still not coded in * 1/11/2023
+var last_verse_diff = 0; 
 
 $("#verseMin").change(function(){
     var max = parseInt($(this).attr('max'));
@@ -759,9 +765,6 @@ $("#verseMin").change(function(){
     last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
 })
 $("#verseMax").change(function(){
-    /*if(parseInt($(this).val()) < parseInt($("#verseMin").val())){
-        $("#verseMin").prop('value',parseInt($(this).val()));
-    }*/
     var max = parseInt($(this).attr('max'));
     var val = parseInt($(this).val());
     var verse_min_min = parseInt($("#verseMin").attr('min')); // should always be 1
