@@ -712,6 +712,8 @@ $('.setting-input input').not("#switchMode, .num-input").click(function(){
 
 $('.num-input').change(function() {
   // max handling
+  var last_val = $(this).val();
+
   var max = parseInt($(this).attr('max'));
   if (parseInt($(this).val()) > max) {
       $(this).val(max); 
@@ -722,6 +724,11 @@ $('.num-input').change(function() {
   if (parseInt($(this).val()) < min) {
       $(this).val(min); 
   }
+
+  if($(this).val() == ""){
+    $(this).val(last_val);
+  }
+
 });
 
 var last_verse_diff = 0; // Use this to maintain the difference between the min verse and max verse
