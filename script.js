@@ -223,9 +223,10 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             remove = true;
           }
         });
+        console.log(remove);
         console.log(ayahLengths);
         if(remove){
-          removeObjectWithId(ayahLengths, thisid);
+          removeObjectWithId(ayahLengths, JSON.stringify(thisid));
         }
         console.log(ayahLengths);
 
