@@ -226,7 +226,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         console.log(remove);
         console.log(ayahLengths);
         if(remove){
-          removeObjectWithId(ayahLengths, JSON.stringify(thisid));
+          removeObjectWithId(ayahLengths, '0');
         }
         console.log(ayahLengths);
 
