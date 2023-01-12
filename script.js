@@ -223,12 +223,10 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             remove = true;
           }
         });
-        console.log(remove);
-        console.log(ayahLengths);
+
         if(remove){
           removeObjectWithId(ayahLengths, thisid.toString());
         }
-        console.log(ayahLengths);
 
         var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
         if(maxVerseRange > data[thisid].ayahs.length){
@@ -256,8 +254,11 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             );
           }
         }
+
         $('#verseMin, #verseMax').attr("max",Math.max(...ayahLengths.map(o => o.length)));
-        //console.log(flashCards);
+        if(parseInt($('#verseMax').val()) > parseInt($('#verseMax').attr('max'))){
+          $('#verseMax').val($('#verseMax').attr('max'));
+        }
       }
     });
   }
