@@ -156,12 +156,11 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
       if (thisid == undefined) {
         thisid = e.target.parentElement.parentElement.id;
       }
-      console.log(thisid);
-
-        if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
+        //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
+        /*if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
             $('#verseMax').val(data[thisid].ayahs.length);
             $('#verseMin').attr("max",data[thisid].ayahs.length);
-        }
+        }*/
       
       var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
       bismillah += "<br/><br/>"
@@ -224,7 +223,6 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             remove = true;
           }
         });
-
         console.log(ayahLengths);
         if(remove){
           removeObjectWithId(ayahLengths, thisid);
@@ -257,6 +255,7 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
             );
           }
         }
+        $('#verseMin, #verseMax').attr("max",Math.max(...ayahLengths.map(o => o.length)));
         //console.log(flashCards);
       }
     });
