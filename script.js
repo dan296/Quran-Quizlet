@@ -157,10 +157,10 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         thisid = e.target.parentElement.parentElement.id;
       }
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
-        /*if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
+        if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
             $('#verseMax').val(data[thisid].ayahs.length);
             $('#verseMin').attr("max",data[thisid].ayahs.length);
-        }*/
+        }
       
       var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
       bismillah += "<br/><br/>"
