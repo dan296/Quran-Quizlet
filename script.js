@@ -1,6 +1,8 @@
 var lastselectid = 114;
 var lastaction = true;
-var endata = false;
+//var endata = false; coming from endata.js included in html
+//console.log(endata);
+var filteredEnData = [...endata];
 var datachecker = false;
 var timer;
 var flashCards = [];
@@ -12,6 +14,8 @@ var count = true;
 var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
 var loadingcapindex = 0;
 var ayahLengths = [];
+//var versesindiv = []; coming from versesindiv.js
+var last_length = 0;
 
 //used for ayah lengths
 function removeObjectWithId(arr, id) {
@@ -45,14 +49,13 @@ function arabicDigits(num){
   return final.join('');
 }
 
-function newTest(){
+/*function newTest(){
   $.getJSON("https://api.quran.com:3000/api/v3/chapters", function(data){
     console.log(data);
   })
-}
-var versesindiv = [];
-var last_length = 0;
-function getIndWords(chapter, num_page = 1){
+}*/
+
+/*function getIndWords(chapter, num_page = 1){
     $.getJSON("https://api.quran.com/api/v4/verses/by_chapter/"+chapter+"?language=en&words=true&word_fields=text_uthmani&page="+num_page+"&per_page=50", function(data){
         if(versesindiv[chapter] == undefined){
             versesindiv[chapter] = data;
@@ -72,7 +75,7 @@ function getIndWords(chapter, num_page = 1){
     })
     
     
-}
+}*/
 var randWord = {};
 function getWordfromAyah(chapter, ayahnum){
     $.ajaxSetup({
@@ -88,9 +91,10 @@ function getWordfromAyah(chapter, ayahnum){
     });
 }
 
-$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
+/*$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
 	console.log("running...");
   endata = engdata.data.surahs;
+  filteredEnData = [...endata];
   if ($(".my-new-list").html()) {
     $("#loadingpage").fadeOut();
     count = false;
@@ -101,7 +105,34 @@ $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
     for(var i = 1; i <= 114; i++){
 	    getIndWords(i);
 	}
-  })
+  })*/
+if ($(".my-new-list").html()) {
+    $("#loadingpage").fadeOut();
+    count = false;
+    console.log("It took " + counter + " seconds to load this page!");
+  }
+
+/*for(var i = 1; i <= 114; i++){
+      getIndWords(i);
+  }*/
+/*fetch("test.json", function(data) {
+  console.log("running...");
+  console.log(data);
+  endata = data;
+  filteredEnData = [...endata];
+  if ($(".my-new-list").html()) {
+    $("#loadingpage").fadeOut();
+    count = false;
+    console.log("It took " + counter + " seconds to load this page!");
+  }
+}).done(function() {
+  console.log(endata);
+    for(var i = 1; i <= 114; i++){
+      getIndWords(i);
+  }
+  })*/
+
+
 
 
 /*
@@ -115,21 +146,23 @@ $.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
     console.log("It took " + counter + " seconds to load this page!");
   }
 })*/
-
-$.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
+var ardata = [];
+//$.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
   if (endata && versesindiv.length == 115) {
     $("#loadingpage").fadeOut();
     count = false;
     console.log("It took " + counter + " seconds to load this page!");
   }
 
-  var data = data.data.surahs;
+  //var data = enda;
+  //console.log(data);
+  //ardata = data.data.surahs;
   var surahs = [];
-  $.each(data, function(key, val) {
+  $.each(endata, function(key, val) {
     surahs.push(
       "<div id='" +
         key +
-        "' class='surahcont'><div class='cross'><div class='innercross'><div class='horiz-cross'></div><div class='vert-cross'></div></div></div><div class='surahname'>" +
+        "' class='surahcont'><div class='surah-label'>"+(parseInt(key)+1)+"</div><div class='cross'><div class='innercross'><div class='horiz-cross'></div><div class='vert-cross'></div></div></div><div class='surahname'>" +
         val.englishName +
         "</div></div>"
     );
@@ -157,9 +190,9 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         thisid = e.target.parentElement.parentElement.id;
       }
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
-        if(data[thisid].ayahs.length > parseInt($('#verseMax').val())){
-            $('#verseMax').val(data[thisid].ayahs.length);
-            $('#verseMin').attr("max",data[thisid].ayahs.length);
+        if(endata[thisid].ayahs.length > parseInt($('#verseMax').val())){
+           // $('#verseMax').val(data[thisid].ayahs.length);
+            //$('#verseMin').attr("max",data[thisid].ayahs.length);
         }
       
       var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
@@ -172,18 +205,18 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
         $('#showsurah h1').html("Chapter " +
             (parseInt(thisid)+1));
         $("#surahcont").html(
-          data[thisid].name +
+          endata[thisid].name +
             "<br/>Surah " +
-            data[thisid].englishName +
+            endata[thisid].englishName +
             "<br/>" +
-            data[thisid].englishNameTranslation +
+            endata[thisid].englishNameTranslation +
             "<br/>" +
             bismillah
         );
 
-        for (var k = 0; k < data[thisid].ayahs.length; k++) {
+        for (var k = 0; k < endata[thisid].ayahs.length; k++) {
           if(k == 0){
-              data[thisid].ayahs[k].text = data[thisid].ayahs[k].text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+              endata[thisid].ayahs[k].text = endata[thisid].ayahs[k].text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
           }
           /*$("#surahcont").append("<div class='ayah-text'>"+
             data[thisid].ayahs[k].text +
@@ -213,9 +246,8 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
           $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
         }
       } else {
-        filteredFlashCards = undefined;
         var remove = false;
-        var surah = data[thisid].englishNameTranslation;
+        var surah = endata[thisid].englishNameTranslation;
         flashCards = flashCards.filter(function(el) {
           if (el.surahEngName != surah) {
             return el;
@@ -226,43 +258,53 @@ $.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
 
         if(remove){
           removeObjectWithId(ayahLengths, thisid.toString());
+        }else{
+          ayahLengths.push({id: thisid, length: endata[thisid].ayahs.length});
+        }
+        if(ayahLengths.length > 0){
+          $('#verseMin, #verseMax').attr("max",Math.max(...ayahLengths.map(o => o.length)));
+          //if(parseInt($('#verseMax').attr('max')) < $('#verseMax').val()){
+          $('#verseMax').val($('#verseMax').attr('max'));
+          //}
+        }else{
+          $('#verseMin, #verseMax').attr("max",1);
+          $('#verseMin, #verseMax').val(1);
         }
 
-        var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
+        /*var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
         if(maxVerseRange > data[thisid].ayahs.length){
             maxVerseRange = data[thisid].ayahs.length;
         }else{
-            $('#verseMin').prop('max', maxVerseRange-1);
+            $('#verseMin').attr('max', maxVerseRange);
         }
-        var minVerseRange = parseInt($('#verseMin').val()); //0
+        var minVerseRange = parseInt($('#verseMin').val()); //0*/
         if (!remove) {
           // Using this for min and max attributes of verse range
-          ayahLengths.push({id: thisid, length: data[thisid].ayahs.length});
-
-          for (var k = minVerseRange; k < maxVerseRange; k++) {
           
+
+          //for (var k = minVerseRange; k <= maxVerseRange; k++) {
+          for (var k = 0; k < endata[thisid].ayahs.length; k++) {
+            if(k == 0){
+              endata[thisid].ayahs[k].text = endata[thisid].ayahs[k].text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+            }
             flashCards.push(
               createFlashCard(
-                data[thisid].ayahs[k].text,
+                endata[thisid].ayahs[k].arab_text,
                 endata[thisid].ayahs[k].text,
-                data[thisid].name,
-                data[thisid].englishName,
-                data[thisid].englishNameTranslation,
-                data[thisid].ayahs[k].numberInSurah,
+                endata[thisid].name,
+                endata[thisid].englishName,
+                endata[thisid].englishNameTranslation,
+                endata[thisid].ayahs[k].numberInSurah,
                 thisid
               )
             );
           }
         }
-
-        $('#verseMin, #verseMax').attr("max",Math.max(...ayahLengths.map(o => o.length)));
-        if(parseInt($('#verseMax').val()) > parseInt($('#verseMax').attr('max'))){
-          $('#verseMax').val($('#verseMax').attr('max'));
-        }
+        
       }
     });
   }
-});
+//});
 var counter = 0;
 setInterval(function() {
   if (count) {
@@ -273,6 +315,7 @@ setInterval(function() {
     newLoadingCaption(loadingcapindex);
   }
   if(counter > 10){
+    //Currently disabled
   	location.reload();
   }
 }, 1000);
@@ -389,6 +432,11 @@ $("#closedeck").click(function(e) {
   $("#surahcont").html("");
   $("#newdeck").css("height", "0%");
   $("#veil").hide();
+  $("#questcont").html("");
+  $("#answer1 .anscont").html("");
+  $("#answer2 .anscont").html("");
+  $("#answercontainer").css("height", "0%");
+  $("#checkcont").css("height", "0px");
 });
 
 /*FLASHCARDS OBJECT:
@@ -431,7 +479,7 @@ var newFlashCards;
 function nextFlashCard() {
   var totalCorrect = 0;
   newFlashCards = [...flashCards];
-  newFlashCards.slice(parseInt($("#verseMin").val()),parseInt($("#verseMax").val())+1);
+  newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
   for(var i = 0; i < newFlashCards.length; i++){
     totalCorrect += newFlashCards[i].correct;
   }
@@ -450,11 +498,7 @@ function nextFlashCard() {
   var vrsOn = parseInt($('#versesOn').val());
   var vocabOn = parseInt($('#vocabOn').val());
   getWordfromAyah(parseInt(thisCard.surahNumber)+1, thisCard.ayahNum);
-  console.log(parseInt(thisCard.surahNumber)+1);
-  console.log(thisCard.ayahNum);
-  console.log(randWord);
   [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
-  console.log(thisCard);
   if(vrsOn && !vocabOn){
       cases = Math.floor(Math.random() * 3) + 1;
   } else if(!vrsOn && vocabOn){
@@ -538,9 +582,10 @@ function nextFlashCard() {
   } else {
     $("#answer2 .anscont").css({ height: "max-content", bottom: 0 });
   }
-  console.log("ran");
-  console.log(flashCards);
+  
 }
+
+
 $("#correct").click(function() {
   $("#questcont").html("");
   $("#answer1 .anscont").html("");
@@ -549,8 +594,9 @@ $("#correct").click(function() {
   $("#checkcont").css("height", "0px");
   currentCard.correct++;
   currentCard.attempts++;
-  console.log(currentCard.correct);
+  //console.log(currentCard.correct);
   setTimeout(nextFlashCard, 200);
+  //nextFlashCard();
 });
 
 $("#incorrect").click(function() {
@@ -559,8 +605,9 @@ $("#incorrect").click(function() {
   $("#answer2 .anscont").html("");
   $("#answercontainer").css("height", "0%");
   $("#checkcont").css("height", "0px");
-  currentCard.attempts++;
+  //currentCard.attempts++;
   setTimeout(nextFlashCard, 200);
+  //nextFlashCard();
 });
 
 $("#showanswer").click(function() {
@@ -583,25 +630,92 @@ function getLevelColor(correct, attempts) {
   }
 }
 
+
+
 function filterSearch(){
     if($("#settings").hasClass("expand-settings")){
         $("#settings-btn").click();
     }
     var search = $('#search input').val();
-    var results = filterIt(endata, search);
+    //var results = filterIt(endata, search);
+    var results = filterIt(filteredEnData, search);
+    $('.surahcont').hide();
     if(results.length>0){
-            $('.surahcont').hide();
+            
             for(var i = 0; i < results.length; i++){
         
         var surahnum = results[i].number - 1;
         $('#'+surahnum).show();
     }
         }else{
-            $('.surahcont').show();
-        }
-    
-    
+            //$('.surahcont').show();
+        }  
 }
+
+function filterJuz(){
+    var juzMin = parseInt($("#juzMin").val());
+    var juzMax = parseInt($("#juzMax").val());
+    var results = [];
+    filteredEnData = filteredEnData.filter(function(el){
+      var filteredAyahs = el.ayahs.filter(function(ayah){
+                if(ayah.juz >= juzMin && ayah.juz <= juzMax && results.indexOf(el) == -1){
+                    results.push(el);
+                    return ayah;
+                }
+            })
+      if(filteredAyahs.length > 0) return el;
+    })
+
+
+    
+    if(results.length>0){
+      $('.surahcont').hide();
+        for(var i = 0; i < results.length; i++){
+            var surahnum = results[i].number - 1;
+            $('#'+surahnum).show();
+        }
+    }else{
+        $('.surahcont').show();
+        filteredEnData = [...endata];
+        $("#juzMin, #juzMax").attr({"min": 1, "max": 30});
+        $("#juzMin").val(1);
+        $("#juzMax").val(30);
+        $("#surahMin, #surahMax").attr({"min": 1, "max": 114});
+        $("#surahMin").val(1);
+        $("#surahMax").val(114);
+    }
+}
+
+function filterSurah(){
+    var surahMin = parseInt($("#surahMin").val());
+    var surahMax = parseInt($("#surahMax").val());
+    var results = [];
+    filteredEnData = filteredEnData.filter(function(el){
+      if(el.number >= surahMin && el.number <= surahMax && results.indexOf(el) == -1){
+          results.push(el);
+          return el;
+      }
+    })
+
+    
+    if(results.length>0){
+      $('.surahcont').hide();
+        for(var i = 0; i < results.length; i++){
+            var surahnum = results[i].number - 1;
+            $('#'+surahnum).show();
+        }
+    }else{
+        $('.surahcont').show();
+        filteredEnData = [...endata];
+        $("#juzMin, #juzMax").attr({"min": 1, "max": 30});
+        $("#juzMin").val(1);
+        $("#juzMax").val(30);
+        $("#surahMin, #surahMax").attr({"min": 1, "max": 114});
+        $("#surahMin").val(1);
+        $("#surahMax").val(114);
+    }
+}
+
 function filterIt(arr, searchKey) {
   var results = [];
   var tresults = [];
@@ -756,46 +870,37 @@ $('.num-input').change(function() {
     $(this).val(last_val);
   }
 
+  //TESTING CONSOLIDATED LOGIC:
+  var min_max = parseInt($(this).parent().children('.num-input-min').attr('max'));
+  var min_val = parseInt($(this).parent().children('.num-input-min').val());
+  var min_min = parseInt($(this).parent().children('.num-input-min').attr('min'));
+  var max_max = parseInt($(this).parent().children('.num-input-max').attr('max'));
+  var max_val = parseInt($(this).parent().children('.num-input-max').val());
+  var last_num_diff = parseInt($(this).parent().attr("data-diff"));
+
+  if(min_val > max_val){
+    if($(this).hasClass("num-input-min")){
+      if(min_val + last_num_diff <= max_max){
+        $(this).parent().children('.num-input-max').val(min_val + last_num_diff);
+      }else{
+        $(this).parent().children('.num-input-max').val(max_max);
+      }
+    }else if($(this).hasClass("num-input-max")){
+      if(max_val - last_num_diff >= min_min){
+        $(this).parent().children('.num-input-min').val(max_val - last_num_diff);
+      }else{
+        $(this).parent().children('.num-input-min').val(min_min);
+      }
+    }
+  }
+
+  var last_num_diff = $(this).parent().children('.num-input-max').val() - $(this).parent().children('.num-input-min').val();
+  $(this).parent().attr("data-diff", last_num_diff);
+
 });
 
-
-// Use this to maintain the difference between the min verse and max verse
-// If a user has it set to min verse as 5 and max as 10, then they adjust the min to 11, auto make the max as 16
-// Only used in the case of when a user make the min greater than max or the max less than the min
-var last_verse_diff = 0; 
-
-$("#verseMin").change(function(){
-    var max = parseInt($(this).attr('max'));
-    var val = parseInt($(this).val());
-    var verse_max_max = parseInt($("#verseMax").attr('max'));
-    var verse_max_val = parseInt($("#verseMax").val());
-
-    if(val > verse_max_val){
-      if(val + last_verse_diff <= verse_max_max){
-        $("#verseMax").prop('value', val + last_verse_diff);
-      }else{
-        $("#verseMax").prop('value', verse_max_max);
-      }
-    }
-
-    last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
-})
-$("#verseMax").change(function(){
-    var max = parseInt($(this).attr('max'));
-    var val = parseInt($(this).val());
-    var verse_min_min = parseInt($("#verseMin").attr('min')); // should always be 1
-    var verse_min_val = parseInt($("#verseMin").val());
-
-    if(val < verse_min_val){
-      if(val - last_verse_diff >= verse_min_min){
-        $("#verseMin").prop('value', val - last_verse_diff);
-      }else{
-        $("#verseMin").prop('value', verse_min_min);
-      }
-    }
-
-    last_verse_diff = $("#verseMax").val() - $("#verseMin").val();
-})
+$("#juzMax, #juzMin").change(function(){ filterJuz() });
+$("#surahMax, #surahMin").change(function(){ filterSurah() });
 
 
 

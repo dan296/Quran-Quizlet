@@ -194,6 +194,15 @@ input:checked + .slider:before {
 .surahcont:hover .cross {
   display: block;
 }
+.surah-label {
+    position: absolute;
+    right: 0;
+    font-size: 10px;
+    opacity: 0.65;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+}
 
 .added {
   background-color: #00bfff;

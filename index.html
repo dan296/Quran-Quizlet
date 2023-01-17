@@ -15,6 +15,8 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js'></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script src="endata.js"></script>
+  <script src="versesindiv.js"></script>
    <script>
   $( function() {
     $( document ).tooltip({
@@ -52,11 +54,17 @@
         <div class='setting-title'>Filter</div>
         <div class='setting-wrap'>
             <div class='setting-label'>Juz Range:</div>
-            <div class='setting-input'><input type="number" class="num-input" id="juzMin" value="1" min="1" max="30" checked><input type="number" class="num-input" id="juzMax" value="30" min="30" max="30" checked></div>
+            <div class='setting-input' data-diff="29">
+              <input type="number" class="num-input num-input-min" id="juzMin" value="1" min="1" max="30">
+              <input type="number" class="num-input num-input-max" id="juzMax" value="30" min="1" max="30">
+            </div>
         </div>
         <div class='setting-wrap'>
             <div class='setting-label'>Surah Range:</div>
-            <div class='setting-input'><input type="number" class="num-input" id="surahMin" value="1" min="1" max="114" checked><input type="number" class="num-input" id="surahMax" value="114" min="1" max="114" checked></div>
+            <div class='setting-input' data-diff="113">
+              <input type="number" class="num-input num-input-min" id="surahMin" value="1" min="1" max="114">
+              <input type="number" class="num-input num-input-max" id="surahMax" value="114" min="1" max="114">
+            </div>
         </div>
     </section>
     
@@ -72,7 +80,10 @@
         </div>
         <div class='setting-wrap'>
             <div class='setting-label'>Verse Range:</div>
-            <div class='setting-input'><input type="number" class="num-input" id="verseMin" value="1" min="1" max="286" checked><input type="number" class="num-input" id="verseMax" value="1" min="1" max="286" checked></div>
+            <div class='setting-input' data-diff="0">
+              <input type="number" class="num-input num-input-min" id="verseMin" value="1" min="1" max="286">
+              <input type="number" class="num-input num-input-max" id="verseMax" value="1" min="1" max="286">
+            </div>
         </div>
     </section>
 </div>
@@ -167,7 +178,8 @@
     <i class="fas fa-arrow-left"></i>
   </div>
   <h1>Cheat Sheet</h1>
-  <audio id='sound' src='https://verses.quran.com/' preload='auto'></audio>
+  <!-- <audio id='sound' src='https://verses.quran.com/' preload='auto'></audio>-->
+  <audio id='sound' src=''></audio>
   <div id='surahcont'></div>
 </div>
 <div id="scoreCard">1/11</div>
