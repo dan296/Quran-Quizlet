@@ -40,12 +40,11 @@ function removeObjectWithId(arr, id) {
 newLoadingCaption(loadingcapindex);*/
 
 function shake(e, oncomplete, distance, time) {
-var time = 500;
+var time = 250;
 var distance = 5;
-
+  var new_e = e[0];
 var start = (new Date()).getTime();
 animate();
-
 function animate() {
     var now = (new Date()).getTime();
     // Get current time
@@ -55,7 +54,7 @@ function animate() {
     // What fraction of total time?
     if (fraction < 1) {
         var x = distance * Math.sin(fraction * 4 * Math.PI);
-        e.style.left = x + "px";
+        new_e.style.left = x + "px";
         // We're aiming for a smooth 40 frames/second animation.
         setTimeout(animate, Math.min(25, time - elapsed));
     } else {
@@ -96,25 +95,20 @@ function signin(){
     $.ajax({
         type: "POST",
         url: 'db.php',
-        data: {user: $("#inputUser").val(), password: $("#inputPassword").val(), signing_in: true, remember: $('#rem-check').is(':checked')},
+        data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check').is(':checked')},
         success: function(data){
           console.log(data);
           data = data.trim();
           if(data.substring(0,5) == "Error"){
               if(data.indexOf("User") > -1){
-                  $( "#inputUser" ).effect( "shake", {distance: 5} );
-                  $( "#inputUser" ).addClass( "invalid-focus" );
-              }else if(data.indexOf("Email") > -1){
-                  $( "#inputEmail" ).effect( "shake", {distance: 5} );
-                  $( "#inputEmail" ).addClass( "invalid-focus" );
+                  shake($( "#signin input[type=text]" ).parent());
+                  $( "#signin input[type=text]" ).parent().addClass( "invalid-focus" );
               }else if(data.indexOf("Password") > -1){
-                  $( "#inputPassword" ).effect( "shake", {distance: 5} );
-                  $( "#inputPassword" ).addClass( "invalid-focus" );
+                  shake($( "#signin input[type=password]" ).parent());
+                  $( "#signin input[type=password]" ).parent().addClass( "invalid-focus" );
               }
-              console.log(data);
               $('#error-text').show();
               $('#error-text').html(data);
-              //$('#error-text').delay(1000).fadeOut();
           }else{
               //show screen
               /*userObj = [];
@@ -136,33 +130,33 @@ var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 function signup(){
   console.log("sign up clicked");
     if(!testEmail.test($("#signup input[type=email]").val())){
-      shake($( "#signup input[type=email]" ));
+        shake($( "#signup input[type=email]" ).parent());
         //$( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
          $( "#signup input[type=email]" ).parent().addClass( "invalid-focus" );
          $('#error-text').show();
          $('#error-text').html("Error: invalid email address");
     }else if(!alphaNumeric($("#signup input[type=text]").val())){
-        $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5});
+        shake($( "#signup input[type=text]" ).parent());
         $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
         $('#error-text').show();
         $('#error-text').html("Error: not alphanumeric");
     }else if($("#signup input[type=text]").val().length<5){
-         $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5} );
+         shake($( "#signup input[type=text]" ).parent());
          $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
          $('#error-text').show();
          $('#error-text').html("Error: must be longer than 4 characters");
     }else if(!alphaNumeric($('#signup input[type=password]').eq(0).val())){
-        $( "#signup input[type=password]" ).eq(0).parent().effect( "shake", {distance: 5} );
+        shake($( "#signup input[type=password]" ).eq(0).parent());
         $( "#signup input[type=password]" ).eq(0).parent().addClass( "invalid-focus" );
         $('#error-text').show();
         $('#error-text').html("Error: not alphanumeric");
     } else if($('#signup input[type=password]').eq(0).val().length<7){
-        $( "#signup input[type=password]" ).eq(0).parent().effect( "shake", {distance: 5} );
+        shake($( "#signup input[type=password]" ).eq(0).parent());
         $( "#signup input[type=password]" ).eq(0).parent().addClass( "invalid-focus" );
         $('#error-text').show();
         $('#error-text').html("Error: must be longer than 6 characters");
     }else if($('#signup input[type=password]').eq(1).val() !== $('#signup input[type=password]').eq(0).val()){
-        $( "#signup input[type=password]" ).parent().effect( "shake", {distance: 5} );
+        shake($( "#signup input[type=password]" ).parent());
         $( "#signup input[type=password]" ).parent().addClass( "invalid-focus" );
         $('#error-text').show();
         $('#error-text').html("Error: passwords do not match!");
@@ -176,10 +170,10 @@ function signup(){
               data = data.trim();
               if(data.substring(0,5) == "Error"){
                   if(data.indexOf("user") > -1){
-                      $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5} );
+                      shake($( "#signup input[type=text]" ).parent());
                       $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
                   }else if(data.indexOf("Email") > -1){
-                      $( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
+                      shake($( "#signup input[type=email]" ).parent());
                       $( "#signup input[type=email]" ).parent().addClass( "invalid-focus" );
                   }
                   $('#error-text').show();
