@@ -90,18 +90,12 @@ function signin(){
               //$('#error-text').delay(1000).fadeOut();
           }else{
               //show screen
-              userObj = [];
+              /*userObj = [];
               if(data!== ""){
                 userObj = JSON.parse(data.replace(/singqt/g, "'"));
-              }
-              thisuser = $("#inputUser").val();
-              setUpSheets();
-              $('#user').html(thisuser);
-              $('#sign-in-cont').fadeOut(200);
-              $(".container:not(#proof-cont), #addSubject, #deleteSubject, #sign-out, #excel, #settings").delay(200).fadeIn(200);
-              $('#course-cont').css('opacity', 1);
-              $('#proof-cont').hide();
-              console.log('hide');
+              }*/
+              thisuser = $('#signin input[type=text]').val();
+              showMain();
           }
         },
         dataType: 'HTML'
@@ -154,29 +148,18 @@ function signup(){
               data = data.trim();
               if(data.substring(0,5) == "Error"){
                   if(data.indexOf("user") > -1){
-                      $( "#signup input[type=text]" ).effect( "shake", {distance: 5} );
-                      $( "#signup input[type=text]" ).addClass( "invalid-focus" );
+                      $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5} );
+                      $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
                   }else if(data.indexOf("Email") > -1){
-                      $( "#signup input[type=email]" ).effect( "shake", {distance: 5} );
-                      $( "#signup input[type=email]" ).addClass( "invalid-focus" );
+                      $( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
+                      $( "#signup input[type=email]" ).parent().addClass( "invalid-focus" );
                   }
                   $('#error-text').show();
                   $('#error-text').html(data);
               }else{
                   //show screen
                   thisuser = data;
-                  $('#sign-in-cont').fadeOut(function(){
-                      //$('#sign-in-cont').css('height', '100px');
-                      //$('#sign-in-cont').html('<h1>Welcome '+ thisuser+'</h1>').fadeIn(function(){
-                          //$('#sign-in-cont').delay(1500).fadeOut(function(){
-                              $(".container, #addSubject, #deleteSubject, #sign-out, #excel, #settings").fadeIn(function(){
-                                   $('#course-cont').css('opacity', 1);
-                              });
-                          //});
-                      //});
-                  });
-                  
-                 
+                  showMain() 
               }
             },
             dataType: 'HTML'
