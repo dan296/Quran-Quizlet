@@ -39,6 +39,33 @@ function removeObjectWithId(arr, id) {
 }
 newLoadingCaption(loadingcapindex);*/
 
+function shake(e, oncomplete, distance, time) {
+var time = 500;
+var distance = 5;
+
+var start = (new Date()).getTime();
+animate();
+
+function animate() {
+    var now = (new Date()).getTime();
+    // Get current time
+    var elapsed = now - start;
+    // How long since we started
+    var fraction = elapsed / time;
+    // What fraction of total time?
+    if (fraction < 1) {
+        var x = distance * Math.sin(fraction * 4 * Math.PI);
+        e.style.left = x + "px";
+        // We're aiming for a smooth 40 frames/second animation.
+        setTimeout(animate, Math.min(25, time - elapsed));
+    } else {
+        // Otherwise, the animation is complete
+        if (oncomplete) oncomplete(e);
+        // Invoke completion callback
+    }
+   }
+}
+
 // Welcome Box JS Begin
 $('.welcome-toggle').click(function(){
   $('.welcome-toggle').removeClass('welcome-toggle-selected');
@@ -109,7 +136,8 @@ var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 function signup(){
   console.log("sign up clicked");
     if(!testEmail.test($("#signup input[type=email]").val())){
-        $( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
+      shake($( "#signup input[type=email]" ));
+        //$( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
          $( "#signup input[type=email]" ).parent().addClass( "invalid-focus" );
          $('#error-text').show();
          $('#error-text').html("Error: invalid email address");
