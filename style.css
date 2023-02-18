@@ -1,3 +1,8 @@
+:root{
+  --theme: black;
+  --theme-bg: #f1f1f1;
+}
+
 html{
     margin: 0;
     padding: 0;
@@ -18,7 +23,8 @@ body {
   margin: 0;
   padding: 0;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  background-color: #f1f1f1;
+  background: var(--theme-bg);
+  color: var(--theme);
 }
 body::-webkit-scrollbar {
   display: none;
@@ -37,14 +43,13 @@ body::-webkit-scrollbar {
 
 /*Settings*/
 #settings {
-    background: #f1f1f1;
+    background: inherit;
     width: 250px;
     height: 100%;
     position: fixed;
     top: 0;
     right: -260px;
     box-shadow: 0px 0px 10px 0px black;
-    transition: 0.2s ease-in-out;
     padding: 10px;
     z-index: 3;
 }
@@ -128,6 +133,22 @@ input:checked + .slider:before {
     height: 40px;
     padding-top: 8px;
 }
+.setting-wrap button{
+  cursor: pointer;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    height: 100%;
+    font-size: 10pt;
+}
+.setting-wrap button:hover{
+  color: var(--theme-bg);
+  background: var(--theme);
+}
 .setting-label, .setting-input {
     width: 50%;
     display: inline-block;
@@ -146,6 +167,24 @@ input:checked + .slider:before {
     background: transparent;
     text-align: center;
 }
+
+/* VERSION CSS */
+
+/* END VERSION CSS */
+#version {
+  position: absolute;
+  bottom: 75px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+#version span {
+  font-size: 10pt;
+}
+
 /*End Settings*/
 
 #loadingpage {
@@ -269,12 +308,12 @@ footer {
     text-align: center;
     /* max-width: 500px; */
     background: #f1f1f1;
-    transition: 0.2s ease-in-out;
     padding: 0;
     /* white-space: nowrap; */
     overflow: hidden;
     margin: 0;
     z-index: 4;
+    background: inherit;
 }
 .footer-cont {
     max-width: 300px;
@@ -532,12 +571,12 @@ footer {
 /*SVG STUFF*/
 
 #demo {
-  position: absolute;
+  /*position: absolute;
   left: 0;
   top: 250px;
   right: 0;
   margin: auto;
-  transform: scale(2.5);
+  transform: scale(2.5);*/
 }
 
 .lpath {
@@ -603,6 +642,120 @@ footer {
     stroke: white;
   }
 }
+
+/* Welcome Box */
+#welcome-box{
+  width: 300px;
+  border: 1px solid;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: auto;
+  margin-bottom: 30px;
+}
+#welcome-toggle-wrap{
+  margin: 10px; 
+  position: relative;
+}
+.welcome-toggle {
+    width: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.welcome-toggle:hover {
+  opacity: 1;
+}
+#welcome-box .separator{
+  background: white;
+  opacity: 0.5;
+}
+.welcome-toggle-selected{
+  opacity: 1;
+}
+
+.form-group {
+    position: relative;
+    opacity: 0.5;
+    text-align: left;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.form-group label {
+    font-size: 10pt;
+    display: block;
+    margin: 0px;
+}
+.form-group input{
+    width: 100%;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    color: white;
+    border-bottom: 2px solid;
+}
+#guest{
+  opacity: 0.5;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#guest:hover, #welcome-enter:hover{
+  opacity: 1;
+}
+#guest span{
+  display: inline-block;
+  transform: translate(0px);
+  transition: 0.2s linear;
+}
+#guest:hover span{
+  transform: translate(5px);
+}
+#welcome-box button{
+  cursor: pointer;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    height: 100%;
+    font-size: 10pt;
+    height: 35px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+#welcome-box button:hover{
+  color: var(--theme-bg);
+  background: var(--theme);
+}
+#rem-check, #welcome-enter{
+  opacity: 0.5;
+}
+#rem-check{
+  font-size: 10pt;
+  text-align: center;
+}
+#rem-check input{
+  width: auto;
+  position: relative;
+  top: 2px;
+}
+.invalid:focus, .invalid-focus{
+        opacity: 1 !important;
+}
+.invalid-focus input{
+        border-bottom-color: #d30000a1 !important;
+}
+.valid:focus{
+        box-shadow: 0 0 0 0.2rem #00d32da1 !important;
+}
+#error-text{
+  color: red;
+  margin-bottom: 10px;
+}
+/* End Welcome Box */
 
 #showsurah {
   background-color: #3d3d3d;
@@ -671,7 +824,7 @@ footer {
   background-color: #f94f4f;
 }
 
-#readsurah:hover, #goback:hover {
+#readsurah:hover, #goback:hover, #version:hover {
   color: #00bfff;
 }
 

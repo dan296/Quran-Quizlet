@@ -11,8 +11,8 @@ var currentCard;
 var studying = false;
 var numSurahsInDeck = 0;
 var count = true;
-var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
-var loadingcapindex = 0;
+//var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
+//var loadingcapindex = 0;
 var ayahLengths = [];
 //var versesindiv = []; coming from versesindiv.js
 var last_length = 0;
@@ -28,7 +28,7 @@ function removeObjectWithId(arr, id) {
   return arr;
 }
 
-function newLoadingCaption(index){
+/*function newLoadingCaption(index){
   $('#loadingcaps').fadeOut(function(){
     if(index > loadingcaps.length - 1){
       index == loadingcaps.length - 1;
@@ -37,7 +37,217 @@ function newLoadingCaption(index){
     $('#loadingcaps').delay(500).fadeIn(500);
   })
 }
-newLoadingCaption(loadingcapindex);
+newLoadingCaption(loadingcapindex);*/
+
+// Welcome Box JS Begin
+$('.welcome-toggle').click(function(){
+  $('.welcome-toggle').removeClass('welcome-toggle-selected');
+  $(this).addClass('welcome-toggle-selected');
+  $('.welcome-module').hide();
+  let thisWlcmMod = $(this).html().toLowerCase().replace(/\s/g, '');
+  $('#'+thisWlcmMod).show();
+  $('#welcome-enter').html($(this).html().toLowerCase());
+})
+
+$('.form-group input').on('focus', function() {
+  $(this).parent().css('opacity',  1);
+})
+$('.form-group input').on('blur', function() {
+  $(this).parent().css('opacity',  0.5);
+})
+
+$('#guest').click(function(){
+  showMain();
+})
+
+// Welcome Box JS End
+
+// Sign in JS
+function signin(){
+    console.log('i logged in');
+    console.log($('#rem-check input').is(':checked'));
+    $.ajax({
+        type: "POST",
+        url: 'db.php',
+        data: {user: $("#inputUser").val(), password: $("#inputPassword").val(), signing_in: true, remember: $('#rem-check').is(':checked')},
+        success: function(data){
+          console.log(data);
+          data = data.trim();
+          if(data.substring(0,5) == "Error"){
+              if(data.indexOf("User") > -1){
+                  $( "#inputUser" ).effect( "shake", {distance: 5} );
+                  $( "#inputUser" ).addClass( "invalid-focus" );
+              }else if(data.indexOf("Email") > -1){
+                  $( "#inputEmail" ).effect( "shake", {distance: 5} );
+                  $( "#inputEmail" ).addClass( "invalid-focus" );
+              }else if(data.indexOf("Password") > -1){
+                  $( "#inputPassword" ).effect( "shake", {distance: 5} );
+                  $( "#inputPassword" ).addClass( "invalid-focus" );
+              }
+              console.log(data);
+              $('#error-text').show();
+              $('#error-text').html(data);
+              //$('#error-text').delay(1000).fadeOut();
+          }else{
+              //show screen
+              userObj = [];
+              if(data!== ""){
+                userObj = JSON.parse(data.replace(/singqt/g, "'"));
+              }
+              thisuser = $("#inputUser").val();
+              setUpSheets();
+              $('#user').html(thisuser);
+              $('#sign-in-cont').fadeOut(200);
+              $(".container:not(#proof-cont), #addSubject, #deleteSubject, #sign-out, #excel, #settings").delay(200).fadeIn(200);
+              $('#course-cont').css('opacity', 1);
+              $('#proof-cont').hide();
+              console.log('hide');
+          }
+        },
+        dataType: 'HTML'
+    });
+}
+
+// Sign in JS End
+var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+// Sign up JS
+function signup(){
+  console.log("sign up clicked");
+    if(!testEmail.test($("#signup input[type=email]").val())){
+        $( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
+         $( "#signup input[type=email]" ).parent().addClass( "invalid-focus" );
+         $('#error-text').show();
+         $('#error-text').html("Error: invalid email address");
+    }else if(!alphaNumeric($("#signup input[type=text]").val())){
+        $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5});
+        $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
+        $('#error-text').show();
+        $('#error-text').html("Error: not alphanumeric");
+    }else if($("#signup input[type=text]").val().length<5){
+         $( "#signup input[type=text]" ).parent().effect( "shake", {distance: 5} );
+         $( "#signup input[type=text]" ).parent().addClass( "invalid-focus" );
+         $('#error-text').show();
+         $('#error-text').html("Error: must be longer than 4 characters");
+    }else if(!alphaNumeric($('#signup input[type=password]').eq(0).val())){
+        $( "#signup input[type=password]" ).eq(0).parent().effect( "shake", {distance: 5} );
+        $( "#signup input[type=password]" ).eq(0).parent().addClass( "invalid-focus" );
+        $('#error-text').show();
+        $('#error-text').html("Error: not alphanumeric");
+    } else if($('#signup input[type=password]').eq(0).val().length<7){
+        $( "#signup input[type=password]" ).eq(0).parent().effect( "shake", {distance: 5} );
+        $( "#signup input[type=password]" ).eq(0).parent().addClass( "invalid-focus" );
+        $('#error-text').show();
+        $('#error-text').html("Error: must be longer than 6 characters");
+    }else if($('#signup input[type=password]').eq(1).val() !== $('#signup input[type=password]').eq(0).val()){
+        $( "#signup input[type=password]" ).parent().effect( "shake", {distance: 5} );
+        $( "#signup input[type=password]" ).parent().addClass( "invalid-focus" );
+        $('#error-text').show();
+        $('#error-text').html("Error: passwords do not match!");
+    }else{
+        $.ajax({
+            type: "POST",
+            url: 'db.php',
+            data: {email: $("#signup input[type=email]").val(), user: $("#signup input[type=text]").val(), password: $("#signup input[type=password]").val(), signing_up: true, remember: $('#rem-check input').is(':checked')},
+            success: function(data){
+              console.log(data);
+              data = data.trim();
+              if(data.substring(0,5) == "Error"){
+                  if(data.indexOf("user") > -1){
+                      $( "#signup input[type=text]" ).effect( "shake", {distance: 5} );
+                      $( "#signup input[type=text]" ).addClass( "invalid-focus" );
+                  }else if(data.indexOf("Email") > -1){
+                      $( "#signup input[type=email]" ).effect( "shake", {distance: 5} );
+                      $( "#signup input[type=email]" ).addClass( "invalid-focus" );
+                  }
+                  $('#error-text').show();
+                  $('#error-text').html(data);
+              }else{
+                  //show screen
+                  thisuser = data;
+                  $('#sign-in-cont').fadeOut(function(){
+                      //$('#sign-in-cont').css('height', '100px');
+                      //$('#sign-in-cont').html('<h1>Welcome '+ thisuser+'</h1>').fadeIn(function(){
+                          //$('#sign-in-cont').delay(1500).fadeOut(function(){
+                              $(".container, #addSubject, #deleteSubject, #sign-out, #excel, #settings").fadeIn(function(){
+                                   $('#course-cont').css('opacity', 1);
+                              });
+                          //});
+                      //});
+                  });
+                  
+                 
+              }
+            },
+            dataType: 'HTML'
+        });
+    }
+}
+$('#welcome-enter').click(function(e){
+  e.preventDefault();
+  if($(this).html() == "sign up"){
+    signup();
+  }else{
+    signin();
+  }
+})
+// Sign up JS End
+
+function alphaNumeric(inputtxt)
+  {
+   var letters = /^[a-z0-9]+$/i;
+   if(inputtxt.match(letters))
+     {
+      return true;
+     }
+   else
+     {
+     //alert("message");
+     return false;
+     }
+  }
+
+function signOut(){
+    $.ajax({
+        type: "POST",
+        url: 'db.php',
+        data: {signing_out: true},
+        success: function(){
+            cookieSet = false;
+            $(".container, #addSubject, #deleteSubject, #sign-out, #excel, #settings").fadeOut(200);
+            $('#course-cont').css('opacity', 0);
+            $('#sign-in-cont').delay(200).fadeIn(200);
+        },
+        dataType: 'HTML'
+    });
+
+    
+}
+
+$('.form-group input').keydown(function(e){
+  if(e.keyCode == 13){
+    $('#welcome-enter').click();
+  }else{
+    clearError();
+  }
+})
+
+function clearError(){
+    $( ".form-group" ).removeClass( "invalid-focus" );
+    $('#error-text').hide();
+}
+
+
+$('#login-btn').click(function(){
+  showHome();
+})
+
+function showMain(){
+  $("#loadingpage").fadeOut();
+}
+function showHome(){
+  $("#loadingpage").fadeIn();
+}
 
 function arabicDigits(num){
   num = num.toString().split('');
@@ -49,33 +259,6 @@ function arabicDigits(num){
   return final.join('');
 }
 
-/*function newTest(){
-  $.getJSON("https://api.quran.com:3000/api/v3/chapters", function(data){
-    console.log(data);
-  })
-}*/
-
-/*function getIndWords(chapter, num_page = 1){
-    $.getJSON("https://api.quran.com/api/v4/verses/by_chapter/"+chapter+"?language=en&words=true&word_fields=text_uthmani&page="+num_page+"&per_page=50", function(data){
-        if(versesindiv[chapter] == undefined){
-            versesindiv[chapter] = data;
-        }else{
-            versesindiv[chapter].verses = versesindiv[chapter].verses.concat(data.verses);
-        }
-        
-        if(chapter == 3){
-            console.log(versesindiv[chapter].verses.length);
-        }
-        if(versesindiv[chapter].verses.length > 0 && versesindiv[chapter].verses.length % 50 == 0 && last_length !==versesindiv[chapter].verses.length && data.verses.length > 0){
-            last_length = versesindiv[chapter].length;
-            getIndWords(chapter, num_page+1);
-        }else{
-            last_length = 0;
-        }
-    })
-    
-    
-}*/
 var randWord = {};
 function getWordfromAyah(chapter, ayahnum){
     $.ajaxSetup({
@@ -91,93 +274,9 @@ function getWordfromAyah(chapter, ayahnum){
     });
 }
 
-/*$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
-	console.log("running...");
-  endata = engdata.data.surahs;
-  filteredEnData = [...endata];
-  if ($(".my-new-list").html()) {
-    $("#loadingpage").fadeOut();
-    count = false;
-    console.log("It took " + counter + " seconds to load this page!");
-  }
-}).done(function() {
-	console.log(endata);
-    for(var i = 1; i <= 114; i++){
-	    getIndWords(i);
-	}
-  })*/
-if ($(".my-new-list").html()) {
-    $("#loadingpage").fadeOut();
-    count = false;
-    console.log("It took " + counter + " seconds to load this page!");
-  }
-
-/*for(var i = 1; i <= 114; i++){
-      getIndWords(i);
-  }*/
-/*fetch("test.json", function(data) {
-  console.log("running...");
-  console.log(data);
-  endata = data;
-  filteredEnData = [...endata];
-  if ($(".my-new-list").html()) {
-    $("#loadingpage").fadeOut();
-    count = false;
-    console.log("It took " + counter + " seconds to load this page!");
-  }
-}).done(function() {
-  console.log(endata);
-    for(var i = 1; i <= 114; i++){
-      getIndWords(i);
-  }
-  })*/
-
-
-
-
-/*
-moved earlier
-$.getJSON("https://api.alquran.cloud/v1/quran/en.pickthall", function(engdata) {
-	console.log("running...");
-  endata = engdata.data.surahs;
-  if ($(".my-new-list").html()) {
-    $("#loadingpage").fadeOut();
-    count = false;
-    console.log("It took " + counter + " seconds to load this page!");
-  }
-})*/
 var ardata = [];
-//$.getJSON("https://api.alquran.cloud/v1/quran/quran-uthmani", function(data) {
-  if (endata && versesindiv.length == 115) {
-    $("#loadingpage").fadeOut();
-    count = false;
-    console.log("It took " + counter + " seconds to load this page!");
-  }
 
-  //var data = enda;
-  //console.log(data);
-  //ardata = data.data.surahs;
-  var surahs = [];
-  $.each(endata, function(key, val) {
-    surahs.push(
-      "<div id='" +
-        key +
-        "' class='surahcont'><div class='surah-label'>"+(parseInt(key)+1)+"</div><div class='cross'><div class='innercross'><div class='horiz-cross'></div><div class='vert-cross'></div></div></div><div class='surahname'>" +
-        val.englishName +
-        "</div></div>"
-    );
-  });
-
-  $("<div/>", {
-    class: "my-new-list",
-    html: surahs.join("")
-  }).prependTo("body");
-  $("body").prepend(
-    '<h1 style="text-align: center; margin-top: 0; padding-top: 20px; font-size: 20px;">Create a Deck</h1><h3 style="text-align: center; font-size: 14px;">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>'
-  );
-
-  for (var i = 0; i < 114; i++) {
-    $("#" + i).click(function() {
+  $('.surahcont').click(function(){
         if($("#settings").hasClass("expand-settings")){
           // had it blocked for some reason?
             $("#settings-btn").click();
@@ -216,16 +315,10 @@ var ardata = [];
 
         for (var k = 0; k < endata[thisid].ayahs.length; k++) {
           if(k == 0){
-              endata[thisid].ayahs[k].text = endata[thisid].ayahs[k].text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+              endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+              console.log(endata[thisid].ayahs[k].text);
           }
-          /*$("#surahcont").append("<div class='ayah-text'>"+
-            data[thisid].ayahs[k].text +
-              "<span class='ayahsym' id='ayahsym"+k+"'>۝<div class='ayahnum' id='ayahnum"+k+"'>" +
-              arabicDigits(k+1) +
-              "</div></span></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
-              endata[thisid].ayahs[k].text +
-              "</div>"
-          );*/
+ 
           var newtext = "";
           for(var m = 0; m < versesindiv[parseInt(thisid)+1].verses[k].words.length-1; m++){
               newtext += "<span  onclick='playAudio(0,0,\""+versesindiv[parseInt(thisid)+1].verses[k].words[m].audio_url+"\")' title='"+versesindiv[parseInt(thisid)+1].verses[k].words[m].translation.text+"'>"+versesindiv[parseInt(thisid)+1].verses[k].words[m].text+"</span>"
@@ -271,21 +364,10 @@ var ardata = [];
           $('#verseMin, #verseMax').val(1);
         }
 
-        /*var maxVerseRange = parseInt($('#verseMax').val()); //data[thisid].ayahs.length;
-        if(maxVerseRange > data[thisid].ayahs.length){
-            maxVerseRange = data[thisid].ayahs.length;
-        }else{
-            $('#verseMin').attr('max', maxVerseRange);
-        }
-        var minVerseRange = parseInt($('#verseMin').val()); //0*/
         if (!remove) {
-          // Using this for min and max attributes of verse range
-          
-
-          //for (var k = minVerseRange; k <= maxVerseRange; k++) {
           for (var k = 0; k < endata[thisid].ayahs.length; k++) {
             if(k == 0){
-              endata[thisid].ayahs[k].text = endata[thisid].ayahs[k].text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+              endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
             }
             flashCards.push(
               createFlashCard(
@@ -303,22 +385,7 @@ var ardata = [];
         
       }
     });
-  }
-//});
-var counter = 0;
-setInterval(function() {
-  if (count) {
-    counter += 1;
-  }
-  if (counter % 7 == 0){
-    loadingcapindex++;
-    newLoadingCaption(loadingcapindex);
-  }
-  if(counter > 10){
-    //Currently disabled
-  	location.reload();
-  }
-}, 1000);
+
 
 window.addEventListener(
   "click",
@@ -479,7 +546,12 @@ var newFlashCards;
 function nextFlashCard() {
   var totalCorrect = 0;
   newFlashCards = [...flashCards];
-  newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
+  newFlashCards = newFlashCards.filter(function(el){
+    if(el.ayahNum >= parseInt($("#verseMin").val()) && el.ayahNum <= parseInt($("#verseMax").val())){
+      return el;
+    }
+  })
+  //newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
   for(var i = 0; i < newFlashCards.length; i++){
     totalCorrect += newFlashCards[i].correct;
   }
@@ -788,7 +860,9 @@ $('#goback').click(function(){
   $('#showsurah').delay(500).fadeOut(500);
 })
 //Animating Divs
-$('#loadingpage h1').addClass('animated bounceInDown');
+//$('#loadingpage h1').addClass('animated bounceInDown');
+/*$('#loadingpage h1').hide();
+$('#loadingpage h1').delay(1000).fadeIn(1000);*/
 
 // PLAYING AUDIO
 function playAudio(surah, ayah, wordUrl = false){
@@ -824,12 +898,17 @@ $('#switchMode').click(function(){
         var isSun = parseInt($(this).val());
         if(isSun){
             $(this).prop('value',0);
-            $('body, footer, #settings').css({'background-color':'#313131','color':'white'});
+            document.documentElement.style.setProperty('--theme', 'white');
+            document.documentElement.style.setProperty('--theme-bg', '#313131');
+            //$('body, footer, #settings').css({'background-color':'#313131','color':'white'});
             $('#buttoncontainer button').removeClass('daybutton');
             $('#buttoncontainer button').addClass('nightbutton');
         } else {
             $(this).prop('value',1);
-            $('body, footer, #settings').css({'background-color':'#f1f1f1','color':'black'});
+            document.documentElement.style.setProperty('--theme', 'black');
+            document.documentElement.style.setProperty('--theme-bg', '#f1f1f1');
+            
+            //$('body, footer, #settings').css({'background-color':'#f1f1f1','color':'black'});
             $('#buttoncontainer button').removeClass('nightbutton');
             $('#buttoncontainer button').addClass('daybutton');
         }
