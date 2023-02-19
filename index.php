@@ -49,6 +49,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         cookieSet = true;
         $('#rem-check').click();
         thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
+        $('#signin-out-btn').html("Sign out");
         //$('#user').html(thisuser);
         $('#signin input[type=text]').prop('value',thisuser);
         //userObj = '<?php //echo $results["userObj"]; ?>';
@@ -123,10 +124,10 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
     <section>
         <div class='setting-title'>Profile</div>
         <div class='setting-wrap'>
-            <button id="login-btn">Log in / Sign up</button>
+            <button id="login-btn">Sign in / Sign up</button>
         </div>
         <div class='setting-wrap'>
-            
+            <button id="logout-btn">Sign out</button>
         </div>
         <div class='setting-wrap'>
             

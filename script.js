@@ -116,6 +116,7 @@ function signin(){
                 userObj = JSON.parse(data.replace(/singqt/g, "'"));
               }*/
               thisuser = $('#signin input[type=text]').val();
+              $('#signin-out-btn').html("Sign out");
               showMain();
           }
         },
@@ -219,9 +220,7 @@ function signOut(){
         data: {signing_out: true},
         success: function(){
             cookieSet = false;
-            $(".container, #addSubject, #deleteSubject, #sign-out, #excel, #settings").fadeOut(200);
-            $('#course-cont').css('opacity', 0);
-            $('#sign-in-cont').delay(200).fadeIn(200);
+            $('#signin-out-btn').html("Sign in / Sign up");
         },
         dataType: 'HTML'
     });
@@ -243,7 +242,10 @@ function clearError(){
 }
 
 
-$('#login-btn').click(function(){
+$('#signin-out-btn').click(function(){
+  if($(this).html() == "Sign out"){
+    signOut();
+  }
   showHome();
 })
 
