@@ -190,6 +190,8 @@ input:checked + .slider:before {
     display: inline-block !important;
     text-align: right;
     float: right;
+    position: relative;
+    top: -4px;
 }
 
 /* VERSION CSS */
