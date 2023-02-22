@@ -740,10 +740,10 @@ footer {
     width: 100px;
     margin-bottom: 20px;
 }
-#welcome-box button:hover{
+/*#welcome-box button:hover{
   color: var(--theme-bg);
   background: var(--theme);
-}
+}*/
 #rem-check, #welcome-enter{
   opacity: 0.5;
 }
