@@ -127,11 +127,17 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
 
     <section>
         <div class='setting-title'>Profile</div>
-        <div class='setting-wrap'>
-            <button id="signin-out-btn">Sign in / Sign up</button>
+        <div class='setting-wrap' id="profile-info">
+            <div class='setting-label'>Email:</div>
+            <div class='setting-info' id="setting-email">dan296@gmail.com</div>
+            <div class='setting-label'>User:</div>
+            <div class='setting-info' id="setting-user">dan296</div>
+            <div class='setting-label'>Password:</div>
+            <div class='setting-info' id="setting-pw">****</div>
+            <button id="signin-out-btn">Edit</button>
         </div>
         <div class='setting-wrap'>
-            
+            <button id="signin-out-btn">Sign in / Sign up</button>
         </div>
     </section>
 
