@@ -97,8 +97,6 @@ function signin(){
         url: 'db.php',
         data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check').is(':checked')},
         success: function(data){
-          console.log(JSON.parse(data));
-          //data = data.trim();
           if(data.substring(0,5) == "Error"){
               if(data.indexOf("User") > -1){
                   shake($( "#signin input[type=text]" ).parent());
@@ -110,13 +108,14 @@ function signin(){
               $('#error-text').show();
               $('#error-text').html(data);
           }else{
+            let user_data = JSON.parse(data);
               //show screen
               /*userObj = [];
               if(data!== ""){
                 userObj = JSON.parse(data.replace(/singqt/g, "'"));
               }*/
-              $('#setting-email').html(data.email);
-              $('#setting-user').html(data.user);
+              $('#setting-email').html(user_data.email);
+              $('#setting-user').html(user_data.user);
               thisuser = $('#signin input[type=text]').val();
               $('#signin-out-btn').html("Sign out");
               $('.setting-profile').show();
