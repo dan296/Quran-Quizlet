@@ -145,7 +145,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
     </section>
 
     
-    <div id="version">
+    <div id="version2">
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
 </div>
@@ -229,6 +229,9 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
     <div id="guest">continue as guest <span>&#8594</span></div>
     <div id="error-text"></div>
   </div>
+  <div id="version">
+    <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
+  </div>
 </div>
 <footer>
     <div class="footer-cont">
@@ -261,6 +264,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
 <div id="developer">created by <a href="https://dkhawaja.com/" target="_blank">Daniyal Khawaja</a></div>
 </footer>
 <div id='flashcard'>
+  <div id="scoreCard">1/11</div>
   <div id='closedeck' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
   <div id='readsurah'><i class="fas fa-book-open"></i></div>
   <div id="flashcont">
@@ -288,7 +292,6 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   <audio id='sound' src=''></audio>
   <div id='surahcont'></div>
 </div>
-<div id="scoreCard">1/11</div>
 <!-- partial -->
 <script  src="./script.js"></script>
 

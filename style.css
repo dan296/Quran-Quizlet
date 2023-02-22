@@ -197,11 +197,9 @@ input:checked + .slider:before {
   display: none;
 }
 /* VERSION CSS */
-
-/* END VERSION CSS */
 #version {
   position: absolute;
-  bottom: 75px;
+  bottom: 0;
   cursor: pointer;
   text-align: center;
   display: block;
@@ -212,6 +210,39 @@ input:checked + .slider:before {
 #version span {
   font-size: 10pt;
 }
+#version a{
+  color: white;
+  opacity: 0.5;
+  transition: 0.2s ease-in-out;
+}
+#version a:hover{
+  opacity: 1;
+}
+
+#version2 {
+  position: absolute;
+  bottom: 75px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+#version2 span {
+  font-size: 10pt;
+}
+#version2 a{
+  color: var(--theme);
+  opacity: 0.5;
+  transition: 0.2s ease-in-out;
+}
+#version2 a:hover{
+  opacity: 1;
+}
+
+/* END VERSION CSS */
+
 
 /*End Settings*/
 
@@ -480,7 +511,7 @@ footer {
   margin: auto;
   overflow: hidden;
   z-index: 2;
-  transition: border-color 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 #flashcont {
   height: 100%;
@@ -513,15 +544,16 @@ footer {
   bottom: 40px;
   height: 276px;
   position: absolute;
+  top: 0;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
   text-align: center;
   transition: 0.2s ease-in-out;
   background: var(--theme-bg);
+  padding-top: 30px;
 }
 #questcont{
-  font-size: 20pt;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -530,6 +562,7 @@ footer {
   margin: auto;
   height: max-content;
   padding: 28px;
+  max-height: 276px;
 }
 .anscont {
   font-size: 20pt;
@@ -858,7 +891,7 @@ footer {
   background-color: #f94f4f;
 }
 
-#readsurah:hover, #goback:hover, #version:hover {
+#readsurah:hover, #goback:hover {
   color: #00bfff;
 }
 
@@ -1098,19 +1131,9 @@ i.fas.fa-play-circle.ayah-audio {
 }
 #scoreCard{
   z-index: 1;
-  position: fixed;
-  width: 70px;
-  top: 0;
-  text-align: right;
-  right: 0;
+  position: absolute;
   padding: 10px;
-  color: white;
-  height: 45px;
-  font-size: 30px;
-  /*border-bottom-left-radius: 5px;*/
-  display: none;
-  background-color: #3d3d3d;
-  height: max-content;
+  font-size: 10pt;
   width: 100%;
   text-align: center;
 }

@@ -7,7 +7,9 @@ var datachecker = false;
 var timer;
 var flashCards = [];
 var filterFlashCards;
-var currentCard;
+var currentCard; // need to reset if closing deck
+var nextCard = false; // need to reset if closing deck
+var nextCase = -1; // need to reset if closing deck
 var studying = false;
 var numSurahsInDeck = 0;
 var count = true;
@@ -274,12 +276,15 @@ function arabicDigits(num){
 var randWord = {};
 function getWordfromAyah(chapter, ayahnum){
     $.ajaxSetup({
-        async: false
+        async: (!nextCard) ? false : true
     });
     $.getJSON("https://api.quran.com/api/v4/verses/by_key/"+chapter+":"+ayahnum+"?language=en&words=true&word_fields=text_uthmani", function(data){
         gvrs = data;
         var words = data.verse.words;
         randWord = words[Math.floor(Math.random()*(words.length-1))];
+        if(nextCard){
+          [nextCard.englishWord, nextCard.arabicWord] = [randWord.translation.text, randWord.text];
+        }
     })
     $.ajaxSetup({
         async: true
@@ -393,9 +398,6 @@ var ardata = [];
               )
             );
           }
-          if (numSurahsInDeck == 1) {
-            nextFlashCard();
-          }
         }
         
       }
@@ -424,7 +426,6 @@ window.addEventListener(
         lastaction = true;
         $(jqid).addClass("added");
         numSurahsInDeck++;
-        // testing preload!
         
         $(jqid + " .cross").addClass("crossrotate");
       }
@@ -494,7 +495,7 @@ $('.menu-button').click(function(){
             if (numSurahsInDeck > 0) {
                 studying = true;
                 //$("#newdeck").css("height", "100%");
-                $("#flashcard, #scoreCard").fadeIn();
+                $("#flashcard").fadeIn();
                 nextFlashCard();
                 $("#veil").show();
               }else{
@@ -512,7 +513,10 @@ $("#closedeck").click(function(e) {
   e.preventDefault();
   $('.menu-button').removeClass('menu-btn-selected');
   studying = false;
-  $("#flashcard, #scoreCard").fadeOut();
+  currentCard = undefined;
+  nextCard = false; 
+  nextCase = -1; 
+  $("#flashcard").fadeOut();
   $("#surahcont").html("");
   $("#newdeck").css("height", "0%");
   $("#veil").hide();
@@ -574,32 +578,48 @@ function nextFlashCard() {
   }
   $('#scoreCard').html(totalCorrect+'/'+newFlashCards.length);
   
-  var thisCard = newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
+  var thisCard = nextCard ? nextCard : newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   ayahnumindex = thisCard.ayahNum - 1;
   currentCard = thisCard;
-  $("#" + thisCard.surahNumber).click();
-  $("#" + thisCard.surahNumber).click();
+  //$("#" + thisCard.surahNumber).click(); ???
+  //$("#" + thisCard.surahNumber).click(); ???
   $("#flashcard").css(
     "border-color",
     getLevelColor(thisCard.correct, thisCard.attempts)
   );
-  var cases = 0;
+  var cases = (nextCase > -1) ? nextCase : 0;
   var vrsOn = parseInt($('#versesOn').val());
   var vocabOn = parseInt($('#vocabOn').val());
-  getWordfromAyah(parseInt(thisCard.surahNumber)+1, thisCard.ayahNum);
-  [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
+
   if(vrsOn && !vocabOn){
-      cases = Math.floor(Math.random() * 3) + 1;
+      if(nextCase == -1){
+        cases = Math.floor(Math.random() * 3) + 1;  
+      }
+      nextCase = Math.floor(Math.random() * 3) + 1;
   } else if(!vrsOn && vocabOn){
-      cases = Math.floor(Math.random() * 2) + 4;
+      if(nextCase == -1){
+        cases = Math.floor(Math.random() * 2) + 4;  
+      }
+      nextCase = Math.floor(Math.random() * 2) + 4;
   } else if(vrsOn && vocabOn){
-      cases = Math.floor(Math.random() * 5) + 1;
+      if(nextCase == -1){
+        cases = Math.floor(Math.random() * 5) + 1;  
+      }
+      nextCase = Math.floor(Math.random() * 5) + 1;
   } else {
       alert("Flash Card Settings are invalid!")
   }
   $('.anscont').html("");
   $('#answer-full').hide();
-  if(cases > 3){ $('#answer-full').show(); }
+  if(cases > 3){ 
+    $('#answer-full').show(); 
+    if(!nextCard){
+      console.log("doing work");
+      getWordfromAyah(parseInt(thisCard.surahNumber)+1, thisCard.ayahNum);
+      [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
+    }
+  }
+
   if (cases == 1) {
     $("#flashcard #questcont").html(thisCard.ayah);
     $("#flashcard #answer1 .anscont").html(thisCard.translation);
@@ -681,6 +701,12 @@ function nextFlashCard() {
   } else {
     $("#answer2 .anscont").css({ height: "max-content", bottom: 0 });
   }
+
+  nextCard = newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
+  if(nextCase > 3){
+    console.log("doing work for next");
+    getWordfromAyah(parseInt(nextCard.surahNumber)+1, nextCard.ayahNum);
+  }
   
 }
 
@@ -689,13 +715,16 @@ $("#correct").click(function() {
   $("#questcont").html("");
   $("#answer1 .anscont").html("");
   $("#answer2 .anscont").html("");
-  $('#questcont, .anscont').removeClass("sz-ar sz-en");
+  $('#questcont').removeClass("sz-ar sz-en");
   $("#answercontainer").css("height", "0%");
   $("#checkcont").css("height", "0px");
   currentCard.correct++;
   currentCard.attempts++;
   //console.log(currentCard.correct);
-  setTimeout(nextFlashCard, 200);
+  setTimeout(function(){
+    $('.anscont').removeClass("sz-ar sz-en");
+    nextFlashCard();
+  }, 200);
   //nextFlashCard();
 });
 
@@ -703,11 +732,15 @@ $("#incorrect").click(function() {
   $("#questcont").html("");
   $("#answer1 .anscont").html("");
   $("#answer2 .anscont").html("");
+  $('#questcont').removeClass("sz-ar sz-en");
   $("#answercontainer").css("height", "0%");
   $("#checkcont").css("height", "0px");
-  //currentCard.attempts++;
-  setTimeout(nextFlashCard, 200);
-  //nextFlashCard();
+  //had this commented out?
+  currentCard.attempts++;
+  setTimeout(function(){
+    $('.anscont').removeClass("sz-ar sz-en");
+    nextFlashCard();
+  }, 200);
 });
 
 $("#showanswer").click(function() {
