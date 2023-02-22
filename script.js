@@ -115,7 +115,8 @@ function signin(){
                 userObj = JSON.parse(data.replace(/singqt/g, "'"));
               }*/
               $('#setting-email').html(user_data.email);
-              $('#setting-user').html(user_data.user);
+              $('#setting-email').attr('title', user_data.email);
+              $('#setting-user').html(user_data.user_name);
               thisuser = $('#signin input[type=text]').val();
               $('#signin-out-btn').html("Sign out");
               $('.setting-profile').show();
@@ -420,6 +421,10 @@ window.addEventListener(
         lastaction = true;
         $(jqid).addClass("added");
         numSurahsInDeck++;
+        // testing preload!
+        if (numSurahsInDeck == 1) {
+          nextFlashCard();
+        }
         $(jqid + " .cross").addClass("crossrotate");
       }
 
