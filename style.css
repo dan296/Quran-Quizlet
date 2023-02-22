@@ -188,12 +188,14 @@ input:checked + .slider:before {
 }
 .setting-info-btn {
     display: inline-block !important;
-    text-align: right;
     float: right;
     position: relative;
     top: -4px;
+    font-weight: 200;
 }
-
+.setting-profile{
+  display: none;
+}
 /* VERSION CSS */
 
 /* END VERSION CSS */

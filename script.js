@@ -117,6 +117,7 @@ function signin(){
               }*/
               thisuser = $('#signin input[type=text]').val();
               $('#signin-out-btn').html("Sign out");
+              $('.setting-profile').show();
               showMain();
           }
         },
@@ -221,6 +222,7 @@ function signOut(){
         success: function(){
             cookieSet = false;
             $('#signin-out-btn').html("Sign in / Sign up");
+            $('.setting-profile').hide();
         },
         dataType: 'HTML'
     });

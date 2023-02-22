@@ -137,7 +137,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         </div>
         <div class='setting-wrap setting-profile'>
             <div class='setting-label'>Password:</div>
-            <button class='setting-info' id="signin-out-btn"><i class="fa fa-edit"></i> Edit</button>
+            <button class='setting-info-btn' id="signin-out-btn"><i class="fa fa-edit"></i> Edit</button>
         </div>
         <div class='setting-wrap'>
             <button id="signin-out-btn">Sign in / Sign up</button>
