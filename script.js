@@ -115,6 +115,8 @@ function signin(){
               if(data!== ""){
                 userObj = JSON.parse(data.replace(/singqt/g, "'"));
               }*/
+              $('#setting-email').html(data.email);
+              $('#setting-user').html(data.user);
               thisuser = $('#signin input[type=text]').val();
               $('#signin-out-btn').html("Sign out");
               $('.setting-profile').show();
