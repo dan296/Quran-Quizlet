@@ -245,6 +245,7 @@ function clearError(){
 
 
 $('#signin-out-btn').click(function(){
+  
   if($(this).html() == "Sign out"){
     signOut();
   }
