@@ -51,7 +51,7 @@ if(isset($_POST["signing_in"])){
         	} else {
     			setcookie ("member_login","");
         	}
-            echo $results["stats"];
+            echo json_encode($results);
         }else{
             echo 'Error: Password Invalid';
         }

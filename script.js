@@ -97,8 +97,8 @@ function signin(){
         url: 'db.php',
         data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check').is(':checked')},
         success: function(data){
-          console.log(data);
-          data = data.trim();
+          console.log(JSON.parse(data));
+          //data = data.trim();
           if(data.substring(0,5) == "Error"){
               if(data.indexOf("User") > -1){
                   shake($( "#signin input[type=text]" ).parent());
@@ -245,7 +245,7 @@ function clearError(){
 
 
 $('#signin-out-btn').click(function(){
-  
+
   if($(this).html() == "Sign out"){
     signOut();
   }
