@@ -128,10 +128,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
     <section>
         <div class='setting-title'>Profile</div>
         <div class='setting-wrap'>
-            <button id="login-btn">Sign in / Sign up</button>
-        </div>
-        <div class='setting-wrap'>
-            <button id="logout-btn">Sign out</button>
+            <button id="signin-out-btn">Sign in / Sign up</button>
         </div>
         <div class='setting-wrap'>
             
