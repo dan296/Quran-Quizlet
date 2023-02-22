@@ -485,6 +485,7 @@ $('.menu-button').click(function(){
         $(this).toggleClass('menu-btn-selected');
         $("#settings").toggleClass("expand-settings");
     }else{
+        $('#goback').click();
         if($("#settings").hasClass("expand-settings")){
             $("#settings-btn").click();
         }
@@ -581,8 +582,9 @@ function nextFlashCard() {
   var thisCard = nextCard ? nextCard : newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   ayahnumindex = thisCard.ayahNum - 1;
   currentCard = thisCard;
-  //$("#" + thisCard.surahNumber).click(); ???
-  //$("#" + thisCard.surahNumber).click(); ???
+  $("#" + thisCard.surahNumber).click(); // USED TO SHOW SURAH!!! -- can later fix by creating function to show
+  $("#" + thisCard.surahNumber).click(); // NEED TO DOUBLE CLICK TO KEEP IN LIST!!!
+
   $("#flashcard").css(
     "border-color",
     getLevelColor(thisCard.correct, thisCard.attempts)
