@@ -334,11 +334,11 @@ var ardata = [];
           
           
           
-          $("#surahcont").append("<div class='ayah-text'>"+
+          $("#surahcont").append("<div class='ayah-wrap'><div class='ayah-text'>"+
             newtext +
                "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
               endata[thisid].ayahs[k].text +
-              "</div>"
+              "</div></div>"
           );
 
           var onewidth = $('#ayahnum'+k).width();
@@ -606,6 +606,8 @@ function nextFlashCard() {
         thisCard.ayahNum +
         "<br/>"
     );
+    $('.anscont').addClass("sz-en");
+    $('#questcont').addClass("sz-ar");
   } else if (cases == 2) {
     $("#flashcard #answer1 .anscont").html(thisCard.ayah);
     $("#flashcard #questcont").html(thisCard.translation);
@@ -622,6 +624,8 @@ function nextFlashCard() {
         thisCard.ayahNum +
         "<br/>"
     );
+    $('#answer2 .anscont, #questcont').addClass("sz-en");
+    $('#answer1 .anscont').addClass("sz-ar");
   } else if (cases == 3) {
     $("#flashcard #answer1 .anscont").html(thisCard.ayah);
     $("#flashcard #answer2 .anscont").html(thisCard.translation);
@@ -638,12 +642,18 @@ function nextFlashCard() {
         thisCard.ayahNum +
         "<br/>"
     );
+    $('#answer2 .anscont, #questcont').addClass("sz-en");
+    $('#answer1 .anscont').addClass("sz-ar");
   } else if (cases == 4) {
     $("#flashcard #answer-full .anscont").html(thisCard.englishWord);
     $("#flashcard #questcont").html(thisCard.arabicWord);
+    $('#answer-full .anscont').addClass("sz-en");
+    $('#questcont').addClass("sz-ar");
   } else if (cases == 5) {
     $("#flashcard #answer-full .anscont").html(thisCard.arabicWord);
     $("#flashcard #questcont").html(thisCard.englishWord);
+    $('#questcont').addClass("sz-en");
+    $('#answer-full .anscont').addClass("sz-ar");
   }
   
   if ($("#questcont").height() > $("#question").height()) {
@@ -669,6 +679,7 @@ $("#correct").click(function() {
   $("#questcont").html("");
   $("#answer1 .anscont").html("");
   $("#answer2 .anscont").html("");
+  $('#questcont, .anscont').removeClass("sz-ar sz-en");
   $("#answercontainer").css("height", "0%");
   $("#checkcont").css("height", "0px");
   currentCard.correct++;
@@ -696,7 +707,7 @@ $("#showanswer").click(function() {
 
 function getLevelColor(correct, attempts) {
   if (attempts == 0) {
-    return "white";
+    return "var(--theme)";
   } else {
     var percent = correct / attempts;
     if (percent < 1 / 3) {
@@ -860,6 +871,13 @@ $('#readsurah').click(function(){
         scrollTop: $(".ayah-text").eq(ayahnumindex).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop()
     }, 500);
   },700);
+  setTimeout(function(){
+    $(".ayah-text").eq(ayahnumindex).parent().addClass('highlight-ayah');
+  },1000);
+  setTimeout(function(){
+    $(".ayah-text").eq(ayahnumindex).parent().removeClass('highlight-ayah');
+  },3000);
+  
 })
 
 $('#goback').click(function(){
@@ -921,6 +939,27 @@ $('#switchMode').click(function(){
         }
         localStorage.setItem('displayMode', $(this).val());
     })
+
+$('#textSize').click(function(){
+    var isSmall = parseInt($(this).val());
+    if(isSmall){
+        //$(this).prop('value',1);
+        document.documentElement.style.setProperty('--ar-font-sz', '20pt');
+        document.documentElement.style.setProperty('--en-font-sz', '12pt');
+        document.documentElement.style.setProperty('--ayah-num-font-sz', '6pt');
+        document.documentElement.style.setProperty('--ayah-num-pos-left', '18px');
+        document.documentElement.style.setProperty('--ayah-num-pos-top', '14px');
+    } else {
+        //$(this).prop('value',1);
+        document.documentElement.style.setProperty('--ar-font-sz', '30pt');
+        document.documentElement.style.setProperty('--en-font-sz', '16pt');
+        document.documentElement.style.setProperty('--ayah-num-font-sz', '9pt');
+        document.documentElement.style.setProperty('--ayah-num-pos-left', '7px');
+        document.documentElement.style.setProperty('--ayah-num-pos-top', '11px');
+        
+    }
+    localStorage.setItem('textSize', $(this).val());
+})
     
 $('.setting-input input').not("#switchMode, .num-input").click(function(){
     var currVal = parseInt($(this).val());

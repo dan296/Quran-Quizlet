@@ -1,6 +1,11 @@
 :root{
   --theme: black;
   --theme-bg: #f1f1f1;
+  --ar-font-sz: 20pt; /* for arabic: small = 20pt, large = 30pt, english: 12pt, 16pt*/
+  --en-font-sz: 12pt;
+  --ayah-num-pos-left: 18px; /*Small: 18px, large: 7px*/
+  --ayah-num-pos-top: 14px; /*Small: 14px, large: 11px*/
+  --ayah-num-font-sz: 6pt; /* Small: 6pt, large: 9pt*/
 }
 
 html{
@@ -52,6 +57,7 @@ body::-webkit-scrollbar {
     box-shadow: 0px 0px 10px 0px black;
     padding: 10px;
     z-index: 3;
+    transition: right 0.2s ease-in-out;
 }
 .expand-settings{
     right: 0px !important;
@@ -144,6 +150,7 @@ input:checked + .slider:before {
     display: block;
     height: 100%;
     font-size: 10pt;
+    transition: 0.2s ease-in-out;
 }
 .setting-wrap button:hover{
   color: var(--theme-bg);
@@ -436,7 +443,8 @@ footer {
 
 #flashcard {
   display: none;
-  background: transparent;
+  color: var(--theme);
+  background: var(--theme-bg);
   box-shadow: 0px 0px 20px #3d3d3d;
   position: fixed;
   width: 80%;
@@ -454,7 +462,6 @@ footer {
   transition: border-color 0.2s ease-in-out;
 }
 #flashcont {
-  color: white;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -469,9 +476,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 40px;
-  font-size: 25px;
-  color: white;
-  background-color: #3d3d3d;
+  font-size: var(--en-font-sz);
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -480,10 +485,10 @@ footer {
 }
 #showanswer:hover {
   background-color: #00bfff;
+  color: white;
 }
 #question,
 #answercontainer {
-  background: #3d3d3d;
   bottom: 40px;
   height: 276px;
   position: absolute;
@@ -492,6 +497,7 @@ footer {
   width: 100%;
   text-align: center;
   transition: 0.2s ease-in-out;
+  background: var(--theme-bg);
 }
 #questcont{
   font-size: 20pt;
@@ -507,6 +513,12 @@ footer {
 .anscont {
   font-size: 20pt;
   padding: 30px;
+}
+.sz-en{
+  font-size: var(--en-font-sz) !important;
+}
+.sz-ar{
+  font-size: var(--ar-font-sz) !important;
 }
 #answercontainer {
   height: 0%;
@@ -524,14 +536,16 @@ footer {
   width: 50%;
   display: inline-block;
   float: left;
-  background-color: #3d3d3d;
+  background-color: var(--theme-bg);
   transition: 0.2s ease-in-out;
 }
 #correct:hover {
   background-color: #41ffa7;
+  color: white;
 }
 #incorrect:hover {
   background-color: #f94f4f;
+  color: white;
 }
 #answer1,
 #answer2 {
@@ -758,7 +772,6 @@ footer {
 /* End Welcome Box */
 
 #showsurah {
-  background-color: #3d3d3d;
   position: fixed;
   padding-top: 20px;
   top: 0;
@@ -771,10 +784,10 @@ footer {
   display: none;
   z-index: 5;
   color: white;
-  background-image: url(https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
   background-size: cover;
-  
-  background: #222222;
+  background: var(--theme-bg);
+  color: var(--theme);
+  padding-bottom: 70px;
 }
 
 #showsurah div, #showsurah h1{
@@ -810,7 +823,7 @@ footer {
 #readsurah, #goback{
   left: 10px;
   right: auto;
-  color:white;
+  color: var(--theme);
 }
 
 #goback{
@@ -883,28 +896,36 @@ footer {
   height: 100%; 
   width: 100%;
 }
+.ayah-wrap {
+    padding-left: 35px;
+    padding-right: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+.highlight-ayah{
+  background-color: #bbb57b;
+  color: white;
+}
 .ayahsym{
     position: relative;
     top: 2px;
     right: 5px;
     display: inline-block !important;
     width: 42px;
-    color: white !important;
 }
 .ayahnum{
-    font-size: 15pt;
+    font-size: var(--ayah-num-font-sz);
     position: absolute;
     text-align: center;
     margin-left: 0px;
     margin: auto;
-    left: 0;
+    left: var(--ayah-num-pos-left);
     right: 0;
-    top: 0px;
+    top: var(--ayah-num-pos-top);
     bottom: 0;
     height: 20px;
 }
 .ayah-text {
-    font-size: 37pt;
+    font-size: var(--ar-font-sz);
     text-align: right;
     padding-top: 40px;
     border-top: 1px solid #3d3d3d;
@@ -980,11 +1001,10 @@ i.fas.fa-play-circle.ayah-audio {
 .ayah-trans {
     text-align: left;
     padding-bottom: 40px;
-    font-size: 16px;
+    font-size: var(--en-font-sz);
     font-weight: 100;
 }
 .ayah-text, .ayah-trans{
-    width: 90%;
     margin: auto;
     display: block;
     position:relative;
@@ -1041,6 +1061,10 @@ i.fas.fa-play-circle.ayah-audio {
 .vert-cross{
   width: 2px;
     height: 100%;
+}
+
+#closedeck .horiz-cross, #closedeck .vert-cross{
+  background: var(--theme);
 }
 
 .nightbutton{

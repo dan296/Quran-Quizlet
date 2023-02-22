@@ -82,6 +82,10 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
             <div class='setting-label'>Night Mode:</div>
             <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="switchMode" value="1"><span class="slider round"></span></label></div>
         </div>
+        <div class='setting-wrap'>
+            <div class='setting-label'>Text Size:</div>
+            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="textSize" value="0"><span class="slider round"></span></label></div>
+        </div>
     </section>
 
     <section>
@@ -251,7 +255,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
 <div id="developer">created by <a href="https://dkhawaja.com/" target="_blank">Daniyal Khawaja</a></div>
 </footer>
 <div id='flashcard'>
-  <div id='closedeck' class='cross crossrotate close' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
+  <div id='closedeck' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
   <div id='readsurah'><i class="fas fa-book-open"></i></div>
   <div id="flashcont">
   <div id='question'>
@@ -265,8 +269,8 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   </div>
   <div id='showanswer'>Show Answer</div>
     <div id='checkcont'>
-      <div id='incorrect'>Missed it <i class="far fa-check"></i></div>
-      <div id='correct'>Got it <i class="far fa-times"></i></div>
+      <div id='incorrect'><i class="fa fa-times"></i> Missed it</div>
+      <div id='correct'><i class="fa fa-check"></i> Got it</div>
     </div>
   </div>
 <div id='showsurah'>
