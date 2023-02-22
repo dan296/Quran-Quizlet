@@ -393,6 +393,9 @@ var ardata = [];
               )
             );
           }
+          if (numSurahsInDeck == 1) {
+            nextFlashCard();
+          }
         }
         
       }
@@ -422,9 +425,7 @@ window.addEventListener(
         $(jqid).addClass("added");
         numSurahsInDeck++;
         // testing preload!
-        if (numSurahsInDeck == 1) {
-          nextFlashCard();
-        }
+        
         $(jqid + " .cross").addClass("crossrotate");
       }
 
