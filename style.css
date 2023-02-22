@@ -854,6 +854,14 @@ footer {
   display: none;
 }
 
+#surah-audio{
+  position: relative;
+    /* top: -3px; */
+    float: left;
+    top: -55px;
+    left: 35px;
+}
+
 #veil {
   position: fixed;
   z-index: 1;
@@ -996,11 +1004,11 @@ footer {
 .ayah-text span {
     display: inline-block !important;
 }
-.ayah-text span:hover, i.fas.fa-play-circle.ayah-audio:hover {
+.ayah-text span:hover, i.fas.fa-play-circle.ayah-audio:hover, i.fas.fa-pause-circle.ayah-audio:hover {
     cursor: pointer;
     color: #03a9f4;
 }
-i.fas.fa-play-circle.ayah-audio {
+i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     font-size: 20pt;
     position: absolute;
     left: 0;

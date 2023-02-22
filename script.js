@@ -292,13 +292,12 @@ function getWordfromAyah(chapter, ayahnum){
 }
 
 var ardata = [];
-
   $('.surahcont').click(function(){
         if($("#settings").hasClass("expand-settings")){
           // had it blocked for some reason?
             $("#settings-btn").click();
         }
-      var thisid = this.id;
+      var thisid = this.id;      
       if (thisid == undefined) {
         thisid = e.target.parentElement.id;
       }
@@ -327,7 +326,8 @@ var ardata = [];
             "<br/>" +
             endata[thisid].englishNameTranslation +
             "<br/>" +
-            bismillah
+            bismillah +
+            "<i id='surah-audio' class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+")'></i>"
         );
 
         for (var k = 0; k < endata[thisid].ayahs.length; k++) {
@@ -926,6 +926,7 @@ $('#readsurah').click(function(){
 })
 
 $('#goback').click(function(){
+  $('#sound')[0].pause();
   $('#showsurah div, #showsurah h1').fadeOut(500);
   $('#showsurah').delay(500).fadeOut(500);
 })
@@ -935,34 +936,77 @@ $('#goback').click(function(){
 $('#loadingpage h1').delay(1000).fadeIn(1000);*/
 
 // PLAYING AUDIO
+var myAudio = $('#sound')[0];
+
+myAudio.addEventListener("ended", function(){
+     myAudio.currentTime = 0;
+     $('.fa-pause-circle').toggleClass('fa-pause-circle fa-play-circle');
+});
+
 function playAudio(surah, ayah, wordUrl = false){
-    var audioText = "";
-    var tsur = parseInt(surah)+1;
-    var tayah = parseInt(ayah) + 1;
-    var prefix = "Alafasy/mp3/";
-    if(tsur > 99){
-      audioText = tsur;
-    }else if(tsur > 9){
-      audioText = "0"+tsur;
+    if(ayah == undefined){
+      if($('#sound').attr("src") !== ("https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/"+(parseInt(surah)+1)+".mp3")){
+          $('#sound').attr("src","https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/"+(parseInt(surah)+1)+".mp3");
+      }
+      //for whole surah use:
+      // https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/74.mp3
     }else{
-      audioText = "00"+tsur;
+      var audioText = "";
+      var tsur = parseInt(surah)+1;
+      var tayah = parseInt(ayah) + 1;
+      var prefix = "Alafasy/mp3/";
+      if(tsur > 99){
+        audioText = tsur;
+      }else if(tsur > 9){
+        audioText = "0"+tsur;
+      }else{
+        audioText = "00"+tsur;
+      }
+      audioText = prefix + audioText;
+      
+      if(tayah > 99){
+        audioText += tayah;
+      }else if(tayah > 9){
+        audioText += "0"+tayah;
+      }else{
+        audioText += "00"+tayah;
+      }
+      audioText+=".mp3";
+      if(wordUrl){
+          audioText = wordUrl;
+      }
+      if($('#sound').attr("src") !== "https://verses.quran.com/"+audioText){
+        $('#sound').attr("src","https://verses.quran.com/"+audioText);
+      }
+      
     }
-    audioText = prefix + audioText;
-    
-    if(tayah > 99){
-      audioText += tayah;
-    }else if(tayah > 9){
-      audioText += "0"+tayah;
-    }else{
-      audioText += "00"+tayah;
-    }
-    audioText+=".mp3";
-    if(wordUrl){
-        audioText = wordUrl;
-    }
-    $('#sound').attr("src","https://verses.quran.com/"+audioText);
     $('#sound')[0].play();
+    
 }
+
+// Handling Pausing and Playing Audio
+/*$('.fa-play-circle, .fa-pause-circle').on('click', function () {
+  $(this).toggleClass('fa-pause-circle fa-play-circle');
+})
+
+$('.fa-pause-circle').on('click', function () {
+  $('#sound')[0].pause();
+
+})
+*/
+$(document).on('click','.fa-play-circle',function(e) {
+  //handler code here
+  $('.fa-pause-circle').toggleClass('fa-pause-circle fa-play-circle');
+  $(this).toggleClass('fa-pause-circle fa-play-circle');
+});
+$(document).on('click','.fa-pause-circle',function(e) {
+  //handler code here
+  $('#sound')[0].pause();
+  $(this).toggleClass('fa-pause-circle fa-play-circle');
+});
+
+
+
 
 $('#switchMode').click(function(){
         var isSun = parseInt($(this).val());
