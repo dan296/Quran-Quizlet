@@ -38,7 +38,7 @@ if(isset($_POST["signing_up"])){
 if(isset($_POST["signing_in"])){
     $user = $_POST["user"];
     $pword = $_POST["password"];
-    $sql = "SELECT `password`, `stats` FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
+    $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
     $result = $conn->query($sql);
     $results = $result -> fetch_array(MYSQLI_ASSOC);
     if(empty($results)){
