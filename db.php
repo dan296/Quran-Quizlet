@@ -59,7 +59,7 @@ if(isset($_POST["signing_in"])){
 }
 
 if(isset($_POST["signing_out"])){
-    setcookie ("member_login","");
+    setcookie ("member_login","","/");
 }
 
 if(isset($_POST["updating_user"])){

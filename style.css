@@ -1,3 +1,4 @@
+/* need to move inside index.php to initialize based on user settings? */
 :root{
   --theme: black;
   --theme-bg: #f1f1f1;
