@@ -1120,6 +1120,10 @@ $("#surahMax, #surahMin").change(function(){ filterSurah() });
 /* LOCAL STORAGE VARIABLES */
 // Settings: displayMode (0: day, 1: night), vocabOn, versesOn, 
 if(!parseInt(localStorage.getItem('displayMode'))){
+    document.documentElement.style.setProperty('--theme', 'white');
+    document.documentElement.style.setProperty('--theme-bg', '#313131');
+    $('#buttoncontainer button').removeClass('daybutton');
+    $('#buttoncontainer button').addClass('nightbutton');
     $('#switchMode').click();
 }
 
