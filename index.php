@@ -286,7 +286,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         $('#setting-user').html(this_user_data.user_name);
         $('#signin-out-btn').html("Sign out");
         $('.setting-profile').show();
-        showMain()
+        $('#loadingpage').hide();
         <?
     }
  ?>  
