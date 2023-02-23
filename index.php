@@ -276,7 +276,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         $results = $result -> fetch_array(MYSQLI_ASSOC);
         ?>
         cookieSet = true;
-        $('#rem-check').click();
+        $('#rem-check input').click();
         thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
         $('#signin input[type=text]').prop('value',thisuser);
         let this_data = '<?php echo json_encode($results); ?>';
