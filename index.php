@@ -50,15 +50,15 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         $('#rem-check').click();
         thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
         $('#signin input[type=text]').prop('value',thisuser);
-        console.log('<?php echo json_encode($results); ?>');
-        /*let user_data = JSON.parse(data);
+        let this_data = '<?php echo json_encode($results); ?>';
+        let user_data = JSON.parse(this_data);
         $('#setting-email').html(user_data.email);
         $('#setting-email').attr('title', user_data.email);
         $('#setting-user').html(user_data.user_name);
         thisuser = $('#signin input[type=text]').val();
         $('#signin-out-btn').html("Sign out");
         $('.setting-profile').show();
-        showMain();*/
+        showMain();
         <?
     }
  ?>  
