@@ -49,7 +49,7 @@ if(isset($_POST["signing_in"])){
             if($_POST["remember"]) {
         		setcookie ("member_login",$user,time()+ (10 * 365 * 24 * 60 * 60));
         	} else {
-    			setcookie ("member_login","");
+    			setcookie ("member_login","",time() - 3600);
         	}
             echo json_encode($results);
         }else{
@@ -59,7 +59,7 @@ if(isset($_POST["signing_in"])){
 }
 
 if(isset($_POST["signing_out"])){
-    setcookie ("member_login","","/");
+    setcookie ("member_login","",time() - 3600);
 }
 
 if(isset($_POST["updating_user"])){
