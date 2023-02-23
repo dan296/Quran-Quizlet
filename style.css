@@ -811,6 +811,9 @@ footer {
   font-size: 10pt;
   text-align: center;
 }
+#rem-check:has(input:checked) {
+    opacity: 1 !important;
+}
 #rem-check input{
   width: auto;
   position: relative;
