@@ -38,30 +38,6 @@
   } );
   var thisuser = null;
   var cookieSet = false;
-  <?php
-  include("db_connection.php");
-if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
-        $user = $_COOKIE["member_login"];
-        $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
-        $result = $conn->query($sql);
-        $results = $result -> fetch_array(MYSQLI_ASSOC);
-        ?>
-        cookieSet = true;
-        $('#rem-check').click();
-        thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
-        $('#signin input[type=text]').prop('value',thisuser);
-        let this_data = '<?php echo json_encode($results); ?>';
-        let user_data = JSON.parse(this_data);
-        $('#setting-email').html(user_data.email);
-        $('#setting-email').attr('title', user_data.email);
-        $('#setting-user').html(user_data.user_name);
-        thisuser = $('#signin input[type=text]').val();
-        $('#signin-out-btn').html("Sign out");
-        $('.setting-profile').show();
-        $("#loadingpage").fadeOut();
-        <?
-    }
- ?>  
   </script>
 </head>
 <body>
@@ -290,6 +266,30 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
 </div>
 <!-- partial -->
 <script  src="./script.js"></script>
-
+<script>
+   <?php
+  include("db_connection.php");
+if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
+        $user = $_COOKIE["member_login"];
+        $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
+        $result = $conn->query($sql);
+        $results = $result -> fetch_array(MYSQLI_ASSOC);
+        ?>
+        cookieSet = true;
+        $('#rem-check').click();
+        thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
+        $('#signin input[type=text]').prop('value',thisuser);
+        let this_data = '<?php echo json_encode($results); ?>';
+        let this_user_data = JSON.parse(this_data);
+        $('#setting-email').html(this_user_data.email);
+        $('#setting-email').attr('title', this_user_data.email);
+        $('#setting-user').html(this_user_data.user_name);
+        $('#signin-out-btn').html("Sign out");
+        $('.setting-profile').show();
+        showMain()
+        <?
+    }
+ ?>  
+</script>
 </body>
 </html>
