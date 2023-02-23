@@ -58,7 +58,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         thisuser = $('#signin input[type=text]').val();
         $('#signin-out-btn').html("Sign out");
         $('.setting-profile').show();
-        showMain();
+        $("#loadingpage").fadeOut();
         <?
     }
  ?>  
