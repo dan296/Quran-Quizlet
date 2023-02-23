@@ -36,33 +36,29 @@
         show: { duration: 100 }
     });
   } );
-  var thisuser = '';
+  var thisuser = null;
   var cookieSet = false;
   <?php
   include("db_connection.php");
 if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
         $user = $_COOKIE["member_login"];
-        $sql = "SELECT `stats` FROM `users` WHERE `user_name`='$user'";
+        $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
         $result = $conn->query($sql);
         $results = $result -> fetch_array(MYSQLI_ASSOC);
         ?>
         cookieSet = true;
         $('#rem-check').click();
         thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
-        $('#signin-out-btn').html("Sign out");
-        //$('#user').html(thisuser);
         $('#signin input[type=text]').prop('value',thisuser);
-        //userObj = '<?php //echo $results["userObj"]; ?>';
-        /*if(userObj == ''){
-            userObj = [];
-        }else{
-            userObj = JSON.parse(userObj.replace(/singqt/g, "'"));
-        }
-        
-        setUpSheets();
-        $('#sign-in-cont').hide();
-        $(".container, #addSubject, #deleteSubject, #sign-out, #excel, #settings, #git").show();
-        $('#course-cont').css('opacity', 1);*/
+        console.log('<?php echo json_encode($results); ?>');
+        /*let user_data = JSON.parse(data);
+        $('#setting-email').html(user_data.email);
+        $('#setting-email').attr('title', user_data.email);
+        $('#setting-user').html(user_data.user_name);
+        thisuser = $('#signin input[type=text]').val();
+        $('#signin-out-btn').html("Sign out");
+        $('.setting-profile').show();
+        showMain();*/
         <?
     }
  ?>  

@@ -92,8 +92,6 @@ $('#guest').click(function(){
 
 // Sign in JS
 function signin(){
-    console.log('i logged in');
-    console.log($('#rem-check input').is(':checked'));
     $.ajax({
         type: "POST",
         url: 'db.php',
@@ -225,6 +223,7 @@ function signOut(){
         data: {signing_out: true},
         success: function(){
             cookieSet = false;
+            thisuser = null;
             $('#signin-out-btn').html("Sign in / Sign up");
             $('.setting-profile').hide();
         },
