@@ -247,13 +247,13 @@ function clearError(){
     $( ".form-group" ).removeClass( "invalid-focus" );
     $('#error-text').hide();
 }
-setInterval(function(){
+setTimeout(function(){
   $('.form-group input').each(function(){
     if($(this).val().length > 0){
       $(this).parent().css('opacity', 1);
     }
   })
-}, 500)
+}, 2000)
 
 
 
