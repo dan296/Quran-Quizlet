@@ -81,7 +81,9 @@ $('.form-group input').on('focus', function() {
   $(this).parent().css('opacity',  1);
 })
 $('.form-group input').on('blur', function() {
-  $(this).parent().css('opacity',  0.5);
+  if($(this).val().length < 1){
+    $(this).parent().css('opacity',  0.5);
+  }
 })
 
 $('#guest').click(function(){
@@ -245,12 +247,14 @@ function clearError(){
     $( ".form-group" ).removeClass( "invalid-focus" );
     $('#error-text').hide();
 }
+setInterval(function(){
+  $('.form-group input').each(function(){
+    if($(this).val().length > 0){
+      $(this).parent().css('opacity', 1);
+    }
+  })
+}, 500)
 
-$('.form-group input').each(function(){
-  if($(this).val().length > 0){
-    $(this).parent().css('opacity', 1);
-  }
-})
 
 
 $('#signin-out-btn').click(function(){
