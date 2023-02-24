@@ -246,6 +246,12 @@ function clearError(){
     $('#error-text').hide();
 }
 
+$('.form-group input').each(function(){
+  if($(this).val().length > 0){
+    $(this).parent().css('opacity', 1);
+  }
+})
+
 
 $('#signin-out-btn').click(function(){
 
