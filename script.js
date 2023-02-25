@@ -81,6 +81,8 @@ $('.form-group input').on('focus', function() {
   $(this).parent().css('opacity',  1);
 })
 $('.form-group input').on('blur', function() {
+  console.log(this.id);
+  console.log($(this).val());
   if($(this).val().length < 1 || (this.id == "rem-check" && $(this).val() == 0)){
     $(this).parent().css('opacity',  0.5);
   }
