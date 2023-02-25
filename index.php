@@ -193,7 +193,7 @@
         </form>
       </div>
       <div class="form-group" id="rem-check">
-        <input type="checkbox" value="remember-me"> Remember Me
+        <input type="checkbox"> Remember Me
       </div>
       <button id="welcome-enter">sign in</button>
     </div>
