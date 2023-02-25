@@ -81,7 +81,7 @@ $('.form-group input').on('focus', function() {
   $(this).parent().css('opacity',  1);
 })
 $('.form-group input').on('blur', function() {
-  if($(this).val().length < 1 || (this.id == "rem-check" && !$('#rem-check').is(':checked'))){
+  if($(this).val().length < 1 || ($(this).val() == "remember-me" && !$('#rem-check').is(':checked'))){
     $(this).parent().css('opacity',  0.5);
   }
 })
