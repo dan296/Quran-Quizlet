@@ -249,7 +249,7 @@ function clearError(){
 }
 setTimeout(function(){
   $('.form-group input').each(function(){
-    if($(this).val().length > 0){
+    if(($(this).val().length > 0 && $(this).val() !== "remember-me") || ($(this).val() !== "remember-me" ** $('#rem-check').is(':checked'))){
       $(this).parent().css('opacity', 1);
     }
   })
