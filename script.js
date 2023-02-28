@@ -1150,7 +1150,7 @@ $(document).on('click','.fa-pause-circle',function(e) {
 $(document).on('click', '.mcq-option', function(e) {
   $(".mcq-option").removeClass("highlight-ayah");
   $(this).addClass("highlight-ayah");
-}
+});
 
 
 
