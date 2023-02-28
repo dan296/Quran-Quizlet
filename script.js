@@ -325,7 +325,7 @@ function getWordfromAyah(chapter, ayahnum){
 }
 
 function getWordOptionsfromAyah(card){
-  let chapter = parseInt(card.surahNum);
+  let chapter = parseInt(card.surahNumber);
   let ayahnum = parseInt(card.ayahNum);
   let filtered_verses = versesindiv[parseInt(chapter)+1].verses.filter(function(el) {
           el.words = el.words.filter(function(tl) {
@@ -858,6 +858,10 @@ function nextFlashCard() {
   }
 }
 
+$(".mcq-option").on("click", function() {
+  $(".mcq-option").removeClass("highlight-ayah");
+  $(this).addClass("highlight-ayah");
+})
 
 $("#correct").click(function() {
   $("#questcont").html("");

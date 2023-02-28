@@ -642,6 +642,20 @@ footer {
   border-color: #41ffa7;
 }
 
+/* Multiple Choice MCQ*/
+.mcq-option {
+    transition: 0.2s ease-in-out;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mcq-option:hover {
+    background: #bbb57b;
+}
+/* MCQ end*/
+
 /*SVG STUFF*/
 
 #demo {
