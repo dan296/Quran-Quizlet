@@ -82,7 +82,7 @@
         <div class='setting-title'>Quiz Settings</div>
         <div class='setting-wrap'>
             <div class='setting-label'>Flash Cards:</div>
-            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="flashOn" value="1"><span class="slider round"></span></label></div>
+            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="flashOn" value="1" checked><span class="slider round"></span></label></div>
         </div>
         <div class='setting-wrap'>
             <div class='setting-label'>Multiple Choice:</div>
