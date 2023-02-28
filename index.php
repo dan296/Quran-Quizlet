@@ -79,7 +79,19 @@
     </section>
     
     <section>
-        <div class='setting-title'>Flash Card Settings</div>
+        <div class='setting-title'>Quiz Settings</div>
+        <div class='setting-wrap'>
+            <div class='setting-label'>Flash Cards:</div>
+            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="flashOn" value="1"><span class="slider round"></span></label></div>
+        </div>
+        <div class='setting-wrap'>
+            <div class='setting-label'>Multiple Choice:</div>
+            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="mcqOn" value="0"><span class="slider round"></span></label></div>
+        </div>
+        <div class='setting-wrap'>
+            <div class='setting-label'>Free Response:</div>
+            <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="freeOn" value="0"><span class="slider round"></span></label></div>
+        </div>
         <div class='setting-wrap'>
             <div class='setting-label'>Vocabulary:</div>
             <div class='setting-input'><label class="switch"><input type="checkbox" class="toggleInput-checkbox" id="vocabOn" value="0"><span class="slider round"></span></label></div>

@@ -30,6 +30,24 @@ function removeObjectWithId(arr, id) {
   return arr;
 }
 
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
 /*function newLoadingCaption(index){
   $('#loadingcaps').fadeOut(function(){
     if(index > loadingcaps.length - 1){
@@ -489,35 +507,44 @@ window.addEventListener(
 });*/
 
 $('.menu-button').click(function(){
-    if($(this).children('i').attr('id') == "settings-btn"){
-        $('.menu-button').not(this).removeClass('menu-btn-selected');
-        $(this).toggleClass('menu-btn-selected');
-        $("#settings").toggleClass("expand-settings");
-    }else{
-        $('#goback').click();
-        if($("#settings").hasClass("expand-settings")){
-            $("#settings-btn").click();
-        }
-        $('.menu-button').removeClass('menu-btn-selected');
-        $(this).addClass('menu-btn-selected');
-        
-        if($(this).children('i').attr('id') !== "settings-btn"){
-            if (numSurahsInDeck > 0) {
-                studying = true;
-                //$("#newdeck").css("height", "100%");
-                $("#flashcard").fadeIn();
-                nextFlashCard();
-                $("#veil").show();
-              }else{
-                  alert('Please select at least one surah!');
-                  $(this).removeClass('menu-btn-selected');
-              }
-        }
+  if($(this).children('i').attr('id') == "settings-btn"){
+      $('.menu-button').not(this).removeClass('menu-btn-selected');
+      $(this).toggleClass('menu-btn-selected');
+      $("#settings").toggleClass("expand-settings");
+  }else{
+    $('#goback').click();
+    if($("#settings").hasClass("expand-settings")){
+        $("#settings-btn").click();
     }
+    $('.menu-button').removeClass('menu-btn-selected');
+    $(this).addClass('menu-btn-selected');
     
-    
-    
+    if($(this).children('i').attr('id') !== "settings-btn"){
+      if (numSurahsInDeck > 0) {
+        var fc = parseInt($("#flashOn").val());
+        var mcq = parseInt($("#mcqOn").val());
+        var fr = parseInt($("#fr").val());
+        if(fc || mcq || fr){
+          studying = true;
+          //$("#newdeck").css("height", "100%");
+          $("#flashcard").fadeIn();
+          nextFlashCard(fc, mcq, fr);
+          $("#veil").show();
+        }else{
+          alert('Quiz Settings are invalid! Please select a question mode!');
+          $(this).removeClass('menu-btn-selected');
+        }
+          
+      }else{
+          alert('Please select at least one surah!');
+          $(this).removeClass('menu-btn-selected');
+      }
+    }
+  }
 })
+    
+    
+    
 
 $("#closedeck").click(function(e) {
   e.preventDefault();
@@ -574,7 +601,7 @@ function createFlashCard(
   return thisCard;
 }
 var newFlashCards;
-function nextFlashCard() {
+function nextFlashCard(fc, mcq, fr) {
   var totalCorrect = 0;
   newFlashCards = [...flashCards];
   newFlashCards = newFlashCards.filter(function(el){
@@ -582,6 +609,12 @@ function nextFlashCard() {
       return el;
     }
   })
+
+  var qModeMax = []; // choosing between flashcard, mcq, or free response
+  if(fc) { qModeMax.push(1) };
+  if(mcq) { qModeMax.push(2) };
+  if(fr) { qModeMax.push(3) };
+  let mode = qModeMax[Math.floor(Math.random() * qModeMax.length)];
   //newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
   for(var i = 0; i < newFlashCards.length; i++){
     totalCorrect += newFlashCards[i].correct;
@@ -632,23 +665,43 @@ function nextFlashCard() {
   }
 
   if (cases == 1) {
-    $("#flashcard #questcont").html(thisCard.ayah);
-    $("#flashcard #answer1 .anscont").html(thisCard.translation);
-    $("#flashcard #answer2 .anscont").html(
-      "Chapter " +
-        (parseInt(thisCard.surahNumber) + 1) +
-        "<br/>" +
-        thisCard.surahName +
-        "<br/>" +
-        thisCard.surahTName +
-        "<br/>" +
-        thisCard.surahEngName +
-        "<br/>Ayah No. " +
-        thisCard.ayahNum +
-        "<br/>"
-    );
-    $('.anscont').addClass("sz-en");
-    $('#questcont').addClass("sz-ar");
+    if(mode == 1){
+      // if Flash Card
+      $("#flashcard #questcont").html(thisCard.ayah);
+      $("#flashcard #answer1 .anscont").html(thisCard.translation);
+      $("#flashcard #answer2 .anscont").html(
+        "Chapter " +
+          (parseInt(thisCard.surahNumber) + 1) +
+          "<br/>" +
+          thisCard.surahName +
+          "<br/>" +
+          thisCard.surahTName +
+          "<br/>" +
+          thisCard.surahEngName +
+          "<br/>Ayah No. " +
+          thisCard.ayahNum +
+          "<br/>"
+      );
+      $('.anscont').addClass("sz-en");
+      $('#questcont').addClass("sz-ar");
+    } else if (mode == 2){
+      let options = newFlashCards.filter(function(el){
+          if(el.surahNumber == thisCard.surahNumber && el.ayahNum !== thisCard.ayahNum){
+            return el;
+          }
+        })
+      options = shuffle(options);
+      options = options.slice(0, 3);
+      options.push(thisCard);
+      $("#flashcard #questcont").html("What is the meaning of the following ayah?<br>"
+        + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
+        + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
+        + "<div class='mcq-option'>B) " + options[1].translation + "</div>"
+        + "<div class='mcq-option'>C) " + options[2].translation + "</div>"
+        + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
+        );
+    }
+    
   } else if (cases == 2) {
     $("#flashcard #answer1 .anscont").html(thisCard.ayah);
     $("#flashcard #questcont").html(thisCard.translation);
