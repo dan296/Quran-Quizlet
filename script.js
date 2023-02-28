@@ -858,11 +858,6 @@ function nextFlashCard() {
   }
 }
 
-$(".mcq-option").on("click", function() {
-  $(".mcq-option").removeClass("highlight-ayah");
-  $(this).addClass("highlight-ayah");
-})
-
 $("#correct").click(function() {
   $("#questcont").html("");
   $("#answer1 .anscont").html("");
@@ -1145,11 +1140,17 @@ $(document).on('click','.fa-play-circle',function(e) {
   $('.fa-pause-circle').toggleClass('fa-pause-circle fa-play-circle');
   $(this).toggleClass('fa-pause-circle fa-play-circle');
 });
+
 $(document).on('click','.fa-pause-circle',function(e) {
   //handler code here
   $('#sound')[0].pause();
   $(this).toggleClass('fa-pause-circle fa-play-circle');
 });
+
+$(document).on('click', '.mcq-option', function(e) {
+  $(".mcq-option").removeClass("highlight-ayah");
+  $(this).addClass("highlight-ayah");
+}
 
 
 
