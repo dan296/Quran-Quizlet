@@ -811,10 +811,10 @@ function nextFlashCard() {
     } else if (mode == 2) {
       $("#flashcard #questcont").html("What is the translation of the following word?<br>"
         + "<div class='mcq-quest'>" + thisCard.arabicWord + "</div>"
-        + "<div class='mcq-option'>A) " + options[0][0] + "</div>"
-        + "<div class='mcq-option'>B) " + options[1][0] + "</div>"
-        + "<div class='mcq-option'>C) " + options[2][0] + "</div>"
-        + "<div class='mcq-option'>D) " + options[3][0] + "</div>" 
+        + "<div class='mcq-option' data-c='"+(options[0][0]==thisCard.englishWord)+"'>A) " + options[0][0] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[1][0]==thisCard.englishWord)+"'>B) " + options[1][0] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[2][0]==thisCard.englishWord)+"'>C) " + options[2][0] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[3][0]==thisCard.englishWord)+"'>D) " + options[3][0] + "</div>" 
         );
     }
     
@@ -827,10 +827,10 @@ function nextFlashCard() {
     } else if (mode == 2) {
       $("#flashcard #questcont").html("What is the arabic word for:<br>"
         + "<div class='mcq-quest'>" + thisCard.englishWord + "</div>"
-        + "<div class='mcq-option'>A) " + options[0][1] + "</div>"
-        + "<div class='mcq-option'>B) " + options[1][1] + "</div>"
-        + "<div class='mcq-option'>C) " + options[2][1] + "</div>"
-        + "<div class='mcq-option'>D) " + options[3][1] + "</div>" 
+        + "<div class='mcq-option' data-c='"+(options[0][1]==thisCard.arabicWord)+"'>A) " + options[0][1] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[1][1]==thisCard.arabicWord)+"'>B) " + options[1][1] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[2][1]==thisCard.arabicWord)+"'>C) " + options[2][1] + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[3][1]==thisCard.arabicWord)+"'>D) " + options[3][1] + "</div>" 
         );
     }
     
