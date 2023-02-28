@@ -654,6 +654,15 @@ footer {
 .mcq-option:hover {
     background: #bbb57b;
 }
+.mcq-correct{
+  background: #00bb64;
+}
+.mcq-incorrect{
+  background: #f94f4f;
+}
+.mcq-correct-faded{
+  background: #00bb647d;
+}
 /* MCQ end*/
 
 /*SVG STUFF*/

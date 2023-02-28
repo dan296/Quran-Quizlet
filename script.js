@@ -12,6 +12,7 @@ var nextCase = -1; // need to reset if closing deck
 var studying = false;
 var numSurahsInDeck = 0;
 var count = true;
+let mode = 0;
 //var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
 //var loadingcapindex = 0;
 var ayahLengths = [];
@@ -639,7 +640,7 @@ function nextFlashCard() {
   if(fc) { qModeMax.push(1) };
   if(mcq) { qModeMax.push(2) };
   if(fr) { qModeMax.push(3) };
-  let mode = qModeMax[Math.floor(Math.random() * qModeMax.length)];
+  mode = qModeMax[Math.floor(Math.random() * qModeMax.length)];
   console.log("The mode is: " + mode);
   //newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
   for(var i = 0; i < newFlashCards.length; i++){
@@ -890,8 +891,27 @@ $("#incorrect").click(function() {
 });
 
 $("#showanswer").click(function() {
-  $("#answercontainer").css("height", "276px");
+  if(mode == 1){
+    $("#answercontainer").css("height", "276px");
+  }else if(mode==2){
+    if($(".mcq-option.highlight-ayah").length > 0){
+      if($(".mcq-option.highlight-ayah").attr("data-c") == "true"){
+        $(".mcq-option.highlight-ayah").addClass("mcq-correct");
+      }else{
+        $(".mcq-option.highlight-ayah").addClass("mcq-incorrect");
+        for(var i = 0; i < $(".mcq-option").length; i++){
+          if($(".mcq-option").eq(i).attr("data-c") == "true"){
+            $(".mcq-option").eq(i).addClass("mcq-correct-faded")
+            break;
+          }
+        }
+      }
+    }else{
+      alert("Select an option!");
+    }
+  }
   $("#checkcont").css("height", "40px");
+
 });
 
 function getLevelColor(correct, attempts) {
