@@ -649,11 +649,13 @@ footer {
     padding: 10px;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 .mcq-option-no-hover {
     text-align: left;
     padding: 10px;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 
 .mcq-selected, .mcq-option:hover {
