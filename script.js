@@ -1,7 +1,6 @@
 var lastselectid = 114;
 var lastaction = true;
 //var endata = false; coming from endata.js included in html
-//console.log(endata);
 var filteredEnData = [...endata];
 var datachecker = false;
 var timer;
@@ -152,7 +151,6 @@ var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 
 // Sign up JS
 function signup(){
-  console.log("sign up clicked");
     if(!testEmail.test($("#signup input[type=email]").val())){
         shake($( "#signup input[type=email]" ).parent());
         //$( "#signup input[type=email]" ).parent().effect( "shake", {distance: 5} );
@@ -190,7 +188,6 @@ function signup(){
             url: 'db.php',
             data: {email: $("#signup input[type=email]").val(), user: $("#signup input[type=text]").val(), password: $("#signup input[type=password]").val(), signing_up: true, remember: $('#rem-check input').is(':checked')},
             success: function(data){
-              console.log(data);
               data = data.trim();
               if(data.substring(0,5) == "Error"){
                   if(data.indexOf("user") > -1){
@@ -387,7 +384,6 @@ var ardata = [];
         for (var k = 0; k < endata[thisid].ayahs.length; k++) {
           if(k == 0){
               endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
-              console.log(endata[thisid].ayahs[k].text);
           }
  
           var newtext = "";
@@ -468,7 +464,6 @@ window.addEventListener(
     if (thisid == "") {
       thisid = e.target.parentElement.parentElement.id;
     }
-    console.log(thisid);
     if (!isNaN(parseInt(thisid))) {
       var jqid = "#" + thisid;
       if ($(jqid).hasClass("added")) {
@@ -686,7 +681,6 @@ function nextFlashCard(fc, mcq, fr) {
   if(cases > 3){ 
     $('#answer-full').show(); 
     if(!nextCard){
-      console.log("doing work");
       getWordfromAyah(parseInt(thisCard.surahNumber)+1, thisCard.ayahNum);
       [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
     }
@@ -857,7 +851,6 @@ function nextFlashCard(fc, mcq, fr) {
 
   nextCard = newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   if(nextCase > 3){
-    console.log("doing work for next");
     getWordfromAyah(parseInt(nextCard.surahNumber)+1, nextCard.ayahNum);
   }
 }
@@ -872,7 +865,6 @@ $("#correct").click(function() {
   $("#checkcont").css("height", "0px");
   currentCard.correct++;
   currentCard.attempts++;
-  //console.log(currentCard.correct);
   setTimeout(function(){
     $('.anscont').removeClass("sz-ar sz-en");
     nextFlashCard();
@@ -1023,8 +1015,6 @@ function filterIt(arr, searchKey) {
     if(searchKey.toLowerCase().includes("chapter") || searchKey.toLowerCase().includes("surah")){
         var surah = searchKey.replace("surah", "").replace("chapter", "").replace(/\s/g, "");
         if(isNaN(parseInt(surah))){
-            console.log('no number');
-            console.log(surah);
             if(el.englishNameTranslation.toLowerCase().indexOf(surah) !== -1 && tresults.indexOf(el) == -1){
                 tresults.push(el);
             }
@@ -1054,7 +1044,6 @@ function filterIt(arr, searchKey) {
   //el.toString().toLowerCase().includes(searchKey.toLowerCase())
   /*console.log(Object.values(arr[0]).some(res => res.includes(searchKey)));
   */
-  console.log(tresults);
   return tresults;
 }
 var ayahnumindex = 0;
@@ -1202,7 +1191,6 @@ $('#textSize').click(function(){
     
 $('.setting-input input').not("#switchMode, .num-input").click(function(){
     var currVal = parseInt($(this).val());
-    console.log(currVal);
     if(currVal){
         $(this).prop('value',0);
     } else {
