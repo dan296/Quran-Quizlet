@@ -328,6 +328,7 @@ function getWordfromAyah(chapter, ayahnum){
 function getWordOptionsfromAyah(card){
   let chapter = parseInt(card.surahNumber);
   let ayahnum = parseInt(card.ayahNum);
+  // Deep copying instead of shallow copy
   let filtered_verses = JSON.parse(JSON.stringify(...versesindiv[parseInt(chapter)+1].verses));
   filtered_verses = filtered_verses.filter(function(el) {
           el.words = el.words.filter(function(tl) {
