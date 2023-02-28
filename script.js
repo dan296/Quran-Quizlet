@@ -550,7 +550,7 @@ $('.menu-button').click(function(){
           studying = true;
           //$("#newdeck").css("height", "100%");
           $("#flashcard").fadeIn();
-          nextFlashCard(fc, mcq, fr);
+          nextFlashCard();
           $("#veil").show();
         }else{
           alert('Quiz Settings are invalid! Please select a question mode!');
@@ -623,7 +623,10 @@ function createFlashCard(
   return thisCard;
 }
 var newFlashCards;
-function nextFlashCard(fc, mcq, fr) {
+function nextFlashCard() {
+  var fc = parseInt($("#flashOn").val());
+  var mcq = parseInt($("#mcqOn").val());
+  var fr = parseInt($("#fr").val());
   var totalCorrect = 0;
   newFlashCards = [...flashCards];
   newFlashCards = newFlashCards.filter(function(el){
