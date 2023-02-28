@@ -328,7 +328,7 @@ function getWordfromAyah(chapter, ayahnum){
 function getWordOptionsfromAyah(card){
   let chapter = parseInt(card.surahNumber);
   let ayahnum = parseInt(card.ayahNum);
-  let filtered_verses = versesindiv[parseInt(chapter)+1].verses.filter(function(el) {
+  let filtered_verses = ...versesindiv[parseInt(chapter)+1].verses.filter(function(el) {
           el.words = el.words.filter(function(tl) {
             if(tl.text !== card.arabicWord && tl.char_type_name !== "end") return tl;
           });
