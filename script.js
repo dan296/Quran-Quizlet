@@ -906,6 +906,8 @@ $("#showanswer").click(function() {
           }
         }
       }
+      $(".mcq-option").addClass("mcq-option-no-hover").removeClass("mcq-option");
+
     }else{
       alert("Select an option!");
     }

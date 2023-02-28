@@ -650,6 +650,11 @@ footer {
     cursor: pointer;
     border-radius: 4px;
 }
+.mcq-option-no-hover {
+    text-align: left;
+    padding: 10px;
+    border-radius: 4px;
+}
 
 .mcq-selected, .mcq-option:hover {
     background: #bbb57b;
