@@ -301,6 +301,7 @@ function arabicDigits(num){
 }
 
 var randWord = {};
+/* OLD:
 function getWordfromAyah(chapter, ayahnum){
     $.ajaxSetup({
         async: (!nextCard) ? false : true
@@ -316,6 +317,32 @@ function getWordfromAyah(chapter, ayahnum){
     $.ajaxSetup({
         async: true
     });
+}*/
+// NEW:
+function getWordfromAyah(chapter, ayahnum){
+  let word_array = versesindiv[parseInt(chapter)+1].verses[ayahnum].words;
+  randWord = word_array[Math.floor(Math.random()*word_array.length)];
+  if(nextCard){
+    [nextCard.englishWord, nextCard.arabicWord] = [randWord.translation.text, randWord.text];
+  }
+}
+
+function getWordOptionsfromAyah(card){
+  let chapter = parseInt(card.surahNum);
+  let ayahnum = parseInt(card.ayahNum);
+  let filtered_verses = versesindiv[parseInt(chapter)+1].verses.filter(function(el) {
+          el.words = el.words.filter(function(tl) {
+            if(tl.text !== card.arabicWord && tl.char_type_name !== "end") return tl;
+          });
+          el.words = shuffle(el.words);
+          return el;
+        });
+  let opts = [];
+  for(var i = 0; i < 3; i++){
+    let randomWord = filtered_verses[Math.floor(Math.random()*filtered_verses.length)].words.pop();
+    opts.push([randomWord.translation.text, randomWord.text]);
+  }
+  return opts;
 }
 
 var ardata = [];
@@ -663,6 +690,24 @@ function nextFlashCard(fc, mcq, fr) {
       [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
     }
   }
+  let options = [];
+  if(mode == 2){
+    if(cases > 3){
+      options = getWordOptionsfromAyah(thisCard);
+      options.push([thisCard.englishWord, thisCard.arabicWord]);
+      options = shuffle(options);
+    }else{
+      options = newFlashCards.filter(function(el){
+        if(el.surahNumber == thisCard.surahNumber && el.ayahNum !== thisCard.ayahNum && el.translation !== thisCard.translation){
+          return el;
+        }
+      })
+      options = shuffle(options);
+      options = options.slice(0, 3);
+      options.push(thisCard);
+      options = shuffle(options);
+    }
+  }
 
   if (cases == 1) {
     if(mode == 1){
@@ -685,14 +730,6 @@ function nextFlashCard(fc, mcq, fr) {
       $('.anscont').addClass("sz-en");
       $('#questcont').addClass("sz-ar");
     } else if (mode == 2){
-      let options = newFlashCards.filter(function(el){
-          if(el.surahNumber == thisCard.surahNumber && el.ayahNum !== thisCard.ayahNum){
-            return el;
-          }
-        })
-      options = shuffle(options);
-      options = options.slice(0, 3);
-      options.push(thisCard);
       $("#flashcard #questcont").html("What is the meaning of the following ayah?<br>"
         + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
         + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
@@ -701,55 +738,106 @@ function nextFlashCard(fc, mcq, fr) {
         + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
         );
     }
-    
   } else if (cases == 2) {
-    $("#flashcard #answer1 .anscont").html(thisCard.ayah);
-    $("#flashcard #questcont").html(thisCard.translation);
-    $("#flashcard #answer2 .anscont").html(
-      "Chapter " +
-        (parseInt(thisCard.surahNumber) + 1) +
-        "<br/>" +
-        thisCard.surahName +
-        "<br/>" +
-        thisCard.surahTName +
-        "<br/>" +
-        thisCard.surahEngName +
-        "<br/>Ayah No. " +
-        thisCard.ayahNum +
-        "<br/>"
-    );
-    $('#answer2 .anscont, #questcont').addClass("sz-en");
-    $('#answer1 .anscont').addClass("sz-ar");
+    if(mode == 1){
+      $("#flashcard #answer1 .anscont").html(thisCard.ayah);
+      $("#flashcard #questcont").html(thisCard.translation);
+      $("#flashcard #answer2 .anscont").html(
+        "Chapter " +
+          (parseInt(thisCard.surahNumber) + 1) +
+          "<br/>" +
+          thisCard.surahName +
+          "<br/>" +
+          thisCard.surahTName +
+          "<br/>" +
+          thisCard.surahEngName +
+          "<br/>Ayah No. " +
+          thisCard.ayahNum +
+          "<br/>"
+      );
+      $('#answer2 .anscont, #questcont').addClass("sz-en");
+      $('#answer1 .anscont').addClass("sz-ar");
+    } else if (mode == 2){
+      $("#flashcard #questcont").html("Which ayah has the following meaning?<br>"
+        + "<div class='mcq-quest'>" + thisCard.translation + "</div>"
+        + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
+        + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
+        + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
+        + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+        );
+    }
   } else if (cases == 3) {
-    $("#flashcard #answer1 .anscont").html(thisCard.ayah);
-    $("#flashcard #answer2 .anscont").html(thisCard.translation);
-    $("#flashcard #questcont").html(
-      "Chapter " +
-        (parseInt(thisCard.surahNumber) + 1) +
-        "<br/>" +
-        thisCard.surahName +
-        "<br/>Surah " +
-        thisCard.surahTName +
-        "<br/>" +
-        thisCard.surahEngName +
-        "<br/>Ayah No. " +
-        thisCard.ayahNum +
-        "<br/>"
-    );
-    $('#answer2 .anscont, #questcont').addClass("sz-en");
-    $('#answer1 .anscont').addClass("sz-ar");
+    if(mode == 1){
+      $("#flashcard #answer1 .anscont").html(thisCard.ayah);
+      $("#flashcard #answer2 .anscont").html(thisCard.translation);
+      $("#flashcard #questcont").html(
+        "Chapter " +
+          (parseInt(thisCard.surahNumber) + 1) +
+          "<br/>" +
+          thisCard.surahName +
+          "<br/>Surah " +
+          thisCard.surahTName +
+          "<br/>" +
+          thisCard.surahEngName +
+          "<br/>Ayah No. " +
+          thisCard.ayahNum +
+          "<br/>"
+      );
+      $('#answer2 .anscont, #questcont').addClass("sz-en");
+      $('#answer1 .anscont').addClass("sz-ar");
+    } else if (mode == 2){
+      $("#flashcard #questcont").html("Which ayah has the following location?<br>"
+        + "<div class='mcq-quest'>" + "Chapter " +
+          (parseInt(thisCard.surahNumber) + 1) +
+          "<br/>" +
+          thisCard.surahName +
+          "<br/>Surah " +
+          thisCard.surahTName +
+          "<br/>" +
+          thisCard.surahEngName +
+          "<br/>Ayah No. " +
+          thisCard.ayahNum +
+          "<br/>" + "</div>"
+        + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
+        + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
+        + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
+        + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+        );
+    }
   } else if (cases == 4) {
-    $("#flashcard #answer-full .anscont").html(thisCard.englishWord);
-    $("#flashcard #questcont").html(thisCard.arabicWord);
-    $('#answer-full .anscont').addClass("sz-en");
-    $('#questcont').addClass("sz-ar");
+    if(mode == 1){
+      $("#flashcard #answer-full .anscont").html(thisCard.englishWord);
+      $("#flashcard #questcont").html(thisCard.arabicWord);
+      $('#answer-full .anscont').addClass("sz-en");
+      $('#questcont').addClass("sz-ar");
+    } else if (mode == 2) {
+      $("#flashcard #questcont").html("What is the translation of the following word?<br>"
+        + "<div class='mcq-quest'>" + thisCard.arabicWord + "</div>"
+        + "<div class='mcq-option'>A) " + options[0][0] + "</div>"
+        + "<div class='mcq-option'>B) " + options[1][0] + "</div>"
+        + "<div class='mcq-option'>C) " + options[2][0] + "</div>"
+        + "<div class='mcq-option'>D) " + options[3][0] + "</div>" 
+        );
+    }
+    
   } else if (cases == 5) {
-    $("#flashcard #answer-full .anscont").html(thisCard.arabicWord);
-    $("#flashcard #questcont").html(thisCard.englishWord);
-    $('#questcont').addClass("sz-en");
-    $('#answer-full .anscont').addClass("sz-ar");
+    if(mode == 1){
+      $("#flashcard #answer-full .anscont").html(thisCard.arabicWord);
+      $("#flashcard #questcont").html(thisCard.englishWord);
+      $('#questcont').addClass("sz-en");
+      $('#answer-full .anscont').addClass("sz-ar"); 
+    } else if (mode == 2) {
+      $("#flashcard #questcont").html("What is the arabic word for:<br>"
+        + "<div class='mcq-quest'>" + thisCard.englishWord + "</div>"
+        + "<div class='mcq-option'>A) " + options[0][1] + "</div>"
+        + "<div class='mcq-option'>B) " + options[1][1] + "</div>"
+        + "<div class='mcq-option'>C) " + options[2][1] + "</div>"
+        + "<div class='mcq-option'>D) " + options[3][1] + "</div>" 
+        );
+    }
+    
+
   }
-  
   if ($("#questcont").height() > $("#question").height()) {
     $("#questcont").css({ height: "auto", bottom: "auto" });
   } else {
@@ -771,7 +859,6 @@ function nextFlashCard(fc, mcq, fr) {
     console.log("doing work for next");
     getWordfromAyah(parseInt(nextCard.surahNumber)+1, nextCard.ayahNum);
   }
-  
 }
 
 
