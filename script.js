@@ -642,6 +642,7 @@ function nextFlashCard(fc, mcq, fr) {
   if(mcq) { qModeMax.push(2) };
   if(fr) { qModeMax.push(3) };
   let mode = qModeMax[Math.floor(Math.random() * qModeMax.length)];
+  console.log("The mode is: " + mode);
   //newFlashCards = newFlashCards.slice(parseInt($("#verseMin").val())-1,parseInt($("#verseMax").val()));
   for(var i = 0; i < newFlashCards.length; i++){
     totalCorrect += newFlashCards[i].correct;
