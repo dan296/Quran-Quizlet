@@ -894,11 +894,11 @@ $("#showanswer").click(function() {
   if(mode == 1){
     $("#answercontainer").css("height", "276px");
   }else if(mode==2){
-    if($(".mcq-option.highlight-ayah").length > 0){
-      if($(".mcq-option.highlight-ayah").attr("data-c") == "true"){
-        $(".mcq-option.highlight-ayah").addClass("mcq-correct");
+    if($(".mcq-option.mcq-selected").length > 0){
+      if($(".mcq-option.mcq-selected").attr("data-c") == "true"){
+        $(".mcq-option.mcq-selected").addClass("mcq-correct");
       }else{
-        $(".mcq-option.highlight-ayah").addClass("mcq-incorrect");
+        $(".mcq-option.mcq-selected").addClass("mcq-incorrect");
         for(var i = 0; i < $(".mcq-option").length; i++){
           if($(".mcq-option").eq(i).attr("data-c") == "true"){
             $(".mcq-option").eq(i).addClass("mcq-correct-faded")
@@ -1168,8 +1168,8 @@ $(document).on('click','.fa-pause-circle',function(e) {
 });
 
 $(document).on('click', '.mcq-option', function(e) {
-  $(".mcq-option").removeClass("highlight-ayah");
-  $(this).addClass("highlight-ayah");
+  $(".mcq-option").removeClass("mcq-selected");
+  $(this).addClass("mcq-selected");
 });
 
 

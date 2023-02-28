@@ -651,7 +651,7 @@ footer {
     border-radius: 4px;
 }
 
-.mcq-option:hover {
+.mcq-selected, .mcq-option:hover {
     background: #bbb57b;
 }
 .mcq-correct{
