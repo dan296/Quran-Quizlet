@@ -861,7 +861,7 @@ function nextFlashCard() {
 
   nextCard = newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   if(nextCase > 3){
-    getWordfromAyah(parseInt(nextCard.surahNumber)+1, nextCard.ayahNum);
+    getWordfromAyah(parseInt(nextCard.surahNumber)+1, (nextCard.ayahNum-1));
   }
 }
 
