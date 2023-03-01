@@ -319,7 +319,7 @@ function getWordfromAyah(chapter, ayahnum){
 // NEW:
 function getWordfromAyah(chapter, ayahnum){
   console.log("Chapter is: "+ chapter);
-  let word_array = versesindiv[parseInt(chapter)+1].verses[ayahnum].words;
+  let word_array = versesindiv[parseInt(chapter)].verses[ayahnum].words;
   console.log(word_array);
   randWord = word_array[Math.floor(Math.random()*word_array.length)];
   if(nextCard){
