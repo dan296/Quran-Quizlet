@@ -691,7 +691,7 @@ function nextFlashCard() {
   if(cases > 3){ 
     $('#answer-full').show(); 
     if(!nextCard){
-      getWordfromAyah(parseInt(thisCard.surahNumber)+1, thisCard.ayahNum);
+      getWordfromAyah(parseInt(thisCard.surahNumber)+1, (thisCard.ayahNum-1));
       [thisCard.englishWord, thisCard.arabicWord] = [randWord.translation.text, randWord.text];
     }
   }
