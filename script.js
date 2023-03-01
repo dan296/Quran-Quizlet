@@ -899,6 +899,7 @@ $("#incorrect").click(function() {
 $("#showanswer").click(function() {
   if(mode == 1){
     $("#answercontainer").css("height", "276px");
+    $("#checkcont").css("height", "40px");
   }else if(mode==2){
     if($(".mcq-option.mcq-selected").length > 0){
       if($(".mcq-option.mcq-selected").attr("data-c") == "true"){
@@ -913,12 +914,12 @@ $("#showanswer").click(function() {
         }
       }
       $(".mcq-option").addClass("mcq-option-no-hover").removeClass("mcq-option");
-
+      $("#checkcont").css("height", "40px");
     }else{
       alert("Select an option!");
     }
   }
-  $("#checkcont").css("height", "40px");
+  
 
 });
 
