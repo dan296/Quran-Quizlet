@@ -320,6 +320,7 @@ function getWordfromAyah(chapter, ayahnum){
 function getWordfromAyah(chapter, ayahnum){
   console.log("Chapter is: "+ chapter);
   let word_array = versesindiv[parseInt(chapter)+1].verses[ayahnum].words;
+  console.log(word_array);
   randWord = word_array[Math.floor(Math.random()*word_array.length)];
   if(nextCard){
     [nextCard.englishWord, nextCard.arabicWord] = [randWord.translation.text, randWord.text];
@@ -332,6 +333,7 @@ function getWordOptionsfromAyah(card){
   console.log("Chapter is: "+ chapter);
   // Deep copying instead of shallow copy
   let filtered_verses = JSON.parse(JSON.stringify(versesindiv[parseInt(chapter)+1].verses));
+  console.log(filtered_verses);
   filtered_verses = filtered_verses.filter(function(el) {
           el.words = el.words.filter(function(tl) {
             if(tl.text !== card.arabicWord && tl.char_type_name !== "end") return tl;
