@@ -528,7 +528,7 @@ footer {
   overflow: hidden;
 }
 #showanswer,
-#checkcont {
+#checkcont, #checkcont2 {
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -538,16 +538,7 @@ footer {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
-#checkcon2 {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  font-size: var(--en-font-sz);
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
+
 #showanswer {
   line-height: 40px;
 }
@@ -594,11 +585,11 @@ footer {
   height: 0%;
 }
 
-#checkcont {
+#checkcont, #checkcont2 {
   height: 0px;
   overflow: hidden;
 }
-#checkcont div {
+#checkcont div{
   line-height: 40px;
   text-align: center;
   height: 100%;
