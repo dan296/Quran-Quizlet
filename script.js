@@ -896,6 +896,15 @@ $("#incorrect").click(function() {
   }, 200);
 });
 
+$("#checkcont2").click(function(){
+  $("#questcont").html("");
+  $('#questcont').removeClass("sz-ar sz-en");
+  $("#checkcont2").css("height", "0px");
+  setTimeout(function(){
+    nextFlashCard();
+  }, 200);
+})
+
 $("#showanswer").click(function() {
   if(mode == 1){
     $("#answercontainer").css("height", "276px");
@@ -903,6 +912,7 @@ $("#showanswer").click(function() {
   }else if(mode==2){
     if($(".mcq-option.mcq-selected").length > 0){
       if($(".mcq-option.mcq-selected").attr("data-c") == "true"){
+        currentCard.correct++;
         $(".mcq-option.mcq-selected").addClass("mcq-correct");
       }else{
         $(".mcq-option.mcq-selected").addClass("mcq-incorrect");
@@ -913,8 +923,9 @@ $("#showanswer").click(function() {
           }
         }
       }
+      currentCard.attempts++;
       $(".mcq-option").addClass("mcq-option-no-hover").removeClass("mcq-option");
-      $("#checkcont").css("height", "40px");
+      $("#checkcont2").css("height", "40px");
     }else{
       alert("Select an option!");
     }

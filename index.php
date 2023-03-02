@@ -266,6 +266,7 @@
       <div id='incorrect'><i class="fa fa-times"></i> Missed it</div>
       <div id='correct'><i class="fa fa-check"></i> Got it</div>
     </div>
+    <div id='checkcont2'>Next</div>
   </div>
 <div id='showsurah'>
   <div id='goback'>
