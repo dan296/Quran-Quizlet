@@ -1217,6 +1217,8 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   color: var(--theme);
   padding: 10px;
   box-shadow: 0px 0px 20px #3d3d3d;
+  z-index: 6;
+  display: none;
 }
 
 

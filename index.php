@@ -154,8 +154,7 @@
 </div>
 <div id="edit-deck" class="perf-center">
   <div class='exit' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
-  <label>Deck Name</label>
-  <input type="text"></input>
+  <input type="text" placeholder="Deck Name"></input>
   <div id="surah-deck-selection">
     
   </div>
