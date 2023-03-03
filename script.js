@@ -11,6 +11,7 @@ var nextCard = false; // need to reset if closing deck
 var nextCase = -1; // need to reset if closing deck
 var studying = false;
 var numSurahsInDeck = 0;
+let surahsSelected = [];
 var count = true;
 let mode = 0;
 //var loadingcaps = ["sabr", "your page is loading...", "inshAllah it will load", "Ya Allah!", "Please forgive us, refresh the page"];
@@ -279,6 +280,20 @@ $('#signin-out-btn').click(function(){
     signOut();
   }
   showHome();
+})
+// Decks will look like this:
+// {name: i.e. Juz 29, surahs: [1,4,5,6,9]}
+
+let decks = [];
+$('#create-deck-btn').click(function(){
+  $("#surah-deck-selection").html("");
+  $('.added').each(function(){
+    $("#surah-deck-selection").append($(this).attr('id'));
+  })
+  $("#edit-deck").show();
+})
+$("#save-deck, #edit-deck .exit").click(function(){
+  $("#edit-deck").hide();
 })
 
 function showMain(){

@@ -135,11 +135,30 @@
 </div>
 <div id="decks">
     You have no decks
-
+    <section>
+      <div class='setting-title'>Decks</div>
+      <div class='setting-wrap'>
+          <div class='setting-label'>Deck 1:</div>
+          <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
+      </div>
+    </section>
+    <section>
+      <div class='setting-wrap'>
+            <button id="add-deck-btn">+ Add a Deck</button>
+        </div>
+    </section>
     
     <div id="version2">
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
+</div>
+<div id="edit-deck">
+  <div class='exit' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
+  <input type="text"></input>
+  <div id="surah-deck-selection">
+    
+  </div>
+  <button id="save-deck">save</button>
 </div>
 <div id='loadingpage'>
   <h1 style="padding-top: 10px;">Quran Quizlet</h1>
@@ -234,7 +253,7 @@
     </div>
 </div><div class="separator"></div><div class="buttoncontainer">
     <div class="menu-button" title="learn">
-  <i id="startdeck" class="daybutton fas fa-list-ul"></i>
+  <i id="startdeck" class="daybutton fas fa-brain"></i>
     </div>
   
 </div><div class="separator"></div><div class="buttoncontainer">
@@ -257,7 +276,7 @@
 </footer>
 <div id='flashcard'>
   <div id="scoreCard">1/11</div>
-  <div id='closedeck' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
+  <div id="closedeck" class='exit cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
   <div id='readsurah'><i class="fas fa-book-open"></i></div>
   <div id="flashcont">
   <div id='question'>
