@@ -152,8 +152,9 @@
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
 </div>
-<div id="edit-deck">
+<div id="edit-deck" class="perf-center">
   <div class='exit' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
+  <label>Deck Name</label>
   <input type="text"></input>
   <div id="surah-deck-selection">
     

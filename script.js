@@ -285,7 +285,7 @@ $('#signin-out-btn').click(function(){
 // {name: i.e. Juz 29, surahs: [1,4,5,6,9]}
 
 let decks = [];
-$('#create-deck-btn').click(function(){
+$('#add-deck-btn').click(function(){
   $("#surah-deck-selection").html("");
   $('.added').each(function(){
     $("#surah-deck-selection").append($(this).attr('id'));
