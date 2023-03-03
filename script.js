@@ -287,11 +287,11 @@ $('#signin-out-btn').click(function(){
 let decks = [];
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
-    $("#surah-deck-selection .wrap").html("");
+    $("#surah-deck-selection").html("");
     $('.added').each(function(){
-      $("#surah-deck-selection .wrap").append(
+      $("#surah-deck-selection").append(
         "<div class='surah-selection'>" +
-        $(this).attr("id") + ") " +
+        (parseInt($(this).attr("id"))+1) + ") " +
         $(this).find(".surahname").html() +
         "</div>"
         );
