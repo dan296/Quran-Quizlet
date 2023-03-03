@@ -342,7 +342,7 @@ function getWordOptionsfromAyah(card){
           return el;
         });
   let opts = [];
-  for(var i = 0; i < 3; i++){
+  while(opts.length < 3 && filtered_verses.length > 0){
     let randomWord = filtered_verses[Math.floor(Math.random()*filtered_verses.length)].words.pop();
     opts.push([randomWord.translation.text, randomWord.text]);
   }
