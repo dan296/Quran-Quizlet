@@ -48,7 +48,7 @@ body::-webkit-scrollbar {
 }
 
 /*Settings*/
-#settings {
+#settings, #decks {
     background: inherit;
     width: 250px;
     height: calc(100% - 70px);

@@ -133,6 +133,14 @@
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
 </div>
+<div id="decks">
+    You have no decks
+
+    
+    <div id="version2">
+      <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
+    </div>
+</div>
 <div id='loadingpage'>
   <h1 style="padding-top: 10px;">Quran Quizlet</h1>
   <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="250px" height="250px" preserveAspectRatio="xMidYMid meet" id='demo'>
@@ -221,12 +229,12 @@
     <div class="footer-cont">
 
 <div class="buttoncontainer">
-    <div class="menu-button" title="flash cards">
-  <i id="startdeck" class="daybutton fas fa-layer-group"></i>
+    <div class="menu-button" title="decks">
+  <i id="decks-btn" class="daybutton fas fa-layer-group"></i>
     </div>
 </div><div class="separator"></div><div class="buttoncontainer">
-    <div class="menu-button" title="multiple choice">
-  <i id="startdeck2" class="daybutton fas fa-list-ul"></i>
+    <div class="menu-button" title="learn">
+  <i id="startdeck" class="daybutton fas fa-list-ul"></i>
     </div>
   
 </div><div class="separator"></div><div class="buttoncontainer">
