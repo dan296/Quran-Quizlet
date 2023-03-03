@@ -1221,5 +1221,33 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   display: none;
 }
 
+#edit-deck input{
+  background: var(--theme-bg);
+  color: var(--theme);
+  outline: none;
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid;
+  text-align: center;
+}
+
+#surah-deck-selection .wrap {
+  overflow: scroll;
+  width: 90%;
+}
+
+#surah-deck-selection .wrap {
+  display: table;
+}
+#surah-deck-selection .surah-selection {
+      display: table-cell;
+    white-space: nowrap;
+    word-break: keep-all;
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+    color: var(--bg);
+}
+
 
 

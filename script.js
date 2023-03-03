@@ -287,9 +287,14 @@ $('#signin-out-btn').click(function(){
 let decks = [];
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
-    $("#surah-deck-selection").html("");
+    $("#surah-deck-selection .wrap").html("");
     $('.added').each(function(){
-      $("#surah-deck-selection").append($(this).attr('id'));
+      $("#surah-deck-selection .wrap").append(
+        "<div class='surah-selection'>" +
+        $(this).attr("id") + ") "
+        $(this).find(".surahname").html() +
+        "</div>"
+        );
     })
     $("#edit-deck").show();
   } else {

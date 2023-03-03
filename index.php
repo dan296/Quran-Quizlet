@@ -156,7 +156,9 @@
   <div class='exit' class='cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
   <input type="text" placeholder="Deck Name"></input>
   <div id="surah-deck-selection">
-    
+    <div class="wrap">
+      
+    </div>
   </div>
   <button id="save-deck">save</button>
 </div>
