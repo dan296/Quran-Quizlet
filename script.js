@@ -286,11 +286,16 @@ $('#signin-out-btn').click(function(){
 
 let decks = [];
 $('#add-deck-btn').click(function(){
-  $("#surah-deck-selection").html("");
-  $('.added').each(function(){
-    $("#surah-deck-selection").append($(this).attr('id'));
-  })
-  $("#edit-deck").show();
+  if($('.added').length < 2){
+    $("#surah-deck-selection").html("");
+    $('.added').each(function(){
+      $("#surah-deck-selection").append($(this).attr('id'));
+    })
+    $("#edit-deck").show();
+  } else {
+    alert("Select at least 2 surahs!");
+  }
+
 })
 $("#save-deck, #edit-deck .exit").click(function(){
   $("#edit-deck").hide();
