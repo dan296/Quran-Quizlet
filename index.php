@@ -138,9 +138,9 @@
     <section>
       <div class='setting-title'>Decks</div>
       <div class='setting-wrap'>
-          <div class='setting-label'>Deck 1</div>
-          <button class='setting-info-btn'><i class="fas fa-brain"></i> Learn</button>
+          <div class='setting-label' style='width: auto;'>Deck 1</div>
           <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
+          <button class='setting-info-btn' style="margin-right: 5px;"><i class="fas fa-brain"></i> Learn</button>
       </div>
     </section>
     <section>
