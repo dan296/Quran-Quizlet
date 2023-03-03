@@ -538,11 +538,15 @@ footer {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
+#checkcont2{
+    color: var(--theme);
+    background: var(--theme-bg);
+}
 
-#showanswer {
+#showanswer, #checkcont2 {
   line-height: 40px;
 }
-#showanswer:hover {
+#showanswer:hover, #checkcont2:hover {
   background-color: #00bfff;
   color: white;
 }
