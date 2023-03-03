@@ -293,7 +293,7 @@ $('#add-deck-btn').click(function(){
         "<div class='surah-selection'>" +
         "<div class='surah-label'>" +
         (parseInt($(this).attr("id"))+1) +
-        "</div>"
+        "</div>" +
         $(this).find(".surahname").html() +
         "</div>"
         );
