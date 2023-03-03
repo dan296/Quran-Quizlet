@@ -286,7 +286,7 @@ $('#signin-out-btn').click(function(){
 
 let decks = [];
 $('#add-deck-btn').click(function(){
-  if($('.added').length < 2){
+  if($('.added').length > 1){
     $("#surah-deck-selection").html("");
     $('.added').each(function(){
       $("#surah-deck-selection").append($(this).attr('id'));
