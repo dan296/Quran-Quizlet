@@ -291,7 +291,9 @@ $('#add-deck-btn').click(function(){
     $('.added').each(function(){
       $("#surah-deck-selection").append(
         "<div class='surah-selection'>" +
-        (parseInt($(this).attr("id"))+1) + ") " +
+        "<div class='surah-label'>" +
+        (parseInt($(this).attr("id"))+1) +
+        "</div>"
         $(this).find(".surahname").html() +
         "</div>"
         );
