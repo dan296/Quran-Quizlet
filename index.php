@@ -134,10 +134,10 @@
     </div>
 </div>
 <div id="decks">
-    You have no decks
     <section>
       <div class='setting-title'>Decks</div>
       <div class='setting-wrap'>
+            You have no decks
           <div class='setting-label' style='width: auto;'>Deck 1</div>
           <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
           <button class='setting-info-btn' style="margin-right: 5px;"><i class="fas fa-brain"></i> Learn</button>

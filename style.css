@@ -1248,14 +1248,31 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   margin: 5px;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
 }
 .surah-selection .surah-label{
-  top: 5px;
-    right: 8px;
+  top: 1px;
+    right: 5px;
     width: auto;
     height: auto;
     padding: 0px;
 }
-
+#surah-deck-selection button{
+  cursor: pointer;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+    height: 100%;
+    font-size: 10pt;
+    transition: 0.2s ease-in-out;
+}
+#surah-deck-selection button:hover{
+  color: var(--theme-bg);
+  background: var(--theme);
+}
 
 
