@@ -136,7 +136,7 @@
 <div id="decks">
     <section>
       <div class='setting-title'>Decks</div>
-      <div id="deck-collection" class='setting-wrap'>
+      <div id="deck-collection">
             You have no decks
       </div>
     </section>

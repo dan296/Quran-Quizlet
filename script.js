@@ -335,12 +335,13 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
     for(var i = 0; i < decks[$(this).attr("deck-id")].surahs.length; i++){
       let srhInd = decks[$(this).attr("deck-id")].surahs[i];
       $("#surah-deck-selection").append(
+        "<div class='setting-wrap'>"
         "<div class='surah-selection'>" +
         "<div class='surah-label'>" +
         srhInd +
         "</div>" +
         $("#"+(srhInd-1)).find(".surahname").html() +
-        "</div>"
+        "</div></div>"
         );
     }
     //})
@@ -360,7 +361,7 @@ $("#save-deck").click(function(){
     alert("Please enter a unique Deck Name");
   }else{
     let deck = {
-      name: $("#deck_name").html(),
+      name: $("#deck_name").val(),
       surahs: []
     }
     $(".surah-selection").each(function(){
