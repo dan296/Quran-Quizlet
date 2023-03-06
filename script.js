@@ -359,15 +359,17 @@ $('#add-deck-btn').click(function(){
 
 })
 
+let editing_deck_id = -1;
 $(document).on('click','.edit-deck-btn',function(e) {
 
 //$('#deck-collection .setting-info-btn').eq(0).click(function(){
   //if($('.added').length > 1){
+    editing_deck_id = $(this).attr("deck-id");
     $("#surah-deck-selection").html("");
-    $("#deck_name").prop("value", decks[$(this).attr("deck-id")].name);
+    $("#deck_name").prop("value", decks[editing_deck_id].name);
     //$('.added').each(function(){
-    for(var i = 0; i < decks[$(this).attr("deck-id")].surahs.length; i++){
-      let srhInd = decks[$(this).attr("deck-id")].surahs[i];
+    for(var i = 0; i < decks[editing_deck_id].surahs.length; i++){
+      let srhInd = decks[editing_deck_id].surahs[i];
       $("#surah-deck-selection").append(
         "<div class='surah-selection'>" +
         "<div class='surah-label'>" +
@@ -378,6 +380,7 @@ $(document).on('click','.edit-deck-btn',function(e) {
         );
     }
     //})
+    $("#delete-deck").show();
     $("#edit-deck").show();
   /*} else {
     alert("Select at least 2 surahs!");
@@ -397,11 +400,13 @@ $(document).on('click','.learn-deck-btn',function(e) {
 })
 
 $("#edit-deck .exit").click(function(){
+  editing_deck_id = -1;
   $("#edit-deck").hide();
+  $("#delete-deck").hide();
 })
 
 $("#save-deck").click(function(){
-  if(decks.filter(e => e.name === $("#deck_name").val()).length > 0 || $("#deck_name").val() == ""){
+  if(decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== editing_deck_id)).length > 0 || $("#deck_name").val() == ""){
     alert("Please enter a unique Deck Name");
   }else{
     let deck = {
@@ -419,11 +424,19 @@ $("#save-deck").click(function(){
       success: function(data){
         //console.log(data);
         updateDecks();
-        $("#edit-deck").hide();
+        $("#edit-deck .exit").click();
       },
       dataType: 'HTML'
     });
     
+  }
+})
+
+$("#delete-deck").click(function(){
+  var confirmDelete = confirm("Would you like to delete the following deck: "+ decks[editing_deck_id].name+ "?");
+  if(confirmDelete) {
+    decks.splice(editing_deck_id, 1);
+    updateDecks();
   }
 })
 

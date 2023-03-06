@@ -159,6 +159,7 @@
     </div>
   </div>
   <button id="save-deck">save</button>
+  <button id="delete-deck">delete</button>
 </div>
 <div id='loadingpage'>
   <h1 style="padding-top: 10px;">Quran Quizlet</h1>
