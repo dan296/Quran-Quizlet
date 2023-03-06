@@ -316,7 +316,7 @@ function updateDecks(){
     "<div class='setting-wrap'>" +
     "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
     "<button class='setting-info-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
-    "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>" +               
+    "<button class='setting-info-btn' deck-id="+i+" style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>" +               
     "</div>"
     )
   }
@@ -381,6 +381,15 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
     alert("Select at least 2 surahs!");
   }*/
 
+})
+
+$('#deck-collection .setting-info-btn').eq(1).click(function(){
+  let this_deck = decks[$(this).attr("deck-id")];
+  $('.surahcont').removeClass('added');
+  for(var i = 0; i < this_deck.surahs.length; i++){
+    $("#"+(this_deck.surahs[i]-1)).click();
+  }
+  $("#startdeck").click();
 })
 
 $("#edit-deck .exit").click(function(){
