@@ -62,11 +62,11 @@ if(isset($_POST["signing_out"])){
     setcookie ("member_login","",time() - 3600);
 }
 
-if(isset($_POST["updating_user"])){
+if(isset($_POST["adding_deck"])){
     $user = $_POST["user"];
-    $userObj = $_POST["userObj"];
+    $decks = $_POST["decks"];
     if($user !== ""){
-        $sql = "UPDATE `users` SET `userObj`='$userObj' WHERE `user_name`='$user'";
+        $sql = "UPDATE `users` SET `decks`='$decks' WHERE `user_name`='$user'";
         $conn->query($sql);
     	fwrite($handle, $conn -> error);
     }

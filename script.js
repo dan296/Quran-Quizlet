@@ -290,16 +290,20 @@ let decks = [
     surahs: [1, 4, 9]
   }
 ];
-if(decks.length > 0){
-  $("#deck-collection").html("");
+
+function updateDecks(){
+  if(decks.length > 0){
+    $("#deck-collection").html("");
+  }
+  for(var i = 0; i < decks.length; i++){
+  $("#deck-collection").append(
+    "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
+    "<button class='setting-info-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
+    "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>"                
+    )
+  }
 }
-for(var i = 0; i < decks.length; i++){
-$("#deck-collection").append(
-  "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
-  "<button class='setting-info-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
-  "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>"                
-  )
-}
+
 
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
@@ -346,12 +350,12 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
 
 })
 
-$("#save-deck, #edit-deck .exit").click(function(){
+$("#edit-deck .exit").click(function(){
   $("#edit-deck").hide();
 })
 
 $("#save-deck").click(function(){
-  if(decks.filter(e => e.name === $("#deck_name").html()).length == 0 || $("#deck_name").html() == ""){
+  if(decks.filter(e => e.name === $("#deck_name").html()).length > 0 || $("#deck_name").html() == ""){
     alert("Please enter a unique Deck Name");
   }else{
     let deck = {
@@ -361,17 +365,29 @@ $("#save-deck").click(function(){
     $(".surah-selection").each(function(){
       deck.surahs.push(parseInt($(this).children().html()));
     })
-    $.ajax({
-      type: "POST",
-      url: 'db.php',
-      data: {user: thisuser, adding_deck: true},
-      success: function(data){
-        console.log(data);
-      },
-      dataType: 'HTML'
-    });
+    if(decks.filter(e => e.surahs === deck.surahs).length > 0){
+      let existing_deck = "";
+      decks.filter(function(e) {
+        if(e.surahs === deck.surahs){
+          existing_deck = e.name;
+        }
+      })
+      alert("This collection already exists as " + existing_deck);
+    }else{
+      decks.push(deck);
+      $.ajax({
+        type: "POST",
+        url: 'db.php',
+        data: {user: thisuser, adding_deck: true},
+        success: function(data){
+          //console.log(data);
+          updateDecks();
+          $("#edit-deck").hide();
+        },
+        dataType: 'HTML'
+      });
+    }
   }
-  
 })
 
 function showMain(){
