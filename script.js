@@ -295,7 +295,7 @@ if(decks.length > 0){
 }
 for(var i = 0; i < decks.length; i++){
 $("#deck-collection").append(
-  "<div class='setting-label' style='width: auto;'>"+deck[i].name+"</div>"+
+  "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
   "<button class='setting-info-btn'><i class='fa fa-edit'></i> Edit</button>"+
   "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>"                
   )
