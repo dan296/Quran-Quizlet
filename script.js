@@ -321,7 +321,7 @@ $('#add-deck-btn').click(function(){
 
 })
 
-$('#deck-collection .fa-edit').click(function(){
+$('#deck-collection .setting-info-btn:first-child').click(function(){
   //if($('.added').length > 1){
     $("#surah-deck-selection").html("");
     //$('.added').each(function(){
