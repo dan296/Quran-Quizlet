@@ -297,9 +297,11 @@ function updateDecks(){
   }
   for(var i = 0; i < decks.length; i++){
   $("#deck-collection").append(
+    "<div class='setting-wrap'>" +
     "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
     "<button class='setting-info-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
-    "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>"                
+    "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>" +               
+    "</div>"
     )
   }
 }
@@ -335,13 +337,12 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
     for(var i = 0; i < decks[$(this).attr("deck-id")].surahs.length; i++){
       let srhInd = decks[$(this).attr("deck-id")].surahs[i];
       $("#surah-deck-selection").append(
-        "<div class='setting-wrap'>" +
         "<div class='surah-selection'>" +
         "<div class='surah-label'>" +
         srhInd +
         "</div>" +
         $("#"+(srhInd-1)).find(".surahname").html() +
-        "</div></div>"
+        "</div>"
         );
     }
     //})
