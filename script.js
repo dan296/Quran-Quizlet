@@ -303,6 +303,7 @@ function updateDecks(){
     )
   }
 }
+updateDecks();
 
 
 $('#add-deck-btn').click(function(){
