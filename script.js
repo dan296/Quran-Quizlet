@@ -31,6 +31,22 @@ function removeObjectWithId(arr, id) {
   return arr;
 }
 
+function arraysEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length !== b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+  // Please note that calling sort on an array will modify that array.
+  // you might want to clone your array first.
+
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -368,10 +384,10 @@ $("#save-deck").click(function(){
     $(".surah-selection").each(function(){
       deck.surahs.push(parseInt($(this).children().html()));
     })
-    if(decks.filter(e => e.surahs === deck.surahs).length > 0){
+    if(decks.filter(e => arraysEqual(e.surahs, deck.surahs)).length > 0){
       let existing_deck = "";
       decks.filter(function(e) {
-        if(e.surahs === deck.surahs){
+        if(arraysEqual(e.surahs, deck.surahs)){
           existing_deck = e.name;
         }
       })
