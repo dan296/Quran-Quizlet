@@ -310,6 +310,8 @@ let decks = [
 function updateDecks(){
   if(decks.length > 0){
     $("#deck-collection").html("");
+  }else{
+    $("#deck-collection").html("You have no decks");
   }
   for(var i = 0; i < decks.length; i++){
   $("#deck-collection").append(
@@ -437,6 +439,7 @@ $("#delete-deck").click(function(){
   if(confirmDelete) {
     decks.splice(editing_deck_id, 1);
     updateDecks();
+    $("#edit-deck .exit").click();
   }
 })
 
