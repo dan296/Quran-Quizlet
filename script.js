@@ -335,7 +335,7 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
     for(var i = 0; i < decks[$(this).attr("deck-id")].surahs.length; i++){
       let srhInd = decks[$(this).attr("deck-id")].surahs[i];
       $("#surah-deck-selection").append(
-        "<div class='setting-wrap'>"
+        "<div class='setting-wrap'>" +
         "<div class='surah-selection'>" +
         "<div class='surah-label'>" +
         srhInd +
