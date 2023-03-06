@@ -287,7 +287,7 @@ $('#signin-out-btn').click(function(){
 let decks = [
   {
     name: "Deck 1",
-    surahs: [1, 4, 9];
+    surahs: [1, 4, 9]
   }
 ];
 if(decks.length > 0){
