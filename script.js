@@ -326,19 +326,33 @@ updateDecks();
 
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
-    $("#surah-deck-selection").html("");
-    $("#deck_name").prop("value","");
+    let addedSurahs = [];
     $('.added').each(function(){
-      $("#surah-deck-selection").append(
-        "<div class='surah-selection'>" +
-        "<div class='surah-label'>" +
-        (parseInt($(this).attr("id"))+1) +
-        "</div>" +
-        $(this).find(".surahname").html() +
-        "</div>"
-        );
+      addedSurahs.push(parseInt($(this).attr("id"))+1);
     })
-    $("#edit-deck").show();
+    if(decks.filter(e => arraysEqual(e.surahs, addedSurahs)).length > 0){
+      let existing_deck = "";
+      decks.filter(function(e) {
+        if(arraysEqual(e.surahs, addedSurahs)){
+          existing_deck = e.name;
+        }
+      })
+      alert("This collection already exists as " + existing_deck);
+    }else{
+      $("#surah-deck-selection").html("");
+      $("#deck_name").prop("value","");
+      $('.added').each(function(){
+        $("#surah-deck-selection").append(
+          "<div class='surah-selection'>" +
+          "<div class='surah-label'>" +
+          (parseInt($(this).attr("id"))+1) +
+          "</div>" +
+          $(this).find(".surahname").html() +
+          "</div>"
+          );
+      })
+      $("#edit-deck").show();
+    }
   } else {
     alert("Select at least 2 surahs!");
   }
@@ -384,28 +398,19 @@ $("#save-deck").click(function(){
     $(".surah-selection").each(function(){
       deck.surahs.push(parseInt($(this).children().html()));
     })
-    if(decks.filter(e => arraysEqual(e.surahs, deck.surahs)).length > 0){
-      let existing_deck = "";
-      decks.filter(function(e) {
-        if(arraysEqual(e.surahs, deck.surahs)){
-          existing_deck = e.name;
-        }
-      })
-      alert("This collection already exists as " + existing_deck);
-    }else{
-      decks.push(deck);
-      $.ajax({
-        type: "POST",
-        url: 'db.php',
-        data: {user: thisuser, adding_deck: true},
-        success: function(data){
-          //console.log(data);
-          updateDecks();
-          $("#edit-deck").hide();
-        },
-        dataType: 'HTML'
-      });
-    }
+    decks.push(deck);
+    $.ajax({
+      type: "POST",
+      url: 'db.php',
+      data: {user: thisuser, adding_deck: true},
+      success: function(data){
+        //console.log(data);
+        updateDecks();
+        $("#edit-deck").hide();
+      },
+      dataType: 'HTML'
+    });
+    
   }
 })
 
