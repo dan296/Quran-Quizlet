@@ -136,11 +136,8 @@
 <div id="decks">
     <section>
       <div class='setting-title'>Decks</div>
-      <div class='setting-wrap'>
+      <div id="deck-collection" class='setting-wrap'>
             You have no decks
-          <div class='setting-label' style='width: auto;'>Deck 1</div>
-          <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
-          <button class='setting-info-btn' style="margin-right: 5px;"><i class="fas fa-brain"></i> Learn</button>
       </div>
     </section>
     <section>
@@ -155,7 +152,7 @@
 </div>
 <div id="edit-deck" class="perf-center">
   <div class='exit cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
-  <input type="text" placeholder="Deck Name"></input>
+  <input type="text" id="deck_name" placeholder="Deck Name"></input>
   <div id="surah-deck-selection">
     <div class="wrap">
       

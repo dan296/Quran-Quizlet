@@ -1257,7 +1257,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     height: auto;
     padding: 0px;
 }
-#surah-deck-selection button{
+#edit-deck button{
   cursor: pointer;
     background: transparent;
     outline: none;
@@ -1270,7 +1270,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     font-size: 10pt;
     transition: 0.2s ease-in-out;
 }
-#surah-deck-selection button:hover{
+#edit-deck button:hover{
   color: var(--theme-bg);
   background: var(--theme);
 }

@@ -284,7 +284,23 @@ $('#signin-out-btn').click(function(){
 // Decks will look like this:
 // {name: i.e. Juz 29, surahs: [1,4,5,6,9]}
 
-let decks = [];
+let decks = [
+  {
+    name: "Deck 1",
+    surahs: [1, 4, 9];
+  }
+];
+if(decks.length > 0){
+  $("#deck-collection").html("");
+}
+for(var i = 0; i < decks.length; i++){
+$("#deck-collection").append(
+  "<div class='setting-label' style='width: auto;'>"+deck[i].name+"</div>"+
+  "<button class='setting-info-btn'><i class='fa fa-edit'></i> Edit</button>"+
+  "<button class='setting-info-btn' style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>"                
+  )
+}
+
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
     $("#surah-deck-selection").html("");
@@ -306,6 +322,30 @@ $('#add-deck-btn').click(function(){
 })
 $("#save-deck, #edit-deck .exit").click(function(){
   $("#edit-deck").hide();
+})
+
+$("#save-deck").click(function(){
+  if(decks.filter(e => e.name === $("#deck_name").html()).length == 0 || $("#deck_name").html() == ""){
+    alert("Please enter a unique Deck Name");
+  }else{
+    let deck = {
+      name: $("#deck_name").html(),
+      surahs: []
+    }
+    $(".surah-selection").each(function(){
+      deck.surahs.push(parseInt($(this).children().html()));
+    })
+    $.ajax({
+      type: "POST",
+      url: 'db.php',
+      data: {user: thisuser, adding_deck: true},
+      success: function(data){
+        console.log(data);
+      },
+      dataType: 'HTML'
+    });
+  }
+  
 })
 
 function showMain(){
