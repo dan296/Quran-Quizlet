@@ -304,6 +304,7 @@ $("#deck-collection").append(
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
     $("#surah-deck-selection").html("");
+    $("#deck_name").prop("value","");
     $('.added').each(function(){
       $("#surah-deck-selection").append(
         "<div class='surah-selection'>" +
@@ -324,6 +325,7 @@ $('#add-deck-btn').click(function(){
 $('#deck-collection .setting-info-btn').eq(0).click(function(){
   //if($('.added').length > 1){
     $("#surah-deck-selection").html("");
+    $("#deck_name").prop("value", decks[$(this).attr("deck-id")].name);
     //$('.added').each(function(){
     for(var i = 0; i < decks[$(this).attr("deck-id")].surahs.length; i++){
       let srhInd = decks[$(this).attr("deck-id")].surahs[i];
