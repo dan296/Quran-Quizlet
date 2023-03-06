@@ -315,8 +315,8 @@ function updateDecks(){
   $("#deck-collection").append(
     "<div class='setting-wrap'>" +
     "<div class='setting-label' style='width: auto;'>"+decks[i].name+"</div>"+
-    "<button class='setting-info-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
-    "<button class='setting-info-btn' deck-id="+i+" style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>" +               
+    "<button class='setting-info-btn edit-deck-btn' deck-id="+i+"><i class='fa fa-edit'></i> Edit</button>"+
+    "<button class='setting-info-btn learn-deck-btn' deck-id="+i+" style='margin-right: 5px;'><i class='fas fa-brain'></i> Learn</button>" +               
     "</div>"
     )
   }
@@ -359,7 +359,9 @@ $('#add-deck-btn').click(function(){
 
 })
 
-$('#deck-collection .setting-info-btn').eq(0).click(function(){
+$(document).on('click','.edit-deck-btn',function(e) {
+
+//$('#deck-collection .setting-info-btn').eq(0).click(function(){
   //if($('.added').length > 1){
     $("#surah-deck-selection").html("");
     $("#deck_name").prop("value", decks[$(this).attr("deck-id")].name);
@@ -383,7 +385,9 @@ $('#deck-collection .setting-info-btn').eq(0).click(function(){
 
 })
 
-$('#deck-collection .setting-info-btn').eq(1).click(function(){
+
+$(document).on('click','.learn-deck-btn',function(e) {
+//$('#deck-collection .setting-info-btn').eq(1).click(function(){
   let this_deck = decks[$(this).attr("deck-id")];
   $('.surahcont').removeClass('added');
   for(var i = 0; i < this_deck.surahs.length; i++){
