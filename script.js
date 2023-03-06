@@ -356,7 +356,7 @@ $("#edit-deck .exit").click(function(){
 })
 
 $("#save-deck").click(function(){
-  if(decks.filter(e => e.name === $("#deck_name").val()).length > 0 || $("#deck_name").html() == ""){
+  if(decks.filter(e => e.name === $("#deck_name").val()).length > 0 || $("#deck_name").val() == ""){
     alert("Please enter a unique Deck Name");
   }else{
     let deck = {
