@@ -7,7 +7,7 @@
   <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="quran.png">
+<link rel="icon" href="assets/logos-2.png">
 <link rel="apple-touch-icon" sizes="100x100" href="logos-2.png" />
 <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
