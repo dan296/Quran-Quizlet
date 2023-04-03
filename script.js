@@ -1373,7 +1373,7 @@ $('#switchMode').click(function(){
         if(isSun){
             $(this).prop('value',0);
             document.documentElement.style.setProperty('--theme', 'white');
-            document.documentElement.style.setProperty('--theme-bg', '#313131');
+            document.documentElement.style.setProperty('--theme-bg', '#1d1d1d');
             //$('body, footer, #settings').css({'background-color':'#313131','color':'white'});
             $('#buttoncontainer button').removeClass('daybutton');
             $('#buttoncontainer button').addClass('nightbutton');
@@ -1481,7 +1481,7 @@ $("#surahMax, #surahMin").change(function(){ filterSurah() });
 // Settings: displayMode (0: day, 1: night), vocabOn, versesOn, 
 if(!parseInt(localStorage.getItem('displayMode'))){
     document.documentElement.style.setProperty('--theme', 'white');
-    document.documentElement.style.setProperty('--theme-bg', '#313131');
+    document.documentElement.style.setProperty('--theme-bg', '#1d1d1d');
     $('#buttoncontainer button').removeClass('daybutton');
     $('#buttoncontainer button').addClass('nightbutton');
     $('#switchMode').click();
