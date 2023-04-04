@@ -1042,8 +1042,17 @@ footer {
 .guide-info{
   height: calc(100% - 30px);
   overflow-y: scroll;
+  font-weight: 100;
 }
 .guide-title{
+  text-decoration: underline;
+}
+
+.guide-link{
+  font-weight: bold;
+  cursor: pointer;
+}
+.guide-link:hover{
   text-decoration: underline;
 }
 
