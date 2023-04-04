@@ -1043,6 +1043,9 @@ footer {
   height: calc(100% - 30px);
   overflow-y: scroll;
 }
+.guide-title{
+  text-decoration: underline;
+}
 
 /**/
 
