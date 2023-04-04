@@ -1037,8 +1037,12 @@ footer {
   background: var(--theme-bg);
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px var(--theme);
+  padding: 10px;
 }
-
+.guide-info{
+  height: calc(100% - 30px);
+  overflow-y: scroll;
+}
 
 /**/
 

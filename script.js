@@ -1477,10 +1477,16 @@ $("#surahMax, #surahMin").change(function(){ filterSurah() });
 
 /* GUIDE INFO*/
 $(".setting-label .guide").click(function(){
-  $('#guide .setting-title').html($(this).parent().html().split(":")[0]);
-  $('#guide .guide-info').html("Daniyal");
+  var lbl = $(this).parent().html().split(":")[0];
+  $('#guide .setting-title').html(lbl);
+  $('#guide .guide-info').html(guideInfo[lbl.replace(/\s+/g, '')]);
   $('#guide').show();
 })
+
+var guideInfo = {
+  "NightMode": "Switch between night mode and dark mode",
+  "TextSize": "Switch between small and large text size"
+}
 
 /*End Guide Info*/
 
