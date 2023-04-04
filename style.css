@@ -1023,7 +1023,12 @@ footer {
   font-size: 28px;
   left: 5px;
 }
-
+.setting-label .guide {
+    font-size: 8pt;
+    position: absolute;
+    /* right: 0; */
+    margin-left: 3px;
+}
 
 
 /**/
