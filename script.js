@@ -908,13 +908,25 @@ function nextFlashCard() {
       $('.anscont').addClass("sz-en");
       $('#questcont').addClass("sz-ar");
     } else if (mode == 2){
-      $("#flashcard #questcont").html("What is the meaning of the following ayah?<br>"
+      let subMode = Math.random();
+      if(subMode < 0.5){
+        $("#flashcard #questcont").html("What is the meaning of the following ayah?<br>"
         + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
         + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
         + "<div class='mcq-option'>B) " + options[1].translation + "</div>"
         + "<div class='mcq-option'>C) " + options[2].translation + "</div>"
         + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
         );
+      }else{
+        $("#flashcard #questcont").html("What is the location of the following ayah?<br>"
+        + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
+        + "<div class='mcq-option'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + " | " + "</div>" 
+        );
+      }
+      
     }
   } else if (cases == 2) {
     if(mode == 1){
@@ -936,13 +948,24 @@ function nextFlashCard() {
       $('#answer2 .anscont, #questcont').addClass("sz-en");
       $('#answer1 .anscont').addClass("sz-ar");
     } else if (mode == 2){
-      $("#flashcard #questcont").html("Which ayah has the following meaning?<br>"
+      let subMode = Math.random();
+      if(subMode < 0.5){
+        $("#flashcard #questcont").html("Which ayah has the following meaning?<br>"
+          + "<div class='mcq-quest'>" + thisCard.translation + "</div>"
+          + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
+          + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
+          + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
+          + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+          );
+      }else{
+        $("#flashcard #questcont").html("What is the location of the following ayah translation?<br>"
         + "<div class='mcq-quest'>" + thisCard.translation + "</div>"
-        + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
-        + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
-        + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
-        + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+        + "<div class='mcq-option'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + " | " + "</div>"
+        + "<div class='mcq-option'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + " | " + "</div>" 
         );
+      }
     }
   } else if (cases == 3) {
     if(mode == 1){
@@ -964,23 +987,44 @@ function nextFlashCard() {
       $('#answer2 .anscont, #questcont').addClass("sz-en");
       $('#answer1 .anscont').addClass("sz-ar");
     } else if (mode == 2){
-      $("#flashcard #questcont").html("Which ayah has the following location?<br>"
-        + "<div class='mcq-quest'>" + "Chapter " +
-          (parseInt(thisCard.surahNumber) + 1) +
-          "<br/>" +
-          thisCard.surahName +
-          "<br/>Surah " +
-          thisCard.surahTName +
-          "<br/>" +
-          thisCard.surahEngName +
-          "<br/>Ayah No. " +
-          thisCard.ayahNum +
-          "<br/>" + "</div>"
-        + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
-        + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
-        + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
-        + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
-        );
+      let subMode = Math.random();
+      if(subMode < 0.5){
+        $("#flashcard #questcont").html("Which ayah has the following location?<br>"
+          + "<div class='mcq-quest'>" + "Chapter " +
+            (parseInt(thisCard.surahNumber) + 1) +
+            "<br/>" +
+            thisCard.surahName +
+            "<br/>Surah " +
+            thisCard.surahTName +
+            "<br/>" +
+            thisCard.surahEngName +
+            "<br/>Ayah No. " +
+            thisCard.ayahNum +
+            "<br/>" + "</div>"
+          + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
+          + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
+          + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
+          + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+          );
+      }else{
+        $("#flashcard #questcont").html("Which ayah translation has the following location?<br>"
+          + "<div class='mcq-quest'>" + "Chapter " +
+            (parseInt(thisCard.surahNumber) + 1) +
+            "<br/>" +
+            thisCard.surahName +
+            "<br/>Surah " +
+            thisCard.surahTName +
+            "<br/>" +
+            thisCard.surahEngName +
+            "<br/>Ayah No. " +
+            thisCard.ayahNum +
+            "<br/>" + "</div>"
+          + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
+          + "<div class='mcq-option'>B) " + options[1].translation + "</div>"
+          + "<div class='mcq-option'>C) " + options[2].translation + "</div>"
+          + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
+          );
+      }
     }
   } else if (cases == 4) {
     if(mode == 1){
@@ -1485,8 +1529,20 @@ $(".setting-label .guide").click(function(){
 
 var guideInfo = {
   "NightMode": "Switch between night mode and dark mode",
-  "TextSize": "Switch between small and large text size"
+  "TextSize": "Switch between small and large text size",
+  "JuzRange": "Filter the surah options for your deck by selecting a range of juz",
+  "SurahRange": "Filter the surah options for your deck by selecting a range of surahs",
+  "FlashCards": "Test your knowledge of the deck with flash cards. The flash cards will give either the verse or word, translation, or description of the verse. The flash cards will generate depending on the <strong class='guide-link'>Vocabulary</strong> and/or the <strong class='guide-link'>Verses</strong> options.",
+  "MultipleChoice": "Test your knowledge of the deck with multiple choice questions. The questions will ask for either the quranic text of a verse or word, translation of a verse or word, or location of the verse. You will be provided 4 options to select the correct answer. The questions will generate depending on the <strong class='guide-link'>Vocabulary</strong> and/or the <strong class='guide-link'>Verses</strong> options.",
+  "FreeResponse": "Test your knowledge of the deck with free response questions. The questions will ask for either the quranic text of a verse or word, translation of a verse or word, or location of the verse. You will be provided a text field to enter the answer. The questions will generate depending on the <strong class='guide-link'>Vocabulary</strong> and/or the <strong class='guide-link'>Verses</strong> options.",
+  "Vocabulary": "If this option is selected, the quiz type chosen will ask about specific words within the verse range selected.",
+  "Verses": "If this option is selected, the quiz type chosen will ask about verses within the verse range selected.",
+  "VerseRange": "Filter the verses of each surah by selecting a range of verses. The verse range applies to all surahs within the deck."
 }
+
+$('.exit').click(function(){
+  $(this).parent().hide();
+})
 
 /*End Guide Info*/
 
