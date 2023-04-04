@@ -1088,6 +1088,8 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     z-index: 8;
     width: auto;
     text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 .ui-tooltip, .arrow:after {
     background: #3d3d3d;
