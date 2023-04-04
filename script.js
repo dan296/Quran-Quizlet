@@ -1540,7 +1540,7 @@ var guideInfo = {
   "VerseRange": "Filter the verses of each surah by selecting a range of verses. The verse range applies to all surahs within the deck."
 }
 
-$('.guide-link').click(function(){
+$(document).on('click','.guide-link',function(e) {
   var lbl = $(this).html();
   $('#guide .guide-title').html(lbl);
   $('#guide .guide-info').html(guideInfo[lbl.replace(/\s+/g, '')]);
