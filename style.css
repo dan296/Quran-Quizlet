@@ -46,6 +46,21 @@ body::-webkit-scrollbar {
     bottom: 0;
     text-align: center;
 }
+/*Logo*/
+
+.main-logo{
+  height: 100px;
+}
+
+#settings .main-logo{
+  height: 50px;
+  margin: auto;
+  text-align: center;
+  display: block;
+}
+
+/*End Logo */
+
 
 /*Settings*/
 #settings, #decks {

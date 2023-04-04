@@ -54,6 +54,7 @@
   <div class='guide-info'></div>
 </div>
 <div id="settings">
+  <?php include("assets/logos-01.svg") ?>
     <section>
         <div class='setting-title'>Display Settings</div>
         <div class='setting-wrap'>
