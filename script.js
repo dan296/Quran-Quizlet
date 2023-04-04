@@ -1476,7 +1476,7 @@ $("#juzMax, #juzMin").change(function(){ filterJuz() });
 $("#surahMax, #surahMin").change(function(){ filterSurah() });
 
 /* GUIDE INFO*/
-$(".setting-title .guide").click(function(){
+$(".setting-label .guide").click(function(){
   $('#guide .setting-title').html($(this).parent().html().split(":")[0]);
   $('#guide .guide-info').html("Daniyal");
   $('#guide').show();
