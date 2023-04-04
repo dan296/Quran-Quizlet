@@ -69,11 +69,11 @@
             <div class='setting-label'>Password:</div>
             <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
         </div>
-        <div class='setting-wrap'>
+        <div class='setting-wrap' style="margin-bottom: 5px">
             <button id="signin-out-btn">Sign in / Sign up</button>
         </div>
     </section>
-    
+
     <section>
         <div class='setting-title'>Display Settings</div>
         <div class='setting-wrap'>
