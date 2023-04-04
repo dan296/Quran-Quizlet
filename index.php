@@ -55,6 +55,25 @@
 </div>
 <div id="settings">
   <?php include("assets/logos-01.svg") ?>
+  <section>
+        <div class='setting-title'>Profile</div>
+        <div class='setting-wrap setting-profile'>
+            <div class='setting-label'>Email:</div>
+            <div class='setting-info' id="setting-email"></div>
+        </div>
+        <div class='setting-wrap setting-profile'>
+            <div class='setting-label'>User:</div>
+            <div class='setting-info' id="setting-user"></div>
+        </div>
+        <div class='setting-wrap setting-profile'>
+            <div class='setting-label'>Password:</div>
+            <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
+        </div>
+        <div class='setting-wrap'>
+            <button id="signin-out-btn">Sign in / Sign up</button>
+        </div>
+    </section>
+    
     <section>
         <div class='setting-title'>Display Settings</div>
         <div class='setting-wrap'>
@@ -116,26 +135,6 @@
         </div>
     </section>
 
-    <section>
-        <div class='setting-title'>Profile</div>
-        <div class='setting-wrap setting-profile'>
-            <div class='setting-label'>Email:</div>
-            <div class='setting-info' id="setting-email"></div>
-        </div>
-        <div class='setting-wrap setting-profile'>
-            <div class='setting-label'>User:</div>
-            <div class='setting-info' id="setting-user"></div>
-        </div>
-        <div class='setting-wrap setting-profile'>
-            <div class='setting-label'>Password:</div>
-            <button class='setting-info-btn'><i class="fa fa-edit"></i> Edit</button>
-        </div>
-        <div class='setting-wrap'>
-            <button id="signin-out-btn">Sign in / Sign up</button>
-        </div>
-    </section>
-
-    
     <div id="version2">
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
