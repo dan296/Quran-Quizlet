@@ -1478,7 +1478,7 @@ $("#surahMax, #surahMin").change(function(){ filterSurah() });
 /* GUIDE INFO*/
 $(".setting-label .guide").click(function(){
   var lbl = $(this).parent().html().split(":")[0];
-  $('#guide .setting-title').html(lbl);
+  $('#guide .guide-title').html(lbl);
   $('#guide .guide-info').html(guideInfo[lbl.replace(/\s+/g, '')]);
   $('#guide').show();
 })

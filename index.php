@@ -49,7 +49,8 @@
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
 <div id="guide" class="perf-center">
-  <div class='setting-title'></div>
+  <div class='exit cross crossrotate' style=''><div class="innercross"><div class="vert-cross"></div><div class="horiz-cross"></div></div></div>
+  <div class='guide-title'></div>
   <div class='guide-info'></div>
 </div>
 <div id="settings">
