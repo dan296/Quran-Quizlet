@@ -1004,6 +1004,31 @@ footer {
     transform: translate(0px, -170px) scale(0.85);
   }
 }*/
+
+/*Guide & Help CSS*/
+.guide {
+    color: var(--theme);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+}
+
+.guide:hover{
+  opacity: 1;
+}
+
+#help{
+  position: fixed;
+  bottom: 80px;
+  font-size: 28px;
+  left: 5px;
+}
+
+
+
+/**/
+
+
 .innercross {
   position: relative;
   height: 100%; 

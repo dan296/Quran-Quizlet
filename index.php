@@ -46,6 +46,7 @@
   <?php include("includes/surahs.php") ?>
   <!-- END SURAHS-->
 <!-- partial:index.partial.html -->
+<i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
 <div id="settings">
     <section>
