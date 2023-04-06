@@ -217,6 +217,9 @@
             <input type="password" name="password"></input>
           </div>
         </form>
+        <div class="form-group" id="forgotpw">
+          Forgot Password?
+        </div>
       </div>
       <div id="signup" class="welcome-module" style="display: none;">
         <form>

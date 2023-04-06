@@ -146,11 +146,6 @@ function signin(){
               $('#error-text').html(data);
           }else{
             let user_data = JSON.parse(data);
-              //show screen
-              /*userObj = [];
-              if(data!== ""){
-                userObj = JSON.parse(data.replace(/singqt/g, "'"));
-              }*/
               $('#setting-email').html(user_data.email);
               $('#setting-email').attr('title', user_data.email);
               $('#setting-user').html(user_data.user_name);
@@ -158,6 +153,8 @@ function signin(){
               $('#signin-out-btn').html("Sign out");
               $('.setting-profile').show();
               showMain();
+              decks = JSON.parse(user_data.decks);
+              console.log(decks);
           }
         },
         dataType: 'HTML'
@@ -325,7 +322,6 @@ function updateDecks(){
 }
 updateDecks();
 
-
 $('#add-deck-btn').click(function(){
   if($('.added').length > 1){
     let addedSurahs = [];
@@ -422,7 +418,7 @@ $("#save-deck").click(function(){
     $.ajax({
       type: "POST",
       url: 'db.php',
-      data: {user: thisuser, adding_deck: true},
+      data: {user: thisuser, decks: JSON.stringify(decks), adding_deck: true},
       success: function(data){
         //console.log(data);
         updateDecks();
