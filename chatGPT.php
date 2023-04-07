@@ -31,7 +31,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 // Get response
 $response = curl_exec($ch);
+
+echo $response;
+
 // Decode
 $result = json_decode($response);
-echo $result;
+
 ?>
