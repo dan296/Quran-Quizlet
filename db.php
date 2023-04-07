@@ -62,7 +62,7 @@ if(isset($_POST["signing_out"])){
     setcookie ("member_login","",time() - 3600);
 }
 
-if(isset($_POST["adding_deck"])){
+if(isset($_POST["updating_decks"])){
     $user = $_POST["user"];
     $decks = $_POST["decks"];
     if($user !== ""){

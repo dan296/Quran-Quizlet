@@ -153,7 +153,8 @@ function signin(){
               $('#signin-out-btn').html("Sign out");
               $('.setting-profile').show();
               showMain();
-              decks = JSON.parse(user_data.decks);
+              decks = user_data.decks !== "" ? JSON.parse(user_data.decks) : [];
+              updateDecks();
               console.log(decks);
           }
         },
@@ -418,7 +419,7 @@ $("#save-deck").click(function(){
     $.ajax({
       type: "POST",
       url: 'db.php',
-      data: {user: thisuser, decks: JSON.stringify(decks), adding_deck: true},
+      data: {user: thisuser, decks: JSON.stringify(decks), updating_decks: true},
       success: function(data){
         //console.log(data);
         updateDecks();
@@ -434,8 +435,17 @@ $("#delete-deck").click(function(){
   var confirmDelete = confirm("Would you like to delete the following deck: "+ decks[editing_deck_id].name+ "?");
   if(confirmDelete) {
     decks.splice(editing_deck_id, 1);
-    updateDecks();
-    $("#edit-deck .exit").click();
+    $.ajax({
+      type: "POST",
+      url: 'db.php',
+      data: {user: thisuser, decks: JSON.stringify(decks), updating_decks: true},
+      success: function(data){
+        //console.log(data);
+        updateDecks();
+        $("#edit-deck .exit").click();
+      },
+      dataType: 'HTML'
+    });
   }
 })
 
