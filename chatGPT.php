@@ -13,7 +13,7 @@ curl https://api.openai.com/v1/chat/completions \
 $name = 'Book name';
 //Server url
 $url = "https://api.openai.com/v1/chat/completions";
-$apiKey = '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'; // should match with Server key
+$apiKey = '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'; // should match with Server key
 $headers = array(
      'Authorization: Bearer '.$apiKey,
      "Content-Type: application/json",
