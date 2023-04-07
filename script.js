@@ -155,7 +155,6 @@ function signin(){
               showMain();
               decks = user_data.decks !== "" ? JSON.parse(user_data.decks) : [];
               updateDecks();
-              console.log(decks);
           }
         },
         dataType: 'HTML'
