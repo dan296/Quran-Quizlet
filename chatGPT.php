@@ -18,17 +18,17 @@ $headers = array(
      'Authorization: Bearer '.$apiKey,
      "Content-Type: application/json",
 );
-$data = array(
+/*$data = array(
 	"model" => "gpt-3.5-turbo",
 	"messages" => [{"role": "user", "content": "Say this is a test!"}],
 	"temperature" => 0.7
-)
+)*/
 // Send request to Server
 $ch = curl_init($url);
 // To save response in a variable from server, set headers;
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+//curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 // Get response
 $response = curl_exec($ch);
 // Decode
