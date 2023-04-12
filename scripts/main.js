@@ -1423,6 +1423,8 @@ $('#switchMode').click(function(){
             $(this).prop('value',0);
             document.documentElement.style.setProperty('--theme', 'white');
             document.documentElement.style.setProperty('--theme-bg', '#1d1d1d');
+            document.documentElement.style.setProperty('--theme-strong', 'white');
+            document.documentElement.style.setProperty('--theme-bg-strong', 'black');
             //$('body, footer, #settings').css({'background-color':'#313131','color':'white'});
             $('#buttoncontainer button').removeClass('daybutton');
             $('#buttoncontainer button').addClass('nightbutton');
@@ -1430,7 +1432,8 @@ $('#switchMode').click(function(){
             $(this).prop('value',1);
             document.documentElement.style.setProperty('--theme', 'black');
             document.documentElement.style.setProperty('--theme-bg', '#f1f1f1');
-            
+            document.documentElement.style.setProperty('--theme-strong', 'black');
+            document.documentElement.style.setProperty('--theme-bg-strong', 'white');
             //$('body, footer, #settings').css({'background-color':'#f1f1f1','color':'black'});
             $('#buttoncontainer button').removeClass('nightbutton');
             $('#buttoncontainer button').addClass('daybutton');
@@ -1564,6 +1567,8 @@ $('.exit').click(function(){
 if(!parseInt(localStorage.getItem('displayMode'))){
     document.documentElement.style.setProperty('--theme', 'white');
     document.documentElement.style.setProperty('--theme-bg', '#1d1d1d');
+    document.documentElement.style.setProperty('--theme-strong', 'white');
+    document.documentElement.style.setProperty('--theme-bg-strong', 'black');
     $('#buttoncontainer button').removeClass('daybutton');
     $('#buttoncontainer button').addClass('nightbutton');
     $('#switchMode').click();

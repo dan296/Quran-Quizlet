@@ -8,6 +8,8 @@
   --ayah-num-pos-top: 14px; /*Small: 14px, large: 11px*/
   --ayah-num-font-sz: 6pt; /* Small: 6pt, large: 9pt*/
   --trans: var(--trans);
+  --theme-strong: black;
+  --theme-bg-strong: white;
 }
 
 html{
@@ -717,7 +719,7 @@ footer {
   animation: dash 10s infinite, FillIn 10s infinite; /*, altColors 20s infinite*/
   animation-delay: 0.5s, 0.5s, 0.5s;
   transform: translate(0px, -40px);
-  fill: var(--theme-bg);
+  fill: var(--theme-bg-strong);
   stroke: var(--theme);
 }
 .flip {
