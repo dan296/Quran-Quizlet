@@ -4,7 +4,7 @@
 <body>
   <?php include("./assets/logos-01.svg") ?>
   <h3 style="text-align: center; font-size: 14px; font-weight: 100">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
-  <?php include("includes/surahs.php") ?>
+  <?php include("includes/list.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
 <?php include("includes/welcome.php") ?>
