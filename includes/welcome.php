@@ -1,5 +1,5 @@
 <div id='loadingpage'>
-  <h1 style="padding-top: 10px;"><?php include("assets/logos-01.svg") ?></h1>
+  <h1 style="margin-bottom: -10px;"><?php include("assets/logos-01.svg") ?></h1>
   <?php include("./assets/loader.php") ?>
   <div id="welcome-box">
     <div id="welcome-toggle-wrap">
