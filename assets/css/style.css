@@ -1363,7 +1363,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     border: 1px solid;
     border-radius: 5px;
     margin: auto;
-    display: block;
+    display: inline-block;
     height: 30px;
     font-size: 10pt;
     transition: var(--trans);
