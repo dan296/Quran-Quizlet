@@ -131,7 +131,7 @@ $('#guest').click(function(){
 function signin(){
     $.ajax({
         type: "POST",
-        url: 'db.php',
+        url: '../backend/db.php',
         data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check').is(':checked')},
         success: function(data){
           if(data.substring(0,5) == "Error"){
@@ -200,7 +200,7 @@ function signup(){
     }else{
         $.ajax({
             type: "POST",
-            url: 'db.php',
+            url: '../backend/db.php',
             data: {email: $("#signup input[type=email]").val(), user: $("#signup input[type=text]").val(), password: $("#signup input[type=password]").val(), signing_up: true, remember: $('#rem-check input').is(':checked')},
             success: function(data){
               data = data.trim();
@@ -251,7 +251,7 @@ function alphaNumeric(inputtxt)
 function signOut(){
     $.ajax({
         type: "POST",
-        url: 'db.php',
+        url: '../backend/db.php',
         data: {signing_out: true},
         success: function(){
             cookieSet = false;
@@ -417,7 +417,7 @@ $("#save-deck").click(function(){
     decks.push(deck);
     $.ajax({
       type: "POST",
-      url: 'db.php',
+      url: '../backend/db.php',
       data: {user: thisuser, decks: JSON.stringify(decks), updating_decks: true},
       success: function(data){
         //console.log(data);
@@ -436,7 +436,7 @@ $("#delete-deck").click(function(){
     decks.splice(editing_deck_id, 1);
     $.ajax({
       type: "POST",
-      url: 'db.php',
+      url: '../backend/db.php',
       data: {user: thisuser, decks: JSON.stringify(decks), updating_decks: true},
       success: function(data){
         //console.log(data);

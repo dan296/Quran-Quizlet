@@ -1,5 +1,5 @@
 <?php
-
+/*Allow this feature for people who pay: give a few samples (maybe 10?)*/
 /*
 curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
