@@ -7,6 +7,7 @@
   --ayah-num-pos-left: 18px; /*Small: 18px, large: 7px*/
   --ayah-num-pos-top: 14px; /*Small: 14px, large: 11px*/
   --ayah-num-font-sz: 6pt; /* Small: 6pt, large: 9pt*/
+  --trans: 0.2s ease-in-out;
 }
 
 html{
@@ -167,7 +168,7 @@ input:checked + .slider:before {
     display: block;
     height: 100%;
     font-size: 10pt;
-    transition: 0.2s ease-in-out;
+    transition: var(--trans);
 }
 .setting-wrap button:hover{
   color: var(--theme-bg);
@@ -218,16 +219,16 @@ input:checked + .slider:before {
 #version {
   text-align: center;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 10px; 
 }
 #version span {
   font-size: 10pt;
 }
 #version a{
   cursor: pointer;
-  color: white;
+  color: var(--theme);
   opacity: 0.5;
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
   font-weight: 200;
 }
 #version a:hover{
@@ -247,7 +248,7 @@ input:checked + .slider:before {
   cursor: pointer;
   color: var(--theme);
   opacity: 0.5;
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
   font-weight: 200;
 }
 #version2 a:hover{
@@ -398,7 +399,7 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: var(--trans);
 }
 .buttoncontainer {
     border: none;
@@ -424,7 +425,7 @@ footer {
     top: 0;
     cursor: pointer;
     bottom: 0;
-    transition: all 0.2s ease-in-out;
+    transition: var(--trans);
 }
 .buttoncontainer i {
     color: #727272;
@@ -497,7 +498,7 @@ footer {
   margin: 0;
   font-size: 30px;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
 }
 #buttoncontainer button:hover {
   opacity: 1;
@@ -550,7 +551,7 @@ footer {
   height: 40px;
   font-size: var(--en-font-sz);
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
 }
 #checkcont2{
     color: var(--theme);
@@ -574,7 +575,7 @@ footer {
   overflow-y: scroll;
   width: 100%;
   text-align: center;
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
   background: var(--theme-bg);
   padding-top: 30px;
 }
@@ -616,7 +617,7 @@ footer {
   display: inline-block;
   float: left;
   background-color: var(--theme-bg);
-  transition: 0.2s ease-in-out;
+  transition: var(--trans);
 }
 #correct:hover {
   background-color: #41ffa7;
@@ -663,7 +664,7 @@ footer {
 
 /* Multiple Choice MCQ*/
 .mcq-option {
-    transition: 0.2s ease-in-out;
+    transition: var(--trans);
     text-align: left;
     padding: 10px;
     cursor: pointer;
@@ -700,6 +701,7 @@ footer {
 /*SVG STUFF*/
 
 #demo {
+  margin-bottom: -30px;
   /*position: absolute;
   left: 0;
   top: 250px;
@@ -780,7 +782,6 @@ footer {
   overflow: hidden;
   overflow-y: scroll;
   margin: auto;
-  margin-bottom: 30px;
 }
 #welcome-toggle-wrap{
   margin: 10px; 
@@ -796,7 +797,7 @@ footer {
   opacity: 1;
 }
 #welcome-box .separator{
-  background: white;
+  background: var(--theme);
   opacity: 0.5;
 }
 .welcome-toggle-selected{
@@ -823,6 +824,15 @@ footer {
     outline: none;
     color: var(--theme) !important;
     border-bottom: 2px solid;
+}
+#forgotpw{
+  text-align: center;
+  font-size: 10px;
+  cursor: pointer;
+  transition: opacity var(--trans);
+}
+#forgotpw:hover{
+  opacity: 1;
 }
 #guest{
   opacity: 0.5;
@@ -1024,7 +1034,7 @@ footer {
     color: var(--theme);
     cursor: pointer;
     opacity: 0.5;
-    transition: 0.2s ease-in-out;
+    transition: var(--trans);
 }
 
 .guide:hover{
@@ -1339,7 +1349,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     display: block;
     height: 30px;
     font-size: 10pt;
-    transition: 0.2s ease-in-out;
+    transition: var(--trans);
 }
 #edit-deck button:hover{
   color: var(--theme-bg);
