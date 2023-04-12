@@ -1,6 +1,6 @@
 <div id='loadingpage'>
   <h1 style="padding-top: 10px;"><?php include("assets/logos-01.svg") ?></h1>
-  <?php includes("./assets/loader.php") ?>
+  <?php include("./assets/loader.php") ?>
   <div id="welcome-box">
     <div id="welcome-toggle-wrap">
       <div class="welcome-toggle welcome-toggle-selected">Sign In</div><div class="separator"></div><div class="welcome-toggle">Sign Up</div>
