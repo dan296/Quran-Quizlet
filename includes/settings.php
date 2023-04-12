@@ -1,5 +1,5 @@
 <div id="settings">
-  <?php include("../assets/logos-01.svg") ?>
+  <?php include("./assets/logos-01.svg") ?>
   <section>
         <div class='setting-title'>Profile</div>
         <div class='setting-wrap setting-profile'>
@@ -79,7 +79,7 @@
             </div>
         </div>
     </section>
-    
+
     <div id="version2">
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>
     </div>
