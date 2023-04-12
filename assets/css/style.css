@@ -327,6 +327,7 @@ input:checked + .slider:before {
   padding: 7px;
   width: 60px;
   position: absolute;
+  font-weight: 100;
 }
 #surahOrJuz div:first-child{
   left: 0;
