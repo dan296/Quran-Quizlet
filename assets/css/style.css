@@ -260,7 +260,7 @@ input:checked + .slider:before {
 /*End Settings*/
 
 #loadingpage {
-  color: white;
+  color: var(--theme);
   position: fixed;
   z-index: 20;
   top: 0;
@@ -271,8 +271,7 @@ input:checked + .slider:before {
   left: 0;
   right: 0;
   margin: 0;
-  background: linear-gradient(45deg, #000000, #5d4d3d);
-  background: #1d1d1d;
+  background: var(--theme-bg);
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -819,10 +818,10 @@ footer {
 }
 .form-group input{
     width: 100%;
-    background: transparent;
+    background: transparent !important;
     border: 0px;
     outline: none;
-    color: white;
+    color: var(--theme) !important;
     border-bottom: 2px solid;
 }
 #guest{
