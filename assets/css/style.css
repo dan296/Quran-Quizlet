@@ -719,8 +719,8 @@ footer {
   animation: dash 10s infinite, FillIn 10s infinite; /*, altColors 20s infinite*/
   animation-delay: 0.5s, 0.5s, 0.5s;
   transform: translate(0px, -40px);
-  fill: var(--theme-bg-strong);
-  stroke: var(--theme);
+  fill: var(--theme);
+  stroke: var(--theme-bg-strong);
 }
 .flip {
   transform: rotateY(180deg) translate(-250px, -40px);
