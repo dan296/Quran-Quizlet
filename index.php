@@ -6,6 +6,7 @@
   <?php include("includes/surahs.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
+<?php include("includes/welcome.php") ?>
 <?php include("includes/guide.php") ?>
 <?php include("includes/settings.php") ?>
 <?php include("includes/decks.php") ?>
