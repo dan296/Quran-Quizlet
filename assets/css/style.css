@@ -55,7 +55,7 @@ body::-webkit-scrollbar {
   height: 100px;
 }
 
-#settings .main-logo{
+#settings .main-logo, #decks .main-logo{
   height: 50px;
   margin: auto;
   text-align: center;
