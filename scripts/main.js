@@ -711,18 +711,18 @@ $('.menu-button').click(function(){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
       $("#settings").toggleClass("expand-settings");
+      $("#decks").removeClass("expand-settings");
   }else if($(this).children('i').attr('id') == "decks-btn"){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
       $("#decks").toggleClass("expand-settings");
+      $("#settings").removeClass("expand-settings");
   }else{
     $('#goback').click();
     if($("#settings").hasClass("expand-settings")){
-        $("#decks").removeClass("expand-settings");
         $("#settings-btn").click();
     }
     if($("#decks").hasClass("expand-settings")){
-      $("#settings").removeClass("expand-settings");
       $("#decks-btn").click();
     }
     $('.menu-button').removeClass('menu-btn-selected');
