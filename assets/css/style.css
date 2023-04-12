@@ -714,9 +714,11 @@ footer {
   fill-opacity: 0;
   stroke-dasharray: 20000;
   stroke-dashoffset: 20000;
-  animation: dash 10s infinite, FillIn 10s infinite, altColors 20s infinite;
+  animation: dash 10s infinite, FillIn 10s infinite; /*, altColors 20s infinite*/
   animation-delay: 0.5s, 0.5s, 0.5s;
   transform: translate(0px, -40px);
+  fill: var(--theme-bg);
+  stroke: var(--theme);
 }
 .flip {
   transform: rotateY(180deg) translate(-250px, -40px);
