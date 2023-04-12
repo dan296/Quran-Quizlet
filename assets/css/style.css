@@ -1042,6 +1042,7 @@ footer {
     cursor: pointer;
     opacity: 0.5;
     transition: var(--trans);
+    z-index: 7;
 }
 
 .guide:hover{
