@@ -710,13 +710,21 @@ $('.menu-button').click(function(){
   if($(this).children('i').attr('id') == "settings-btn"){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
-      $("#settings").toggleClass("expand-settings");
+      if($(this).hasClass('menu-btn-selected')){
+        $("#settings").addClass("expand-settings");
+      }else{
+        $("#settings").removeClass("expand-settings");
+      }
       $(".decks").hide();
       $(".settings").show();
   }else if($(this).children('i').attr('id') == "decks-btn"){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
-      $("#settings").toggleClass("expand-settings");
+      if($(this).hasClass('menu-btn-selected')){
+        $("#settings").addClass("expand-settings");
+      }else{
+        $("#settings").removeClass("expand-settings");
+      }
       $(".settings").hide();
       $(".decks").show();
   }else{
