@@ -1183,7 +1183,18 @@ function getLevelColor(correct, attempts) {
   }
 }
 
+$("#surahOrJuz div").click(function(){
+  $("#surahOrJuz div").removeClass("sur-juz-selected");
+  $(this).addClass("sur-juz-selected");
 
+  if($(this).html() == "Surah"){
+    $(".surahcont").show();
+    $(".juzcont").hide();
+  }else{
+    $(".juzcont").show();
+    $(".surahcont").hide();
+  }
+})
 
 function filterSearch(){
     if($("#settings").hasClass("expand-settings")){
