@@ -50,16 +50,18 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 /*Logo*/
+
 .main-logo{
+  height: 100px;
+}
+
+#settings .main-logo, #decks .main-logo{
   height: 50px;
   margin: auto;
   text-align: center;
   display: block;
 }
 
-#loadingpage .main-logo{
-  height: 100px;
-}
 /*End Logo */
 
 

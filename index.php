@@ -3,7 +3,7 @@
 <?php include("includes/head.php")?>
 <body>
   <?php include("./assets/logos-01.svg") ?>
-  <h1 style="text-align: center; margin-top: 0; padding-top: 20px; font-size: 20px;">Create a Deck</h1><h3 style="text-align: center; font-size: 14px; font-weight: 100">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
+  <h3 style="text-align: center; font-size: 14px; font-weight: 100">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
   <?php include("includes/surahs.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
