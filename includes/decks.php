@@ -1,12 +1,12 @@
 <div id="decks">
   <?php include("./assets/logos-01.svg") ?>
-    <section>
+    <section class="decks">
       <div class='setting-title'>Decks</div>
       <div id="deck-collection">
             You have no decks
       </div>
     </section>
-    <section>
+    <section class="decks">
       <div class='setting-wrap'>
             <button id="add-deck-btn">+ Add a Deck</button>
         </div>

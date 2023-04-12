@@ -1,6 +1,6 @@
 <div id="settings">
   <?php include("./assets/logos-01.svg") ?>
-  <section>
+  <section class="settings">
         <div class='setting-title'>Profile</div>
         <div class='setting-wrap setting-profile'>
             <div class='setting-label'>Email:</div>
@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="settings">
         <div class='setting-title'>Display Settings</div>
         <div class='setting-wrap'>
             <div class='setting-label'>Night Mode:<i class="fa fa-info-circle guide" aria-hidden="true"></i></div>
@@ -31,7 +31,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="settings">
         <div class='setting-title'>Filter</div>
         <div class='setting-wrap'>
             <div class='setting-label'>Juz Range:<i class="fa fa-info-circle guide" aria-hidden="true"></i></div>
@@ -49,7 +49,7 @@
         </div>
     </section>
     
-    <section>
+    <section class="settings">
         <div class='setting-title'>Quiz Settings</div>
         <div class='setting-wrap'>
             <div class='setting-label'>Flash Cards:<i class="fa fa-info-circle guide" aria-hidden="true"></i></div>
@@ -79,6 +79,20 @@
             </div>
         </div>
     </section>
+
+    <!-- DECKS -->
+    <section class="decks">
+      <div class='setting-title'>Decks</div>
+      <div id="deck-collection">
+            You have no decks
+      </div>
+    </section>
+    <section class="decks">
+      <div class='setting-wrap'>
+            <button id="add-deck-btn">+ Add a Deck</button>
+        </div>
+    </section>
+    <!-- DECKS -->
 
     <div id="version2">
       <a href="https://github.com/dan296" target="_blank"><i class="fab fa-github"></i> <span>v1.0.0</span></a>

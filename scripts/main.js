@@ -711,12 +711,14 @@ $('.menu-button').click(function(){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
       $("#settings").toggleClass("expand-settings");
-      $("#decks").removeClass("expand-settings");
+      $(".decks").hide();
+      $(".settings").show();
   }else if($(this).children('i').attr('id') == "decks-btn"){
       $('.menu-button').not(this).removeClass('menu-btn-selected');
       $(this).toggleClass('menu-btn-selected');
-      $("#decks").toggleClass("expand-settings");
-      $("#settings").removeClass("expand-settings");
+      $("#settings").toggleClass("expand-settings");
+      $(".settings").hide();
+      $(".decks").show();
   }else{
     $('#goback').click();
     if($("#settings").hasClass("expand-settings")){
