@@ -303,8 +303,10 @@ input:checked + .slider:before {
   border-radius: 5px;
   border: 1px solid;
   cursor: pointer;
+  margin-top: 0px !important;
   transition: background-color var(--trans), color var(--trans), border-color var(--trans);
 }
+
 .juzcont{
   display: none;
 }
@@ -313,7 +315,7 @@ input:checked + .slider:before {
   margin: auto;
   text-align: center;
   position: relative;
-  height: 30px;
+  height: 40px;
   width: 120px;
   margin: 10px auto;
 }
