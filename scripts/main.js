@@ -718,10 +718,12 @@ $('.menu-button').click(function(){
   }else{
     $('#goback').click();
     if($("#settings").hasClass("expand-settings")){
+        $("#decks-btn").click();
         $("#settings-btn").click();
     }
     if($("#decks").hasClass("expand-settings")){
-        $("#decks-btn").click();
+      $("#settings-btn").click();
+      $("#decks-btn").click();
     }
     $('.menu-button').removeClass('menu-btn-selected');
     $(this).addClass('menu-btn-selected');
