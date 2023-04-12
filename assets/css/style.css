@@ -303,6 +303,7 @@ input:checked + .slider:before {
   background-color: none;
   border-radius: 5px;
   border: 1px solid;
+  max-width: 280px;
   cursor: pointer;
   margin-top: 0px !important;
   transition: background-color var(--trans), color var(--trans), border-color var(--trans);
@@ -446,6 +447,7 @@ input:checked + .slider:before {
     max-width: 800px;
     height: calc(100vh - 194px);
     overflow-y: scroll;
+    text-align: center;
 }
 footer {
     position: fixed;
@@ -1087,21 +1089,21 @@ footer {
 }
 @media only screen and (max-width: 1745px) {
   .surahcont, .juzcont {
-    width: 28%;
-    margin: 10px 2.66% 10px 2.66%;
+    width: calc(33% - 10px);
+    margin: 10px 5px;
   }
 }
 
 @media only screen and (max-width: 780px) {
   .surahcont, .juzcont {
-    width: 35%;
-    margin: 10px 7% 10px 7%;
+    width: calc(50% - 10px);
+    margin: 10px 5px;
   }
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 630px) {
   .surahcont, .juzcont {
-    width: 50%;
-    margin: 10px 25% 10px 25%;
+    width: 100%;
+    margin: 10px 0px;
   }
 }
 /*@media only screen and (max-width: 350px) {
