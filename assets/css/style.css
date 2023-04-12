@@ -848,6 +848,10 @@ footer {
 #guest:hover, #welcome-enter:hover{
   opacity: 1;
 }
+#welcome-enter:hover{
+  background: var(--theme);
+    color: var(--theme-bg);
+}
 #guest span{
   display: inline-block;
   transform: translate(0px);
