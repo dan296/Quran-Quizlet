@@ -718,11 +718,11 @@ $('.menu-button').click(function(){
   }else{
     $('#goback').click();
     if($("#settings").hasClass("expand-settings")){
-        $("#decks-btn").click();
+        $("#decks-btn").removeClass("expand-settings");
         $("#settings-btn").click();
     }
     if($("#decks").hasClass("expand-settings")){
-      $("#settings-btn").click();
+      $("#settings-btn").removeClass("expand-settings");
       $("#decks-btn").click();
     }
     $('.menu-button').removeClass('menu-btn-selected');
