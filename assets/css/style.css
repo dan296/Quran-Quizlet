@@ -313,6 +313,9 @@ input:checked + .slider:before {
   margin: auto;
   text-align: center;
   position: relative;
+  height: 30px;
+  width: 120px;
+  margin: 10px auto;
 }
 #surahOrJuz div{
   background: var(--theme-bg);
@@ -335,9 +338,16 @@ input:checked + .slider:before {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
-#surahOrJuz div.sur-juz-selected{
+
+#surahOrJuz:hover{
+  opacity: 0.5;
+}
+#surahOrJuz div.sur-juz-selected, #surahOrJuz:hover{
   background: var(--theme);
   color: var(--theme-bg);
+}
+#surahOrJuz div.sur-juz-selected{
+  opacity: 1;
 }
 .surahcont:hover, .juzcont:hover {
   background-color: #00bb64;
