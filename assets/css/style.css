@@ -444,6 +444,7 @@ footer {
     bottom: 0;
     margin: auto;
     text-align: center;
+    transition: var(--trans);
 }
 .menu-button:hover, .menu-btn-selected {
     background: var(--theme);
