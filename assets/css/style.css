@@ -308,6 +308,12 @@ input:checked + .slider:before {
 .juzcont{
   display: none;
 }
+#surahOrJuz{
+  display: block;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
 #surahOrJuz div{
   background: var(--theme-bg);
   color: var(--theme);
@@ -315,8 +321,21 @@ input:checked + .slider:before {
   display: inline-block;
   cursor: pointer;
   transition: var(--trans);
+  padding: 7px;
+  width: 60px;
+  position: absolute;
 }
-.sur-juz-selected{
+#surahOrJuz div:first-child{
+  left: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#surahOrJuz div:last-child{
+  right: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+#surahOrJuz div.sur-juz-selected{
   background: var(--theme);
   color: var(--theme-bg);
 }
@@ -1011,7 +1030,7 @@ footer {
   color: #00bfff;
 }
 
-.surahname, .juzname, {
+.surahname, .juzname {
   font-size: 16px;
   line-height: 40px;
   height: 100%;
