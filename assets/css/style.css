@@ -53,13 +53,15 @@ body::-webkit-scrollbar {
 
 .main-logo{
   height: 100px;
+  margin: auto;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #settings .main-logo, #decks .main-logo{
   height: 50px;
-  margin: auto;
-  text-align: center;
-  display: block;
 }
 
 /*End Logo */
