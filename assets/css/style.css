@@ -295,10 +295,11 @@ input:checked + .slider:before {
 .surahcont, .juzcont {
   position: relative;
   display: inline-block;
-  height: 40px;
+  height: 50px;
+  padding-left: 40px;
   width: 11%;
   margin: 10px 2.833% 10px 2.833%;
-  text-align: center;
+  text-align: left;
   background-color: none;
   border-radius: 5px;
   border: 1px solid;
@@ -362,12 +363,32 @@ input:checked + .slider:before {
 }
 .surah-label, .juz-label {
     position: absolute;
-    right: 0;
+    right: 10px;
+    top: 10px;
     font-size: 10px;
     opacity: 0.65;
     width: 24px;
     height: 24px;
     padding: 5px;
+    background: var(--theme);
+    /* opacity: 0.5; */
+    color: var(--theme-bg);
+    border: 1px solid;
+    border-radius: 4px;
+    transform: rotate(45deg);
+}
+.surah-label span, .juz-label span{
+  left: 0;
+    transform: rotate(-45deg);
+    display: block;
+    text-align: center;
+    position: absolute;
+    width: 24px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+    line-height: 21px;
 }
 
 .added {
