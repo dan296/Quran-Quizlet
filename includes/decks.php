@@ -1,4 +1,5 @@
 <div id="decks">
+  <?php include("./assets/logos-01.svg") ?>
     <section>
       <div class='setting-title'>Decks</div>
       <div id="deck-collection">
