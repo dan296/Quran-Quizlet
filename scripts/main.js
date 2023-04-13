@@ -1700,7 +1700,7 @@ $('#sorter').click(function(){
   $(this).toggleClass("sorted");
   var hasClass = $(this).hasClass("sorted")
   $(".surahcont, .juzcont").sort(function (a, b) {
-    if(hasClass){
+    if(!hasClass){
       return parseInt(a.id) - parseInt(b.id);
     } else {
       return parseInt(b.id) - parseInt(a.id);
