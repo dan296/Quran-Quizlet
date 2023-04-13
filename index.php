@@ -10,6 +10,7 @@
   </div>
   <?php include("includes/list.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
+<i id="sorted" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
 <?php include("includes/welcome.php") ?>
 <?php include("includes/guide.php") ?>

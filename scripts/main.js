@@ -1601,6 +1601,117 @@ if(!parseInt(localStorage.getItem('displayMode'))){
 
 /* END LOCAL STORAGE */
 
+/* CODE FOR CLICK AND DRAG SELECTION */
+function addedHoveredObject(x, y) {
+    $(".surahcont").each(function() {
+      // check if is inside boundaries
+      if (!(
+          x <= $(this).offset().left || x >= $(this).offset().left + $(this).outerWidth() ||
+          y <= $(this).offset().top  || y >= $(this).offset().top + $(this).outerHeight()
+      )) {
+        if($(this).attr("id") !== lastSur){
+            if($(this).hasClass("added")){
+                $(this).removeClass("added");
+            }else{
+                $(this).addClass("added");
+            }
+        }
+        
+        lastSur = $(this).attr("id");
+      }
+    });
+}
+var lastSur = "";
 
+// if you are using jQuery Mobile replace the next line with
+// $("#yourpage").on("pagecreate", function() {
 
+$(document).ready(function() {  
+
+    var active = false;
+
+    /*$(".surahcont").on("mousedown", function(ev) {
+        active = true;
+        //$(".added").removeClass("added"); // clear previous selection
+        ev.preventDefault(); // this prevents text selection from happening
+        if($(this).attr("id") !== lastSur){
+        if($(this).hasClass("added")){
+            $(this).removeClass("added");
+        }else{
+            $(this).addClass("added");
+        }
+        }
+        lastSur = $(this).attr("id");
+        
+    });
+
+    $(".surahcont").on("mousemove", function(ev) {
+        if (active) {
+            if($(this).hasClass("added")){
+                $(this).removeClass("added");
+            }else{
+                $(this).addClass("added");
+            }
+        }
+    });
+
+    $(document).on("mouseup", function(ev) {
+        active = false;
+        setTimeout(function(){
+            lastSur = "";
+        }, 500)
+        
+    });*/
+
+    $(".surahcont").on("touchstart", function(ev) {
+        active = true;
+        //$(".added").removeClass("added"); // clear previous selection
+        ev.preventDefault(); // this prevents text selection from happening
+        if($(this).attr("id") !== lastSur){
+        if($(this).hasClass("added")){
+            $(this).removeClass("added");
+        }else{
+            $(this).addClass("added");
+        }
+        }
+        lastSur = $(this).attr("id");
+    });
+
+    $(".surahcont").on("touchmove", function(ev) {
+        if (active) {
+            var touch = ev.originalEvent.touches[0];
+            addedHoveredObject(touch.clientX, touch.clientY);
+        }
+    });
+
+    $(document).on("touchend", function(ev) {
+        active = false;
+        $('')
+        setTimeout(function(){
+            lastSur = "";
+        }, 500)
+        
+    });
+
+});
+/* CODE FOR CLICK AND DRAG SELECTION */
+//sorting code: ascending/descending
+$('#sorter').click(function(){
+  $(this).toggleClass("sorted");
+  var hasClass = $(this).hasClass("sorted")
+  $(".surahcont, .juzcont").sort(function (a, b) {
+    if(hasClass){
+      return parseInt(a.id) - parseInt(b.id);
+    } else {
+      return parseInt(b.id) - parseInt(a.id);
+    }
+    
+}).each(function () {
+    var elem = $(this);
+    elem.remove();
+    $(elem).appendTo(".my-new-list");
+});
+})
+
+//sorting code: ascending/descending
     
