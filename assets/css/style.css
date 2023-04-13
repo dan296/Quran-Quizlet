@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
 }
 #header {
   display: grid;
-  grid-template-columns: : 1fr 1fr 4fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
   max-width: 600px;
   top: 0;
   margin: auto;
