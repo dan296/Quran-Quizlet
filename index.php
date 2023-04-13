@@ -2,13 +2,15 @@
 <html lang="en" >
 <?php include("includes/head.php")?>
 <body>
+<div id="header">
   <?php include("./assets/logos-01.svg") ?>
-  <h3 style="text-align: center; font-size: 14px; font-weight: 100">Add Surahs You Know to Your Deck</h3><div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
+  <div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
   <div id="surahOrJuz">
     <div class="sur-juz-selected">Surah</div>
     <div>Juz</div>
   </div>
-  <?php include("includes/list.php") ?>
+</div>
+<?php include("includes/list.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <i id="sorted" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
 <div id='veil'></div>
