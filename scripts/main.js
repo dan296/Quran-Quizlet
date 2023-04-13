@@ -1607,7 +1607,7 @@ function addedHoveredObject(x, y) {
       // check if is inside boundaries
       if (!(
           x <= $(this).offset().left || x >= $(this).offset().left + $(this).outerWidth() ||
-          y <= $(this).offset().top  || y >= $(this).offset().top + $(this).outerHeight()
+          y <= $(this).offset().top - $(document).scrollTop()  || y >= $(this).offset().top + $(this).outerHeight()  - $(document).scrollTop()
       )) {
         if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
@@ -1663,7 +1663,7 @@ $(document).ready(function() {
         
     });*/
 
-    $(".surahcont").on("touchstart", function(ev) {
+    $(document).on("touchstart",".surahcont", function(ev) {
         active = true;
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
@@ -1677,14 +1677,14 @@ $(document).ready(function() {
         lastSur = $(this).attr("id");
     });
 
-    $(".surahcont").on("touchmove", function(ev) {
+    $(document).on("touchmove",".surahcont", function(ev) {
         if (active) {
             var touch = ev.originalEvent.touches[0];
             addedHoveredObject(touch.clientX, touch.clientY);
         }
     });
 
-    $(document).on("touchend", function(ev) {
+    $(document).on("touchend",".surahcont", function(ev) {
         active = false;
         $('')
         setTimeout(function(){
