@@ -1160,7 +1160,7 @@ footer {
 @media only screen and (max-width: 630px) {
   .surahcont, .juzcont {
     width: 100%;
-    margin: 10px 0px;
+    margin: 10px auto;
   }
 }
 @media only screen and (max-width: 400px) {
