@@ -327,8 +327,8 @@ input:checked + .slider:before {
 }
 
 .juzcont{
-  padding-top: 43px;
-  height: 78px;
+  padding-top: 68px;
+    height: 100px;
 }
 #surahOrJuz{
   text-align: center;
@@ -410,7 +410,7 @@ input:checked + .slider:before {
   width: 16px;
   padding: 0px;
   font-size: 6pt;
-  top: 47px;
+  top: 71px;
   left: 14px;
 }
 .juz-mini-label:nth-child(2n-1){
@@ -1148,7 +1148,8 @@ footer {
 .juzcont .surah-name-trans:nth-child(3n-2){
   position: absolute;
   left: 30px;
-  top: 27px;
+  top: 44px;
+  width: 70%;
 }
 .juzcont .surah-name-trans span{
   position: absolute;
