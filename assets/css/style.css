@@ -1099,7 +1099,7 @@ footer {
 }
 
 .surahname, .juzname {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 35px;
   height: 55%;
   font-weight: 200;
@@ -1123,7 +1123,6 @@ footer {
 .juzname{
   position: absolute;
   top: 4px;
-  left: 40px;
 }
 .surah-name-trans {
     font-weight: 100;
