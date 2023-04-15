@@ -329,7 +329,6 @@ input:checked + .slider:before {
   display: none;
   padding-top: 43px;
   height: 78px;
-  padding-left: 60px;
 }
 #surahOrJuz{
   text-align: center;
@@ -1113,10 +1112,7 @@ footer {
   line-height: 1;
   left: 5px;
 }
-.juzcont{
-  padding-top: 43px;
-  height: 78px;
-}
+
 .juzcont .surahname span{
   position: absolute;
   right: 0;
@@ -1155,7 +1151,7 @@ footer {
     right: 45px;
     top: 8px;
 }
-.juzcont .surah-name=ar{
+.juzcont .surah-name-ar{
   font-size: 8pt;
   top: 14px;
 }
