@@ -327,7 +327,6 @@ input:checked + .slider:before {
 }
 
 .juzcont{
-  display: none;
   padding-top: 43px;
   height: 78px;
 }

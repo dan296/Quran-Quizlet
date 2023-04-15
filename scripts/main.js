@@ -20,6 +20,9 @@ var ayahLengths = [];
 //var versesindiv = []; coming from versesindiv.js
 var last_length = 0;
 
+// Initializing states:
+$(".juzcont").hide();
+
 //used for ayah lengths
 function removeObjectWithId(arr, id) {
   const objWithIdIndex = arr.findIndex((obj) => obj.id === id);
