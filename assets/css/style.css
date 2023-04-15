@@ -404,7 +404,7 @@ input:checked + .slider:before {
   padding: 0px;
   font-size: 6pt;
   top: 47px;
-  left: 40px;
+  left: 14px;
 }
 .juz-mini-label:nth-child(2n-1){
   left: auto;
@@ -1107,10 +1107,11 @@ footer {
 .juzcont .surahname{
   font-size: 10px;
   border-bottom: 1px solid;
-  width: calc(100% - 34px);
+  width: calc(100% - 37px);
   height: 38%;
   position: relative;
   line-height: 1;
+  left: 5px;
 }
 .juzcont{
   padding-top: 43px;
