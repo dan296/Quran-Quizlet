@@ -1686,7 +1686,6 @@ $(document).ready(function() {
 
     $(document).on("touchend",".surahcont", function(ev) {
         active = false;
-        $('')
         setTimeout(function(){
             lastSur = "";
         }, 500)
