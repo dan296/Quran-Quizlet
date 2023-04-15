@@ -397,6 +397,9 @@ input:checked + .slider:before {
     border-radius: 4px;
     transform: rotate(45deg);
 }
+.juz-main-label{
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
 .juz-mini-label{
   height: 16px;
   width: 16px;
@@ -1128,7 +1131,7 @@ footer {
     height: 45%;
 }
 .juzcont .surah-name-trans{
-  width: calc(100% - 34px);
+  width: calc(100% - 37px);
   position: relative;
   font-size: 6pt;
   left: 5px;
