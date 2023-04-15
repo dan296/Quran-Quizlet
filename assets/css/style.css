@@ -311,6 +311,7 @@ input:checked + .slider:before {
 .surahcont, .juzcont {
   position: relative;
   display: inline-block;
+  touch-action: none;
   height: 50px;
   padding-left: 28px;
   width: 11%;
