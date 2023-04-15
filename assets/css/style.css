@@ -1558,4 +1558,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   .my-new-list{
     margin-top: 100px;
   }
+  #sorter{
+    top: 90px;
+  }
 }
