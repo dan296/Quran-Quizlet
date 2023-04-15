@@ -399,7 +399,10 @@ input:checked + .slider:before {
 }
 .juz-main-label{
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  transform: none;
+  width: 22px;
 }
+
 .juz-mini-label{
   height: 16px;
   width: 16px;
@@ -427,6 +430,11 @@ input:checked + .slider:before {
 }
 .juz-mini-label span{
   line-height: 11px;
+}
+.juz-main-label span{
+  transform: none;
+  width: 21px;
+  top: 1px;
 }
 .added {
   background-color: #00bfff;
