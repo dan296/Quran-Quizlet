@@ -1158,34 +1158,7 @@ footer {
   font-size: 8pt;
   top: 14px;
 }
-@media only screen and (max-width: 1745px) {
-  .surahcont, .juzcont {
-    width: calc(33% - 10px);
-    margin: 10px 5px;
-  }
-}
 
-@media only screen and (max-width: 780px) {
-  .surahcont, .juzcont {
-    width: calc(50% - 10px);
-    margin: 10px 5px;
-  }
-}
-@media only screen and (max-width: 630px) {
-  .surahcont, .juzcont {
-    width: 100%;
-    margin: 10px auto;
-  }
-}
-@media only screen and (max-width: 400px) {
-  #search{
-    grid-row: 2;
-    grid-column: 1 / 6;
-  }
-  .my-new-list{
-    margin-top: 100px;
-  }
-}
 /*@media only screen and (max-width: 350px) {
   #demo{
     transform: translate(0px, -40px) scale(2);
@@ -1558,4 +1531,31 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   background: var(--theme);
 }
 
+@media only screen and (max-width: 1745px) {
+  .surahcont, .juzcont {
+    width: calc(33% - 10px);
+    margin: 10px 5px;
+  }
+}
 
+@media only screen and (max-width: 780px) {
+  .surahcont, .juzcont {
+    width: calc(50% - 10px);
+    margin: 10px 5px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .surahcont, .juzcont {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #search{
+    grid-row: 2;
+    grid-column: 1 / 6;
+  }
+  .my-new-list{
+    margin-top: 100px;
+  }
+}
