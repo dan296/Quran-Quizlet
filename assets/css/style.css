@@ -401,8 +401,9 @@ input:checked + .slider:before {
 .juz-main-label{
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   transform: none;
-  width: 21px;
+  width: 24px;
   border: none;
+  height: 26px;
 }
 
 .juz-mini-label{
@@ -435,8 +436,7 @@ input:checked + .slider:before {
 }
 .juz-main-label span{
   transform: none;
-  width: 21px;
-  top: 2px;
+  top: 3px;
 }
 .added {
   background-color: #00bfff;
@@ -1213,6 +1213,7 @@ footer {
   bottom: 80px;
   font-size: 28px;
   left: 5px;
+  z-index: 4;
 }
 #sorter{
   right: 10px;
