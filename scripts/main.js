@@ -1701,9 +1701,9 @@ $('#sorter').click(function(){
   var hasClass = $(this).hasClass("sorted")
   $(".surahcont, .juzcont").sort(function (a, b) {
     if(!hasClass){
-      return parseInt(a.id) - parseInt(b.id);
+      return parseInt(a.id.replace("juz","")) - parseInt(b.id.replace("juz",""));
     } else {
-      return parseInt(b.id) - parseInt(a.id);
+      return parseInt(b.id.replace("juz","")) - parseInt(a.id.replace("juz",""));
     }
     
 }).each(function () {
