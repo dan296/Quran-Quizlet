@@ -1766,4 +1766,21 @@ $('#sorter').click(function(){
 })
 
 //sorting code: ascending/descending
+
+//Select all/deselect all
+$("#selector").click(function(){
+  if(!$(this).hasClass("deselect-all")){
+    $(".surahcont").each(function(){
+      $(this).addClass("added");
+      addSurah($(this).attr("id"));
+    })
+  }else{
+    $(".surahcont").each(function(){
+      $(this).removeClass("added");
+      addSurah($(this).attr("id"));
+    })
+  }
+
+  $(this).toggleClass("deselect-all");
+})
     

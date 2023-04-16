@@ -9,3 +9,4 @@
   </div>
 </div>
 <i id="sorter" title="sort" class="fa fa-chevron-down guide" aria-hidden="true"></i>
+<i id="selector" title="sort" class="fa fa-asterisk" aria-hidden="true"></i>
