@@ -1656,8 +1656,9 @@ function addedHoveredObject(x, y) {
                 $(this).addClass("added");
                 numSurahsInDeck++;
             }
+            addSurah($(this).attr("id"));
         }
-        addSurah($(this).attr("id"));
+        
         lastSur = $(this).attr("id");
       }
     });
@@ -1682,8 +1683,8 @@ $(document).ready(function() {
               $(this).addClass("added");
               numSurahsInDeck++;
           }
+          addSurah($(this).attr("id"));
         }
-        addSurah($(this).attr("id"));
         lastSur = $(this).attr("id");
         
     });
@@ -1698,8 +1699,8 @@ $(document).ready(function() {
                 $(this).addClass("added");
                 numSurahsInDeck++;
             }
+            addSurah($(this).attr("id"));
           }
-          addSurah($(this).attr("id"));
           lastSur = $(this).attr("id");
         }
     });
@@ -1724,8 +1725,8 @@ $(document).ready(function() {
               $(this).addClass("added");
               numSurahsInDeck++;
           }
+          addSurah($(this).attr("id"));
         }
-        addSurah($(this).attr("id"));
         lastSur = $(this).attr("id");
     });
 
