@@ -580,7 +580,7 @@ function addSurah(surahId){
           var twowidth = $('#ayahsym'+k).width();
           $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
         }*/
-      } else {
+      //} else {
         var remove = false;
         var surah = endata[thisid].englishNameTranslation;
         flashCards = flashCards.filter(function(el) {
@@ -625,7 +625,7 @@ function addSurah(surahId){
           }
         }
         
-      }
+     // }
     };
 
 function readSurah(surahId){
