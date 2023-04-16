@@ -1314,6 +1314,7 @@ footer {
     top: var(--ayah-num-pos-top);
     bottom: 0;
     height: 20px;
+    font-family: initial;
 }
 .ayah-text {
     font-size: var(--ar-font-sz);
