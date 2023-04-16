@@ -2,20 +2,9 @@
 <html lang="en" >
 <?php include("includes/head.php")?>
 <body>
-<div id="header-wrap">
-<div id="header">
-  <?php include("./assets/logos-01.svg") ?>
-  <div id="search"><i class="fa fa-search"></i><input type="text" placeholder="Ex: Mankind" onkeyup="filterSearch()"></div>
-  <div id="surahOrJuz">
-    <div class="sur-juz-selected">Surah</div>
-    <div>Juz</div>
-  </div>
-</div>
-</div>
+<?php include("includes/header.php") ?>
 <?php include("includes/list.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
-<i id="sorter" title="sort" class="fa fa-chevron-down guide" aria-hidden="true"></i>
-<div id='veil'></div>
 <?php include("includes/welcome.php") ?>
 <?php include("includes/guide.php") ?>
 <?php include("includes/settings.php") ?>
