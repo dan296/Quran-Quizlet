@@ -5,8 +5,8 @@
   --ar-font-sz: 20pt; /* for arabic: small = 20pt, large = 30pt, english: 12pt, 16pt*/
   --ar-font-fam: "Uthmani Hafs";
   --en-font-sz: 12pt;
-  --ayah-num-pos-left: 18px; /*Small: 18px, large: 7px*/
-  --ayah-num-pos-top: 14px; /*Small: 14px, large: 11px*/
+  --ayah-num-pos-left: 20px; /*Small: 18px, large: 7px*/
+  --ayah-num-pos-top: 12px; /*Small: 14px, large: 11px*/
   --ayah-num-font-sz: 6pt; /* Small: 6pt, large: 9pt*/
   --trans: 0.2s ease-in-out;
   --theme-strong: black;

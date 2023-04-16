@@ -812,12 +812,7 @@ $('.menu-button').click(function(){
       $(".decks").show();
   }else{
     $('#goback').click();
-    if($("#settings").hasClass("expand-settings")){
-        $("#settings-btn").click();
-    }
-    if($("#decks").hasClass("expand-settings")){
-      $("#decks-btn").click();
-    }
+    $("#settings, #decks").removeClass("expand-settings")
     $('.menu-button').removeClass('menu-btn-selected');
     $(this).addClass('menu-btn-selected');
     
@@ -1555,15 +1550,15 @@ $('#textSize').click(function(){
         document.documentElement.style.setProperty('--ar-font-sz', '20pt');
         document.documentElement.style.setProperty('--en-font-sz', '12pt');
         document.documentElement.style.setProperty('--ayah-num-font-sz', '6pt');
-        document.documentElement.style.setProperty('--ayah-num-pos-left', '18px');
-        document.documentElement.style.setProperty('--ayah-num-pos-top', '14px');
+        document.documentElement.style.setProperty('--ayah-num-pos-left', '20px');
+        document.documentElement.style.setProperty('--ayah-num-pos-top', '12px');
     } else {
         //$(this).prop('value',1);
         document.documentElement.style.setProperty('--ar-font-sz', '30pt');
         document.documentElement.style.setProperty('--en-font-sz', '16pt');
         document.documentElement.style.setProperty('--ayah-num-font-sz', '9pt');
-        document.documentElement.style.setProperty('--ayah-num-pos-left', '7px');
-        document.documentElement.style.setProperty('--ayah-num-pos-top', '11px');
+        document.documentElement.style.setProperty('--ayah-num-pos-left', '10px');
+        document.documentElement.style.setProperty('--ayah-num-pos-top', '9px');
         
     }
     localStorage.setItem('textSize', $(this).val());
