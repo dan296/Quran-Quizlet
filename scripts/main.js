@@ -1673,11 +1673,11 @@ $(document).ready(function() {
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
         if($(this).attr("id") !== lastSur){
-        if($(this).hasClass("added")){
-            $(this).removeClass("added");
-        }else{
-            $(this).addClass("added");
-        }
+          if($(this).hasClass("added")){
+              $(this).removeClass("added");
+          }else{
+              $(this).addClass("added");
+          }
         }
         lastSur = $(this).attr("id");
         
@@ -1685,11 +1685,13 @@ $(document).ready(function() {
 
     $(".surahcont").on("mousemove", function(ev) {
         if (active) {
+          if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
                 $(this).removeClass("added");
             }else{
                 $(this).addClass("added");
             }
+          }
         }
     });
 
