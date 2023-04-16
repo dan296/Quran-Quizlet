@@ -524,18 +524,12 @@ function getWordOptionsfromAyah(card){
 }
 
 var ardata = [];
-  $('.surahcont').click(function(){
+function addSurah(surahId){
         if($("#settings").hasClass("expand-settings")){
           // had it blocked for some reason?
             $("#settings-btn").click();
         }
-      var thisid = this.id;      
-      if (thisid == undefined) {
-        thisid = e.target.parentElement.id;
-      }
-      if (thisid == undefined) {
-        thisid = e.target.parentElement.parentElement.id;
-      }
+      var thisid = surahId;
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
         if(endata[thisid].ayahs.length > parseInt($('#verseMax').val())){
            // $('#verseMax').val(data[thisid].ayahs.length);
@@ -632,10 +626,52 @@ var ardata = [];
         }
         
       }
-    });
+    };
+
+/*$(".surahcont, .juzcont").click(function(e){
+  if ($(this).hasClass("added")) {
+    lastaction = false;
+    $(this).removeClass("added");
+    numSurahsInDeck--;
+    $(this + " .cross").removeClass("crossrotate");
+  } else {
+    lastaction = true;
+    $(this).addClass("added");
+    numSurahsInDeck++;
+    $(this + " .cross").addClass("crossrotate");
+  }
+
+  if (e.shiftKey) {
+    var lastselectidind = parseInt(lastselectid);
+    var thisidind = parseInt($(this).attr("id"));
+    var startind;
+    var finalind;
+    if (lastselectidind > thisidind) {
+      startind = thisidind;
+      finalind = lastselectidind;
+    } else {
+      startind = lastselectidind;
+      finalind = thisidind;
+    }
+    for (var i = startind + 1; i < finalind; i++) {
+      if (lastaction) {
+        if ($("#" + i).hasClass("added")) {
+        } else {
+          $("#" + i).click();
+        }
+      } else {
+        if ($("#" + i).hasClass("added")) {
+          $("#" + i).click();
+        }
+      }
+    }
+  } else {
+    lastselectid = thisid;
+  }
 
 
-window.addEventListener(
+})*/
+/*window.addEventListener(
   "click",
   function(e) {
     var thisid = e.target.id;
@@ -693,7 +729,7 @@ window.addEventListener(
     }
   },
   false
-);
+);*/
 
 /*$("#startdeck").click(function(e) {
   e.preventDefault();
@@ -1628,12 +1664,11 @@ var lastSur = "";
 
 // if you are using jQuery Mobile replace the next line with
 // $("#yourpage").on("pagecreate", function() {
-/* REmove this one if need to re enable!!
 $(document).ready(function() {  
 
     var active = false;
 
-    /*$(".surahcont").on("mousedown", function(ev) {
+    $(".surahcont").on("mousedown", function(ev) {
         active = true;
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
@@ -1664,7 +1699,7 @@ $(document).ready(function() {
             lastSur = "";
         }, 500)
         
-    });* and put slash here
+    });
 
     $(document).on("touchstart",".surahcont", function(ev) {
         active = true;
