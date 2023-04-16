@@ -61,15 +61,7 @@ body::-webkit-scrollbar {
   display: grid;
   grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
   max-width: 600px;
-  top: 0;
   margin: auto;
-  left: 0;
-  position: fixed;
-  right: 0;
-  background: var(--theme-bg);
-  text-align: center;
-  z-index: 1;
-  justify-content: center;
 }
 
 #header .main-logo{
@@ -327,8 +319,8 @@ input:checked + .slider:before {
 }
 
 .juzcont{
-  padding-top: 68px;
-    height: 100px;
+  padding-top: 74px;
+  height: 105px;
 }
 #surahOrJuz{
   text-align: center;
@@ -410,7 +402,7 @@ input:checked + .slider:before {
   width: 16px;
   padding: 0px;
   font-size: 6pt;
-  top: 71px;
+  top: 76px;
   left: 14px;
 }
 .juz-mini-label:nth-child(2n-1){
@@ -1115,6 +1107,14 @@ footer {
   height: 55%;
   font-weight: 200;
 }
+.juzname-wrap{
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 4fr 4fr;
+  position: absolute;
+  top: 15px;
+  display: grid;
+  width: calc(100% - 62px);
+}
 .juzcont .surahname{
   font-size: 10px;
   border-bottom: 1px solid;
@@ -1130,9 +1130,8 @@ footer {
   right: 0;
 }
 .juzname{
-  position: absolute;
-  top: 16px;
-  width: 49%;
+  padding-top: 1px;
+  display: inline-block;
   line-height: 1;
 }
 .surah-name-trans {
@@ -1142,16 +1141,16 @@ footer {
     height: 45%;
 }
 .juzcont .surah-name-trans{
-  width: calc(100% - 37px);
-  position: relative;
-  font-size: 6pt;
-  left: 5px;
+    width: 100%;
+    position: relative;
+    font-size: 6pt;
+    display: block;
+    grid-column: 1 / 4;
 }
 .juzcont .surah-name-trans:nth-child(3n-2){
-  position: absolute;
-  left: 30px;
-  top: 44px;
-  width: 70%;
+  position: absolute; */
+  left: 5px;
+  width: calc(100% - 37px);
 }
 .juzcont .surah-name-trans span{
   position: absolute;
@@ -1168,7 +1167,12 @@ footer {
 }
 .juzcont .surah-name-ar{
   font-size: 8pt;
-  top: 14px;
+  grid-row: 1;
+  grid-column: 2 / 3;
+  position: unset;
+  text-align: right;
+  padding-right: 4px;
+  white-space: nowrap;
 }
 
 /*@media only screen and (max-width: 350px) {
