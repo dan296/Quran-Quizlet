@@ -11,8 +11,8 @@
     </div>
   
 </div><div class="separator"></div><div class="buttoncontainer">
-    <div class="menu-button" title="free response">
-  <i id="startdeck2" class="daybutton fas fa-spell-check"></i>
+    <div class="menu-button" title="read">
+  <i id="startdeck2" class="daybutton fas fa-book-open"></i>
     </div>
   
 </div><div class="separator"></div><div class="buttoncontainer" style="

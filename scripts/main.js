@@ -1665,7 +1665,7 @@ $(document).ready(function() {
         }, 500)
         
     });*/
-
+/* REmove this one if need to re enable!!
     $(document).on("touchstart",".surahcont", function(ev) {
         active = true;
         //$(".added").removeClass("added"); // clear previous selection
