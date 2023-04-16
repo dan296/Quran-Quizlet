@@ -525,62 +525,14 @@ function getWordOptionsfromAyah(card){
 
 var ardata = [];
 function addSurah(surahId){
-        if($("#settings").hasClass("expand-settings")){
-          // had it blocked for some reason?
-            $("#settings-btn").click();
-        }
+  $("#settings").removeClass("expand-settings");
+  $("#settings-btn, #decks-btn").parent().removeClass("menu-btn-selected");
       var thisid = surahId;
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
         if(endata[thisid].ayahs.length > parseInt($('#verseMax').val())){
            // $('#verseMax').val(data[thisid].ayahs.length);
             //$('#verseMin').attr("max",data[thisid].ayahs.length);
         }
-      
-      /*var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
-      bismillah += "<br/><br/>"
-      if(thisid == 8){
-          bismillah = "<br/>";
-      }
-      if (studying) {
-          
-        /*$('#showsurah h1').html("Chapter " +
-            (parseInt(thisid)+1));
-        $("#surahcont").html(
-          endata[thisid].name +
-            "<br/>Surah " +
-            endata[thisid].englishName +
-            "<br/>" +
-            endata[thisid].englishNameTranslation +
-            "<br/>" +
-            bismillah +
-            "<i id='surah-audio' class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+")'></i>"
-        );
-
-        for (var k = 0; k < endata[thisid].ayahs.length; k++) {
-          if(k == 0){
-              endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
-          }
- 
-          var newtext = "";
-          for(var m = 0; m < versesindiv[parseInt(thisid)+1].verses[k].words.length-1; m++){
-              newtext += "<span  onclick='playAudio(0,0,\""+versesindiv[parseInt(thisid)+1].verses[k].words[m].audio_url+"\")' title='"+versesindiv[parseInt(thisid)+1].verses[k].words[m].translation.text+"'>"+versesindiv[parseInt(thisid)+1].verses[k].words[m].text+"</span>"
-          }
-          newtext+="<span class='ayahsym' title='Ayah " + (k+1) + "' id='ayahsym"+k+"'>۝<div class='ayahnum' id='ayahnum"+k+"'>"+arabicDigits(k+1) +"</div></span>";
-          
-          
-          
-          $("#surahcont").append("<div class='ayah-wrap'><div class='ayah-text'>"+
-            newtext +
-               "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
-              endata[thisid].ayahs[k].text +
-              "</div></div>"
-          );
-
-          var onewidth = $('#ayahnum'+k).width();
-          var twowidth = $('#ayahsym'+k).width();
-          $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
-        }*/
-      //} else {
         var remove = false;
         var surah = endata[thisid].englishNameTranslation;
         flashCards = flashCards.filter(function(el) {
@@ -624,9 +576,7 @@ function addSurah(surahId){
             );
           }
         }
-        
-     // }
-    };
+      };
 
 function readSurah(surahId){
   let thisid = surahId;
