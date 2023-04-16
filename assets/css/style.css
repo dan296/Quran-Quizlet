@@ -1148,7 +1148,6 @@ footer {
     grid-column: 1 / 4;
 }
 .juzcont .surah-name-trans:nth-child(3n-2){
-  position: absolute;
   left: 5px;
   width: calc(100% - 37px);
 }
