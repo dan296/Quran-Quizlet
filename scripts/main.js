@@ -1658,7 +1658,6 @@ function addedHoveredObject(x, y) {
             }
         }
         addSurah($(this).attr("id"));
-        
         lastSur = $(this).attr("id");
       }
     });
@@ -1683,8 +1682,8 @@ $(document).ready(function() {
               $(this).addClass("added");
               numSurahsInDeck++;
           }
-          addSurah($(this).attr("id"));
         }
+        addSurah($(this).attr("id"));
         lastSur = $(this).attr("id");
         
     });
@@ -1700,7 +1699,8 @@ $(document).ready(function() {
                 numSurahsInDeck++;
             }
           }
-          addSurah($(this).attr("id"))
+          addSurah($(this).attr("id"));
+          lastSur = $(this).attr("id");
         }
     });
 
@@ -1717,15 +1717,15 @@ $(document).ready(function() {
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
         if($(this).attr("id") !== lastSur){
-        if($(this).hasClass("added")){
-            $(this).removeClass("added");
-            numSurahsInDeck--;
-        }else{
-            $(this).addClass("added");
-            numSurahsInDeck++;
+          if($(this).hasClass("added")){
+              $(this).removeClass("added");
+              numSurahsInDeck--;
+          }else{
+              $(this).addClass("added");
+              numSurahsInDeck++;
+          }
         }
-        addSurah($(this).attr("id"))
-        }
+        addSurah($(this).attr("id"));
         lastSur = $(this).attr("id");
     });
 
