@@ -628,7 +628,7 @@ function addSurah(surahId){
       }
     };
 
-function readSurah(suradId){
+function readSurah(surahId){
   let thisid = surahId;
   $('#showsurah h1').html("Chapter " + (parseInt(thisid)+1));
   $("#surahcont").html(
