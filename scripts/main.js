@@ -536,7 +536,7 @@ function addSurah(surahId){
             //$('#verseMin').attr("max",data[thisid].ayahs.length);
         }
       
-      var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
+      /*var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
       bismillah += "<br/><br/>"
       if(thisid == 8){
           bismillah = "<br/>";
@@ -630,6 +630,12 @@ function addSurah(surahId){
 
 function readSurah(surahId){
   let thisid = surahId;
+  var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
+  bismillah += "<br/><br/>"
+  if(thisid == 8){
+      bismillah = "<br/>";
+  }
+
   $('#showsurah h1').html("Chapter " + (parseInt(thisid)+1));
   $("#surahcont").html(
     endata[thisid].name +
