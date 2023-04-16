@@ -1240,7 +1240,7 @@ footer {
   transform: rotate(180deg);
 }
 #selector{
-  right: 20px;
+  right: 35px;
 }
 .deselect-all{
   text-decoration: line-through;
