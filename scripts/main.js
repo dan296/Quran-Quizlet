@@ -1774,11 +1774,13 @@ $("#selector").click(function(){
       $(this).addClass("added");
       addSurah($(this).attr("id"));
     })
+    $(this).attr("title","deselect all");
   }else{
     $(".surahcont").each(function(){
       $(this).removeClass("added");
       addSurah($(this).attr("id"));
     })
+    $(this).attr("title","select all");
   }
 
   $(this).toggleClass("deselect-all");
