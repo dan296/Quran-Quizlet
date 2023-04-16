@@ -1664,7 +1664,7 @@ $(document).ready(function() {
             lastSur = "";
         }, 500)
         
-    });*/
+    });* and put slash here
 
     $(document).on("touchstart",".surahcont", function(ev) {
         active = true;
