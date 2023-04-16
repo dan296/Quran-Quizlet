@@ -1667,15 +1667,49 @@ $(document).ready(function() {
         ev.preventDefault(); // this prevents text selection from happening
         if($(this).attr("id") !== lastSur){
           if($(this).hasClass("added")){
+              lastaction = false;
               $(this).removeClass("added");
               numSurahsInDeck--;
           }else{
+              lastaction = true;
               $(this).addClass("added");
               numSurahsInDeck++;
           }
           addSurah($(this).attr("id"));
         }
         lastSur = $(this).attr("id");
+
+
+        /* SHIFT CAPABILITY:*/
+        if (ev.shiftKey) {
+          var lastselectidind = parseInt(lastselectid);
+          var thisidind = parseInt(lastSur);
+          var startind;
+          var finalind;
+          if (lastselectidind > thisidind) {
+            startind = thisidind;
+            finalind = lastselectidind;
+          } else {
+            startind = lastselectidind;
+            finalind = thisidind;
+          }
+          for (var i = startind + 1; i < finalind; i++) {
+            if (lastaction && !$("#" + i).hasClass("added")) {
+                $('#'+i).addClass('added');
+                numSurahsInDeck++;
+                addSurah(i);
+            } else if ($("#" + i).hasClass("added")) {
+                $('#'+i).removeClass('added');
+                numSurahsInDeck--;
+                addSurah(i);
+            }            
+          }
+        } else {
+          lastselectid = lastSur;
+        }
+        /**/
+
+
         
     });
 
