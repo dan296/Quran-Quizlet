@@ -1317,6 +1317,7 @@ footer {
 }
 .ayah-text {
     font-size: var(--ar-font-sz);
+    font-family: var(--ar-font-fam);
     text-align: right;
     padding-top: 40px;
     border-top: 1px solid #3d3d3d;
