@@ -1628,7 +1628,7 @@ var lastSur = "";
 
 // if you are using jQuery Mobile replace the next line with
 // $("#yourpage").on("pagecreate", function() {
-
+/* REmove this one if need to re enable!!
 $(document).ready(function() {  
 
     var active = false;
@@ -1665,7 +1665,7 @@ $(document).ready(function() {
         }, 500)
         
     });*/
-/* REmove this one if need to re enable!!
+
     $(document).on("touchstart",".surahcont", function(ev) {
         active = true;
         //$(".added").removeClass("added"); // clear previous selection
