@@ -1242,7 +1242,7 @@ footer {
 #selector{
   right: 20px;
 }
-.delect-all{
+.deselect-all{
   text-decoration: line-through;
 }
 .setting-label .guide {
