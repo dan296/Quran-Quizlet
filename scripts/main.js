@@ -543,7 +543,7 @@ function addSurah(surahId){
       }
       if (studying) {
           
-        $('#showsurah h1').html("Chapter " +
+        /*$('#showsurah h1').html("Chapter " +
             (parseInt(thisid)+1));
         $("#surahcont").html(
           endata[thisid].name +
@@ -579,7 +579,7 @@ function addSurah(surahId){
           var onewidth = $('#ayahnum'+k).width();
           var twowidth = $('#ayahsym'+k).width();
           $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
-        }
+        }*/
       } else {
         var remove = false;
         var surah = endata[thisid].englishNameTranslation;
@@ -627,6 +627,44 @@ function addSurah(surahId){
         
       }
     };
+
+function readSurah(suradId){
+  let thisid = surahId;
+  $('#showsurah h1').html("Chapter " + (parseInt(thisid)+1));
+  $("#surahcont").html(
+    endata[thisid].name +
+      "<br/>Surah " +
+      endata[thisid].englishName +
+      "<br/>" +
+      endata[thisid].englishNameTranslation +
+      "<br/>" +
+      bismillah +
+      "<i id='surah-audio' class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+")'></i>"
+  );
+
+  for (var k = 0; k < endata[thisid].ayahs.length; k++) {
+    if(k == 0){
+        endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
+    }
+
+    var newtext = "";
+    for(var m = 0; m < versesindiv[parseInt(thisid)+1].verses[k].words.length-1; m++){
+        newtext += "<span  onclick='playAudio(0,0,\""+versesindiv[parseInt(thisid)+1].verses[k].words[m].audio_url+"\")' title='"+versesindiv[parseInt(thisid)+1].verses[k].words[m].translation.text+"'>"+versesindiv[parseInt(thisid)+1].verses[k].words[m].text+"</span>"
+    }
+    newtext+="<span class='ayahsym' title='Ayah " + (k+1) + "' id='ayahsym"+k+"'>۝<div class='ayahnum' id='ayahnum"+k+"'>"+arabicDigits(k+1) +"</div></span>";
+
+    $("#surahcont").append("<div class='ayah-wrap'><div class='ayah-text'>"+
+      newtext +
+         "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
+        endata[thisid].ayahs[k].text +
+        "</div></div>"
+    );
+
+    var onewidth = $('#ayahnum'+k).width();
+    var twowidth = $('#ayahsym'+k).width();
+    $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
+  }
+}
 
 /*$(".surahcont, .juzcont").click(function(e){
   if ($(this).hasClass("added")) {
@@ -886,8 +924,9 @@ function nextFlashCard() {
   var thisCard = nextCard ? nextCard : newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   ayahnumindex = thisCard.ayahNum - 1;
   currentCard = thisCard;
-  $("#" + thisCard.surahNumber).click(); // USED TO SHOW SURAH!!! -- can later fix by creating function to show
-  $("#" + thisCard.surahNumber).click(); // NEED TO DOUBLE CLICK TO KEEP IN LIST!!!
+  readSurah(thisCard.surahNumber);
+  //$("#" + thisCard.surahNumber).click(); // USED TO SHOW SURAH!!! -- can later fix by creating function to show
+  //$("#" + thisCard.surahNumber).click(); // NEED TO DOUBLE CLICK TO KEEP IN LIST!!!
 
   $("#flashcard").css(
     "border-color",
