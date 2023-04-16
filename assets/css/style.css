@@ -63,6 +63,13 @@ body::-webkit-scrollbar {
   max-width: 600px;
   margin: auto;
 }
+#header-wrap{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--theme-bg);
+  z-index: 1;
+}
 
 #header .main-logo{
   height: 28px;
