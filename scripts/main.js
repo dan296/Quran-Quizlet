@@ -1661,7 +1661,7 @@ $(document).ready(function() {
 
     var active = false;
 
-    $(".surahcont").on("mousedown", function(ev) {
+    $(document).on("mousedown",".surahcont", function(ev) {
         active = true;
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
@@ -1679,7 +1679,7 @@ $(document).ready(function() {
         
     });
 
-    $(".surahcont").on("mousemove", function(ev) {
+    $(document).on("mousemove",".surahcont", function(ev) {
         if (active) {
           if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
@@ -1695,7 +1695,7 @@ $(document).ready(function() {
         }
     });
 
-    $(document).on("mouseup", function(ev) {
+    $(document).on("mouseup",".surahcont",  function(ev) {
         active = false;
         setTimeout(function(){
             lastSur = "";
