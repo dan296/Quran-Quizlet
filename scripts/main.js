@@ -1697,6 +1697,11 @@ $(document).ready(function() {
 
     $(document).on("mouseup",".surahcont",  function(ev) {
         active = false;
+        if(numSurahsInDeck == 114){
+          $("#selector").addClass("deselect-all");
+        }else{
+          $("#selector").removeClass("deselect-all");
+        }
         setTimeout(function(){
             lastSur = "";
         }, 500)
@@ -1729,6 +1734,11 @@ $(document).ready(function() {
 
     $(document).on("touchend",".surahcont", function(ev) {
         active = false;
+        if(numSurahsInDeck == 114){
+          $("#selector").addClass("deselect-all");
+        }else{
+          $("#selector").removeClass("deselect-all");
+        }
         setTimeout(function(){
             lastSur = "";
         }, 500)
