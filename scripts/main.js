@@ -1698,7 +1698,7 @@ $(document).ready(function() {
                 $('#'+i).addClass('added');
                 numSurahsInDeck++;
                 addSurah(i);
-            } else if ($("#" + i).hasClass("added")) {
+            } else if (!lastaction && $("#" + i).hasClass("added")) {
                 $('#'+i).removeClass('added');
                 numSurahsInDeck--;
                 addSurah(i);
