@@ -1651,10 +1651,13 @@ function addedHoveredObject(x, y) {
         if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
                 $(this).removeClass("added");
+                numSurahsInDeck--;
             }else{
                 $(this).addClass("added");
+                numSurahsInDeck++;
             }
         }
+        addSurah($(this).attr("id"));
         
         lastSur = $(this).attr("id");
       }
@@ -1675,9 +1678,12 @@ $(document).ready(function() {
         if($(this).attr("id") !== lastSur){
           if($(this).hasClass("added")){
               $(this).removeClass("added");
+              numSurahsInDeck--;
           }else{
               $(this).addClass("added");
+              numSurahsInDeck++;
           }
+          addSurah($(this).attr("id"));
         }
         lastSur = $(this).attr("id");
         
@@ -1688,10 +1694,13 @@ $(document).ready(function() {
           if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
                 $(this).removeClass("added");
+                numSurahsInDeck--;
             }else{
                 $(this).addClass("added");
+                numSurahsInDeck++;
             }
           }
+          addSurah($(this).attr("id"))
         }
     });
 
@@ -1710,9 +1719,12 @@ $(document).ready(function() {
         if($(this).attr("id") !== lastSur){
         if($(this).hasClass("added")){
             $(this).removeClass("added");
+            numSurahsInDeck--;
         }else{
             $(this).addClass("added");
+            numSurahsInDeck++;
         }
+        addSurah($(this).attr("id"))
         }
         lastSur = $(this).attr("id");
     });
