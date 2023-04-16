@@ -1486,13 +1486,13 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
 
 @font-face {
     font-family: 'Uthmani Hafs';
-    src: url('../QQ/assets/fonts/Uthmani_Hafs.eot'), /* IE9 Compat Modes */
-    url('../QQ/assets/fonts/Uthmani_Hafs.eot?') format('embedded-opentype'), /* IE6-IE8 */
-    url('../QQ/assets/fonts/Uthmani_Hafs.otf') format('otf'),
-    url('../QQ/assets/fonts/Uthmani_Hafs.woff') format('woff'),
-    url('../QQ/assets/fonts/Uthmani_Hafs.woff2') format('woff2'),
-    url('../QQ/assets/fonts/Uthmani_Hafs.ttf') format('truetype'),
-    url('../QQ/assets/fonts/Uthmani_Hafs.svg') format('svg'); /* Legacy iOS */
+    src: url('../fonts/Uthmani_Hafs.eot'), /* IE9 Compat Modes */
+    url('../fonts/Uthmani_Hafs.eot?') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Uthmani_Hafs.otf') format('otf'),
+    url('../fonts/Uthmani_Hafs.woff') format('woff'),
+    url('../fonts/Uthmani_Hafs.woff2') format('woff2'),
+    url('../fonts/Uthmani_Hafs.ttf') format('truetype'),
+    url('../fonts/Uthmani_Hafs.svg') format('svg'); /* Legacy iOS */
 }
 
 /* Edit Deck */
