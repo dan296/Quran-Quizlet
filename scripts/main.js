@@ -1771,14 +1771,18 @@ $('#sorter').click(function(){
 $("#selector").click(function(){
   if(!$(this).hasClass("deselect-all")){
     $(".surahcont").each(function(){
+      if($(this).css("display") !== "none"){
       $(this).addClass("added");
       addSurah($(this).attr("id"));
+    }
     })
     $(this).attr("title","deselect all");
   }else{
     $(".surahcont").each(function(){
+      if($(this).css("display") !== "none"){
       $(this).removeClass("added");
       addSurah($(this).attr("id"));
+    }
     })
     $(this).attr("title","select all");
   }
