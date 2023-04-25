@@ -524,12 +524,14 @@ function getWordOptionsfromAyah(card){
 }
 
 var ardata = [];
-function addSurah(surahId){
+function addSurah(surahId, juz){
   $("#settings").removeClass("expand-settings");
   $("#settings-btn, #decks-btn").parent().removeClass("menu-btn-selected");
       var thisid = surahId;
+      let loopEnd = (juz && juz.end.surah == surahId) ? juz.end.ayah : endata[thisid].ayahs.length;
+      let loopStart = (juz && juz.start.surah == surahId) ? juz.start.ayah : endata[thisid].ayahs.length;
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
-        if(endata[thisid].ayahs.length > parseInt($('#verseMax').val())){
+        if(loopEnd > parseInt($('#verseMax').val())){
            // $('#verseMax').val(data[thisid].ayahs.length);
             //$('#verseMin').attr("max",data[thisid].ayahs.length);
         }
@@ -546,7 +548,7 @@ function addSurah(surahId){
         if(remove){
           removeObjectWithId(ayahLengths, thisid.toString());
         }else{
-          ayahLengths.push({id: thisid, length: endata[thisid].ayahs.length});
+          ayahLengths.push({id: thisid, length: loopEnd});
         }
         if(ayahLengths.length > 0){
           $('#verseMin, #verseMax').attr("max",Math.max(...ayahLengths.map(o => o.length)));
@@ -559,7 +561,7 @@ function addSurah(surahId){
         }
 
         if (!remove) {
-          for (var k = 0; k < endata[thisid].ayahs.length; k++) {
+          for (var k = loopStart; k < loopEnd; k++) {
             if(k == 0){
               endata[thisid].ayahs[k].arab_text = endata[thisid].ayahs[k].arab_text.replace("بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ", "")
             }
@@ -1654,28 +1656,52 @@ function addedHoveredObject(x, y) {
     });
 }
 var lastSur = "";
-
 // if you are using jQuery Mobile replace the next line with
 // $("#yourpage").on("pagecreate", function() {
 $(document).ready(function() {  
 
     var active = false;
 
-    $(document).on("mousedown",".surahcont", function(ev) {
+    $(document).on("mousedown",".surahcont, .juzcont", function(ev) {
         active = true;
+        let isJuz = $(this).hasClass("juzcont");
+        let surAdd = 1;
+        let beginSurah = parseInt($(this).attr("id"));
+        let endSurah = beginSurah;
+        if(isJuz){
+          beginSurah = parseInt($(this).children(".juz-mini-label").eq(0).children("span").html());
+          endSurah = parseInt($(this).children(".juz-mini-label").eq(1).children("span").html());
+          surAdd = endSurah - beginSurah + 1;
+        }
+
+        //Remove existing surahs or juzs currently selected (need to clear deck as well)
+        if(isJuz && $(".surahcont.added").length > 0){
+          $('.surahcont').removeClass("added");
+          $(".surahcont").each(function(){
+              addSurah($(this).attr("id"));
+          })
+        }else if($(".juzcont.added").length > 0){
+          $('.juzcont').removeClass("added");
+          $(".juzcont").each(function(){
+              //addSurah($(this).attr("id"));
+          })
+        }
         //$(".added").removeClass("added"); // clear previous selection
         ev.preventDefault(); // this prevents text selection from happening
         if($(this).attr("id") !== lastSur){
           if($(this).hasClass("added")){
               lastaction = false;
               $(this).removeClass("added");
-              numSurahsInDeck--;
+              numSurahsInDeck -= surAdd;
           }else{
               lastaction = true;
               $(this).addClass("added");
-              numSurahsInDeck++;
+              numSurahsInDeck += surAdd;
           }
-          addSurah($(this).attr("id"));
+          for(var i = beginSurah; i <= endSurah; i++){
+            addSurah(i);
+          }
+          
         }
         lastSur = $(this).attr("id");
 
