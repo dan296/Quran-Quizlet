@@ -528,8 +528,8 @@ function addSurah(surahId, juz){
   $("#settings").removeClass("expand-settings");
   $("#settings-btn, #decks-btn").parent().removeClass("menu-btn-selected");
       var thisid = surahId;
-      let loopEnd = (juz && juz.end.surah == surahId) ? juz.end.ayah : endata[thisid].ayahs.length;
-      let loopStart = (juz && juz.start.surah == surahId) ? juz.start.ayah : endata[thisid].ayahs.length;
+      let loopEnd = (juz && juz.end && juz.end.surah == surahId) ? juz.end.ayah : endata[thisid].ayahs.length;
+      let loopStart = (juz && juz.start && juz.start.surah == surahId) ? juz.start.ayah : 0;
         //NEED TO ADD LOGIC FOR CHANGING MAX ATTR
         if(loopEnd > parseInt($('#verseMax').val())){
            // $('#verseMax').val(data[thisid].ayahs.length);
@@ -1668,10 +1668,15 @@ $(document).ready(function() {
         let surAdd = 1;
         let beginSurah = parseInt($(this).attr("id"));
         let endSurah = beginSurah;
+        let beginAyah = 0;
+        let endAyah = 0;
         if(isJuz){
           beginSurah = parseInt($(this).children(".juz-mini-label").eq(0).children("span").html());
           endSurah = parseInt($(this).children(".juz-mini-label").eq(1).children("span").html());
           surAdd = endSurah - beginSurah + 1;
+          let ayahRange = $(this).children(".surah-name-trans").html().split("<span>");
+          beginAyah = parseInt(ayahRange[0]);
+          endAyah = parseInt(ayahRange[1].split("</span>")[0]);
         }
 
         //Remove existing surahs or juzs currently selected (need to clear deck as well)
@@ -1699,7 +1704,13 @@ $(document).ready(function() {
               numSurahsInDeck += surAdd;
           }
           for(var i = beginSurah; i <= endSurah; i++){
-            addSurah(i);
+            let tjuz = {};
+            if(i == beginSurah && isJuz){
+              tjuz = {surah: i, start: beginAyah};
+            }else if (i == endSurah && isJuz){
+              tjuz = {surah: i, end: endAyah}
+            }
+            addSurah(i, tjuz);
           }
           
         }
