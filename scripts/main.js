@@ -601,7 +601,7 @@ function readSurah(surahId){
   );*/
   $("#surahcont").html(bismillah);
   $(".surah-details").eq(0).html(endata[thisid].englishName);
-  $(".surah-details").eq(1).html(endata[thisid].ayahs.length + "ayahs");
+  $(".surah-details").eq(1).html(endata[thisid].ayahs.length + " ayahs");
 
   for (var k = 0; k < endata[thisid].ayahs.length; k++) {
     if(k == 0){
