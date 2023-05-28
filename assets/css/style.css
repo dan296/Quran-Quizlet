@@ -373,6 +373,9 @@ input:checked + .slider:before {
 #surahOrJuz div.sur-juz-selected{
   opacity: 1;
 }
+#surahcont{
+    padding-top: 70px;
+}
 .surahcont:hover, .juzcont:hover {
   background-color: #00bb64;
   border-color: #00bb64;
@@ -1055,13 +1058,15 @@ footer {
 }
 
 #surah-audio{
-  position: relative;
-    /* top: -3px; */
-    float: left;
-    top: -55px;
-    left: 35px;
+  position: absolute;
+  top: 22px;
+  left: 15px;
 }
-
+#surah-details{
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
 #veil {
   position: fixed;
   z-index: 1;
@@ -1288,7 +1293,7 @@ footer {
   width: 100%;
 }
 .ayah-wrap {
-    padding-left: 35px;
+    padding-left: 15px;
     padding-right: 15px;
     transition: background-color var(--trans);
 }

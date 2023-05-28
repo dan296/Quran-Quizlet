@@ -589,7 +589,7 @@ function readSurah(surahId){
   }
 
   $('#showsurah h1').html("Chapter " + (parseInt(thisid)+1));
-  $("#surahcont").html(
+  /*$("#surahcont").html(
     endata[thisid].name +
       "<br/>Surah " +
       endata[thisid].englishName +
@@ -598,7 +598,10 @@ function readSurah(surahId){
       "<br/>" +
       bismillah +
       "<i id='surah-audio' class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+")'></i>"
-  );
+  );*/
+  $("#surahcont").html(bismillah);
+  $(".surah-details").eq(0).html(endata[thisid].englishName);
+  $(".surah-details").eq(1).html(endata[thisid].ayahs.length + "ayahs");
 
   for (var k = 0; k < endata[thisid].ayahs.length; k++) {
     if(k == 0){
