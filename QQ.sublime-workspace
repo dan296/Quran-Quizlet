@@ -1,0 +1,391 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dese",
+				"deselect-all"
+			],
+			[
+				"menu-",
+				"menu-btn-selected"
+			],
+			[
+				"Uth",
+				"Uthmani_Hafs"
+			],
+			[
+				"them",
+				"theme-bg"
+			],
+			[
+				"inli",
+				"inline-block\tdisplay"
+			],
+			[
+				"last_v",
+				"last_verse_diff"
+			],
+			[
+				"onClic",
+				"onClickNav"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"dis",
+				"displayData"
+			],
+			[
+				"Age",
+				"AgeSelector"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"timer_ti",
+				"timer_time_left"
+			],
+			[
+				"main",
+				"maintainTeamsTemp"
+			],
+			[
+				"maint",
+				"maintainTeams"
+			],
+			[
+				"displ",
+				"displayclock"
+			],
+			[
+				"team",
+				"teammembers1"
+			],
+			[
+				"teamm",
+				"teammembers2"
+			],
+			[
+				"te",
+				"teammembers2"
+			],
+			[
+				"teamme",
+				"teammembers1"
+			],
+			[
+				"setting",
+				"settingUpNewGame"
+			],
+			[
+				"review",
+				"reviewWords"
+			],
+			[
+				"user",
+				"user_email"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"git",
+			"git status"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/owner/Documents/Daniyal/Web Projects/git repos/QQ"
+	],
+	"file_history":
+	[
+		"/Users/owner/Documents/Daniyal/Web Projects/QQ/sublime-project.sublime-workspace",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/assets/css/style.css",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/scripts/main.js",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/flashcard.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/scripts/tooltip.js",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/head.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/decks.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/settings.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/assets/loader.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/backend/db.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/list.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/juzs.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/surahs.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/footer.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/header.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/script.js",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/welcome.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/includes/guide.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/db.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/db_connection.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/chatGPT.php",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/style.css",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/assets/logos-01.svg",
+		"/Users/owner/Documents/Web Projects/git repos/QQ/index.html",
+		"/Users/owner/Documents/GameNight+/Version Control/gamenight/beta/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/css/gameplay-update.css",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/inputConstructors.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/gridlock/play/play.js",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/ajax/nearby.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/fishbowl/play/play.js",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/gridlock/play/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/error_log",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/tobedeleted.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/color copy.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/color.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/home.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/js/index.js",
+		"/Volumes/Samsung_T5/Daniyal Career/Controls/MES & SCADA/Ignition/Sample Scripts/Reading and Writing OPC tags",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/play/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/play-01/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/includes/gamepage.dat",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/gamepagestructure.dat",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/GradeBook/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/GradeBook/.gitignore",
+		"/Users/owner/Documents/Web Projects/git repos/GradeBook/db_connection.php",
+		"/Users/owner/Documents/Web Projects/git repos/FFL-Stats/README.md",
+		"/Users/owner/Documents/Web Projects/git repos/FFL-Stats/dist/style.css",
+		"/Users/owner/anonymuslim/.gitignore",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/Darts/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/Darts/error_log",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/Darts/cpanel.yml",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/Darts/cpanel.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/couch/play/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/version_info.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/gameplay.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/couch/play/play.js",
+		"/Users/owner/Downloads/includes/gamepage.dat",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/video.dat",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/setup.dat",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/play-01/backup.php",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/play/newGame.php",
+		"/Users/owner/Documents/Web Projects/git repos/Darts/clearSession.php",
+		"/Users/owner/Documents/Web Projects/git repos/FFL-Stats/dist/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/FFL-Stats/dist/script.js",
+		"/Users/owner/anonymuslim/src/components/create-post.component.js",
+		"/Users/owner/anonymuslim/src/index.js",
+		"/Users/owner/Documents/Web Projects/git repos/fflstats/dist/index.php",
+		"/Users/owner/Documents/Web Projects/git repos/fflstats/.cpanel.yml",
+		"/Users/owner/Documents/Web Projects/newffl/fflstats/.cpanel.yml",
+		"/Users/owner/Documents/Web Projects/fflstats/fflrepo/.cpanel.yml",
+		"/Users/owner/Documents/Web Projects/newffl/dist/index.php",
+		"/Users/owner/Documents/Web Projects/newffl/dist/.cpanel.yml",
+		"/Users/owner/anonymuslim/src/components/navbar.component.js",
+		"/Users/owner/anonymuslim/src/components/posts-list.component.js",
+		"/Users/owner/anonymuslim/src/components/post-components/all-posts.component.js",
+		"/Users/owner/anonymuslim/src/index.css",
+		"/Users/owner/anonymuslim/src/components/home.component.js",
+		"/Users/owner/anonymuslim/src/App.js",
+		"/Users/owner/anonymuslim/backend/routes/posts.js",
+		"/Users/owner/anonymuslim/backend/models/post.model.js",
+		"/Users/owner/anonymuslim/src/components/create-user.component.js",
+		"/Users/owner/anonymuslim/src/components/post-components/featured-post.component.js",
+		"/Users/owner/anonymuslim/src/components/story.component.js",
+		"/Users/owner/anonymuslim/src/components/contact.component.js",
+		"/Users/owner/anonymuslim/src/components/mission.component.js",
+		"/Users/owner/anonymuslim/public/index.html",
+		"/Users/owner/anonymuslim/src/data.ts",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/fishbowl/play/error_log",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/fishbowl/play/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/fishbowl/play/updateGame.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/js/gameplay.js",
+		"/Users/owner/anonymuslim/src/components/edit-post.component.js",
+		"/Users/owner/anonymuslim/backend/server.js",
+		"/Users/owner/anonymuslim/backend/routes/users.js",
+		"/Users/owner/anonymuslim/backend/models/user.model.js",
+		"/Users/owner/anonymuslim/backend/models/posts.model.js",
+		"/Users/owner/anonymuslim/backend/.env",
+		"/Users/owner/Documents/Web Projects/freelancer/assets/img/SVG/Asset 1.svg",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/fishbowl/play/play.css",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/debugger/SQLtest.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/updateGamePost.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/contact.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/contact/index.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/contact/oldindex.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/js/getlocation.js",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/svg/fishbowl/taboo-new-05.svg",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/svg/fishbowl/taboo.svg",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/guide.php",
+		"/Users/owner/My-Web-Development/README.md",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/updateGamePre.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/css/index-update.css",
+		"/Users/owner/Desktop/plus-load-01.svg",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/joingame.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/profile/addToAvatar.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/profile/changeAvatar.php",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/js/gamepage-update.js",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/svg/vinfo_plus_tokens.svg",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/bullseye/setup.dat",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/includes/gamepage.dat",
+		"/private/var/folders/gl/dgmj9pwn2j387nb_kh8p8d740000gn/T/ch.sudo.cyberduck/1417ccc0-8284-4cb2-b5c7-338048376854/beta/bullseye/index.php"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "QQ.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 182.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
