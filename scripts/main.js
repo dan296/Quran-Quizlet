@@ -1700,10 +1700,12 @@ $(document).ready(function() {
           if($(this).hasClass("added")){
               lastaction = false;
               $(this).removeClass("added");
+              $(this).child("cross").removeClass("crossrotate");
               numSurahsInDeck -= surAdd;
           }else{
               lastaction = true;
               $(this).addClass("added");
+              $(this).child("cross").addClass("crossrotate");
               numSurahsInDeck += surAdd;
           }
           for(var i = beginSurah; i <= endSurah; i++){
@@ -1736,10 +1738,12 @@ $(document).ready(function() {
           for (var i = startind + 1; i < finalind; i++) {
             if (lastaction && !$("#" + i).hasClass("added")) {
                 $('#'+i).addClass('added');
+                $('#'+i).child("cross").removeClass("crossrotate");
                 numSurahsInDeck++;
                 addSurah(i);
             } else if (!lastaction && $("#" + i).hasClass("added")) {
                 $('#'+i).removeClass('added');
+                $('#'+i).child("cross").addClass("crossrotate");
                 numSurahsInDeck--;
                 addSurah(i);
             }            
@@ -1758,9 +1762,11 @@ $(document).ready(function() {
           if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
                 $(this).removeClass("added");
+                $(this).child("cross").removeClass("crossrotate");
                 numSurahsInDeck--;
             }else{
                 $(this).addClass("added");
+                $(this).child("cross").addClass("crossrotate");
                 numSurahsInDeck++;
             }
             addSurah($(this).attr("id"));
@@ -1789,9 +1795,11 @@ $(document).ready(function() {
         if($(this).attr("id") !== lastSur){
           if($(this).hasClass("added")){
               $(this).removeClass("added");
+              $(this).child("cross").removeClass("crossrotate");
               numSurahsInDeck--;
           }else{
               $(this).addClass("added");
+              $(this).child("cross").addClass("crossrotate");
               numSurahsInDeck++;
           }
           addSurah($(this).attr("id"));
@@ -1847,6 +1855,7 @@ $("#selector").click(function(){
     $(".surahcont").each(function(){
       if($(this).css("display") !== "none" && !$(this).hasClass("added")){
         $(this).addClass("added");
+        $(this).child("cross").addClass("crossrotate");
         addSurah($(this).attr("id"));
       }
     })
@@ -1855,6 +1864,7 @@ $("#selector").click(function(){
     $(".surahcont").each(function(){
       if($(this).css("display") !== "none" && $(this).hasClass("added")){
         $(this).removeClass("added");
+        $(this).child("cross").removeClass("crossrotate");
         addSurah($(this).attr("id"));
       }
     })
