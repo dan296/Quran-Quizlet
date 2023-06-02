@@ -1353,6 +1353,8 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     font-size: 10pt;
     right: 0;
     top: 0;
+    direction: ltr;
+    font-weight: lighter;
 }
 .your_class-Name{
     z-index: 8;
