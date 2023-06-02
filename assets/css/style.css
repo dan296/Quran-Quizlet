@@ -1544,6 +1544,9 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   padding-right: 20px;
   position: relative;
 }
+#surah-selector option {
+    background: var(--theme-bg);
+}
 .surah-selection .surah-label{
   top: 1px;
     right: 5px;
