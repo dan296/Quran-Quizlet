@@ -618,7 +618,7 @@ function readSurah(surahId){
 
     $("#surahcont").append("<div class='ayah-wrap'><div class='ayah-text'>"+
       newtext +
-         "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
+         "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i><div class='chpvrs'>"+(parseInt(thisid)+1)+":"+(k+1)+"</div></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
         endata[thisid].ayahs[k].text +
         "</div></div>"
     );

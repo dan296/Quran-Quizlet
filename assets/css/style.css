@@ -11,6 +11,7 @@
   --trans: 0.2s ease-in-out;
   --theme-strong: black;
   --theme-bg-strong: white;
+  --main-font: "Poppins", "Helvetica" !important;
 }
 
 html{
@@ -23,7 +24,7 @@ html{
 body {
   height: 100vh;
   overflow: scroll;
-  font-family: "Poppins", "Helvetica" !important;
+  font-family: var(--main-font);
   font-weight: 500;
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
@@ -1344,6 +1345,14 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     position: absolute;
     left: 0;
     top: 10px;
+}
+.chpvrs{
+    position: absolute;
+    display: block;
+    font-family: var(--main-font);
+    font-size: 10pt;
+    right: 0;
+    top: 0;
 }
 .your_class-Name{
     z-index: 8;
