@@ -1863,4 +1863,8 @@ $("#selector").click(function(){
 
   $(this).toggleClass("deselect-all");
 })
-    
+
+$("#surah-selector").change(function(){
+  console.log($(this).val());
+  readSurah($(this).val());
+})
