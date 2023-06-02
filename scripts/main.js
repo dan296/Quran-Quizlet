@@ -582,6 +582,7 @@ function addSurah(surahId, juz){
 
 function readSurah(surahId){
   let thisid = surahId;
+  lastSurahRead = thisid;
   var bismillah = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ ";
   bismillah += "<br/><br/>"
   if(thisid == 8){
@@ -771,7 +772,7 @@ $('.menu-button').click(function(){
     $('.menu-button').removeClass('menu-btn-selected');
     $(this).addClass('menu-btn-selected');
     
-    if($(this).children('i').attr('id') !== "settings-btn"){
+    if($(this).children('i').attr('id') == "startdeck"){
       if (numSurahsInDeck > 0) {
         var fc = parseInt($("#flashOn").val());
         var mcq = parseInt($("#mcqOn").val());
@@ -791,10 +792,14 @@ $('.menu-button').click(function(){
           alert('Please select at least one surah!');
           $(this).removeClass('menu-btn-selected');
       }
+    }else{
+        readSurah(lastSurahRead);
     }
   }
 })
-    
+
+var lastSurahRead = 0;
+readSurah(lastSurahRead);    
     
     
 
@@ -1880,4 +1885,3 @@ $("#surah-selector").change(function(){
   console.log($(this).val());
   readSurah($(this).val());
 })
-readSurah(0);
