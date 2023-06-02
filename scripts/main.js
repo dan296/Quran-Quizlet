@@ -1868,3 +1868,4 @@ $("#surah-selector").change(function(){
   console.log($(this).val());
   readSurah($(this).val());
 })
+readSurah(0);

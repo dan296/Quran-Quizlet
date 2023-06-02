@@ -1054,7 +1054,7 @@ footer {
 }
 
 #showsurah div, #showsurah h1{
-  display: none;
+  /*display: none;*/
 }
 
 #surah-audio{
