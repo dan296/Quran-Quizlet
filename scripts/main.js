@@ -603,6 +603,9 @@ function readSurah(surahId){
   $("#surahcont").html(bismillah);
   $(".surah-details").eq(0).html(endata[thisid].englishName);
   $(".surah-details").eq(1).html(endata[thisid].ayahs.length + " ayahs");
+  
+  if($('#showsurah').css("display") == "none") $('#showsurah').fadeIn(500);
+  $('#showsurah div, #showsurah h1').delay(500).fadeIn(500);
 
   for (var k = 0; k < endata[thisid].ayahs.length; k++) {
     if(k == 0){
