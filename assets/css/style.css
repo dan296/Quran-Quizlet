@@ -1327,10 +1327,15 @@ footer {
     font-family: var(--ar-font-fam);
     text-align: right;
     padding-top: 40px;
-    border-top: 1px solid #3d3d3d;
+    /*border-top: 1px solid #3d3d3d;*/
     direction: rtl;
     padding-left: 20px;
     
+}
+.ayah-separator{
+  height: 1px;
+  background: #3d3d3d;
+  width: 100%;
 }
 .ayah-text span {
     display: inline-block !important;

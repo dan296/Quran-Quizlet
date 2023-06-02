@@ -616,7 +616,7 @@ function readSurah(surahId){
     }
     newtext+="<span class='ayahsym' title='Ayah " + (k+1) + "' id='ayahsym"+k+"'>۝<div class='ayahnum' id='ayahnum"+k+"'>"+arabicDigits(k+1) +"</div></span>";
 
-    $("#surahcont").append("<div class='ayah-wrap'><div class='ayah-text'>"+
+    $("#surahcont").append("<div class='ayah-separator'></div><div class='ayah-wrap'><div class='ayah-text'>"+
       newtext +
          "<i class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+","+k+")'></i><div class='chpvrs'>"+(parseInt(thisid)+1)+":"+(k+1)+"</div></div><br/> <div class='ayah-trans'>"+ (k+1) + ") " +
         endata[thisid].ayahs[k].text +
@@ -1382,7 +1382,7 @@ $('#readsurah').click(function(){
   $('#showsurah div, #showsurah h1').delay(500).fadeIn(500);
   setTimeout(function(){
     $('#showsurah').animate({
-        scrollTop: $(".ayah-text").eq(ayahnumindex).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop()
+        scrollTop: $(".ayah-text").eq(ayahnumindex).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop() - 70
     }, 500);
   },700);
   setTimeout(function(){
@@ -1414,11 +1414,29 @@ myAudio.addEventListener("ended", function(){
 
 function playAudio(surah, ayah, wordUrl = false){
     if(ayah == undefined){
-      if($('#sound').attr("src") !== ("https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/"+(parseInt(surah)+1)+".mp3")){
+      /*if($('#sound').attr("src") !== ("https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/"+(parseInt(surah)+1)+".mp3")){
           $('#sound').attr("src","https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/"+(parseInt(surah)+1)+".mp3");
-      }
+      }*/
       //for whole surah use:
       // https://download.quranicaudio.com/qdc/mishari_al_afasy/murattal/74.mp3
+      /*actually going to play through whole surah looping through each ayah, if ayah is past screen scroll, if ayah is playing highlight*/
+              let audio = $("#sound")[0];
+        let i = 1;
+      $(".ayah-text").parent().removeClass('highlight-ayah');
+      $(".ayah-text").eq(0).parent().addClass('highlight-ayah');
+      playAudio(surah, 0);
+      audio.addEventListener('ended', () => {
+          $(".ayah-text").parent().removeClass('highlight-ayah');
+          if (i < endata[surah].ayahs.length){
+            $('#showsurah').animate({
+                scrollTop: $(".ayah-text").eq(i).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop() - 70
+            }, 500);
+            $(".ayah-text").eq(i).parent().addClass('highlight-ayah');
+            playAudio(surah, i);
+            i++;
+          }
+        });
+
     }else{
       var audioText = "";
       var tsur = parseInt(surah)+1;
