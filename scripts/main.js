@@ -1740,12 +1740,12 @@ $(document).ready(function() {
           for (var i = startind + 1; i < finalind; i++) {
             if (lastaction && !$("#" + i).hasClass("added")) {
                 $('#'+i).addClass('added');
-                $('#'+i).find(".cross").removeClass("crossrotate");
+                $('#'+i).find(".cross").addClass("crossrotate");
                 numSurahsInDeck++;
                 addSurah(i);
             } else if (!lastaction && $("#" + i).hasClass("added")) {
                 $('#'+i).removeClass('added');
-                $('#'+i).find(".cross").addClass("crossrotate");
+                $('#'+i).find(".cross").removeClass("crossrotate");
                 numSurahsInDeck--;
                 addSurah(i);
             }            
