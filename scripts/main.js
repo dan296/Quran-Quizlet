@@ -603,6 +603,7 @@ function readSurah(surahId){
   $("#surahcont").html(bismillah);
   $(".surah-details").eq(0).html(endata[thisid].englishName);
   $(".surah-details").eq(1).html(endata[thisid].ayahs.length + " ayahs");
+  document.getElementById("surah-audio").onclick = function() { playAudio(thisid); }
 
   for (var k = 0; k < endata[thisid].ayahs.length; k++) {
     if(k == 0){
@@ -1884,6 +1885,5 @@ $("#selector").click(function(){
 })
 
 $("#surah-selector").change(function(){
-  console.log($(this).val());
   readSurah($(this).val());
 })
