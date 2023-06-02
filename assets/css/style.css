@@ -1335,7 +1335,8 @@ footer {
 .ayah-separator{
   height: 1px;
   background: #3d3d3d;
-  width: 100%;
+  width: calc(100% - 30px);
+  margin: auto;
 }
 .ayah-text span {
     display: inline-block !important;

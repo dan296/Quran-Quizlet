@@ -1432,6 +1432,7 @@ function playAudio(surah, ayah, wordUrl = false){
                 scrollTop: $(".ayah-text").eq(i).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop() - 70
             }, 500);
             $(".ayah-text").eq(i).parent().addClass('highlight-ayah');
+            $('#surah-audio').toggleClass('fa-pause-circle fa-play-circle');
             playAudio(surah, i);
             i++;
           }
