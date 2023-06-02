@@ -1646,9 +1646,11 @@ function addedHoveredObject(x, y) {
         if($(this).attr("id") !== lastSur){
             if($(this).hasClass("added")){
                 $(this).removeClass("added");
+                $(this).find(".cross").removeClass("crossrotate");
                 numSurahsInDeck--;
             }else{
                 $(this).addClass("added");
+                $(this).find(".cross").addClass("crossrotate");
                 numSurahsInDeck++;
             }
             addSurah($(this).attr("id"));
