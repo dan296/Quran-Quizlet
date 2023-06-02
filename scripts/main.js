@@ -627,7 +627,7 @@ function readSurah(surahId){
     var twowidth = $('#ayahsym'+k).width();
     $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
   }
-  $("#showsurah .ayah-wrap").fadeIn(500);
+  $("#surahcont div").fadeIn(500);
 }
 
 /*$(".surahcont, .juzcont").click(function(e){
