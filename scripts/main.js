@@ -612,7 +612,7 @@ function readSurah(surahId){
 
     var newtext = "";
     for(var m = 0; m < versesindiv[parseInt(thisid)+1].verses[k].words.length-1; m++){
-        newtext += "<span  onclick='playAudio(0,0,\""+versesindiv[parseInt(thisid)+1].verses[k].words[m].audio_url+"\")' title='"+versesindiv[parseInt(thisid)+1].verses[k].words[m].translation.text+"'>"+versesindiv[parseInt(thisid)+1].verses[k].words[m].text+"</span>"
+        newtext += "<span onclick='playAudio(0,0,\""+versesindiv[parseInt(thisid)+1].verses[k].words[m].audio_url+"\")' title='"+versesindiv[parseInt(thisid)+1].verses[k].words[m].translation.text+"'>"+versesindiv[parseInt(thisid)+1].verses[k].words[m].text+"</span>"
     }
     newtext+="<span class='ayahsym' title='Ayah " + (k+1) + "' id='ayahsym"+k+"'>۝<div class='ayahnum' id='ayahnum"+k+"'>"+arabicDigits(k+1) +"</div></span>";
 
@@ -627,6 +627,7 @@ function readSurah(surahId){
     var twowidth = $('#ayahsym'+k).width();
     $('#ayahsym'+k).css('margin-left',-1*((twowidth/2)+(.75*onewidth))+'px');
   }
+  $("#showsurah .ayah-wrap").fadeIn(500);
 }
 
 /*$(".surahcont, .juzcont").click(function(e){

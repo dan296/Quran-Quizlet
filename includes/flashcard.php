@@ -32,7 +32,7 @@
     top: 0;
     padding: 20px 0px;
 ">
-<i id="surah-audio" class="fas fa-play-circle ayah-audio" onclick="playAudio(70)"></i>
+<i id="surah-audio" class="fas fa-play-circle ayah-audio"></i>
     <select id="surah-selector" style="
     background: transparent;
     color: inherit;
