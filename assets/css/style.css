@@ -1370,25 +1370,26 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     padding-bottom: 0px;
 }
 .ui-tooltip, .arrow:after {
-    background: #3d3d3d;
+    background: var(--theme-bg);
 }
 .ui-tooltip {
-    padding: 10px 10px;
+    padding: 5px;
     color: white;
-    border-radius: 5px;
-    font: bold 14px "Helvetica Neue", Sans-Serif;
+    border-radius: 2px;
+    font: lighter 10px var(--main-font);
     box-shadow: 0 0 7px black;
     position: fixed;
     font-weight: 400;
 }
 .arrow {
-    width: 50px;
+    width: 40px;
     height: 16px;
     overflow: hidden;
     position: absolute;
     left: 50%;
-    margin-left: -35px;
+    margin-left: 0px;
     bottom: -16px;
+  display: none;
 }
 .arrow.top {
     top: -16px;

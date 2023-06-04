@@ -1,7 +1,7 @@
 $( function() {
   $( document ).tooltip({
       position: {
-      my: "center bottom-15",
+      my: "center bottom-5",
       at: "center top",
       using: function( position, feedback ) {
         $( this ).css( position );
