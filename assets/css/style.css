@@ -91,7 +91,7 @@ body {
 #settings, #decks {
     background: inherit;
     width: 250px;
-    height: calc(100% - 70px);
+    height: calc(100% - 50px);
     overflow-y: scroll;
     position: fixed;
     top: 0;
