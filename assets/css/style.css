@@ -501,7 +501,7 @@ footer {
     position: fixed;
     box-shadow: 0px 0px 10px 0px black;
     bottom: 0;
-    height: 70px;
+    height: 50px;
     width: 100%;
     text-align: center;
     /* max-width: 500px; */
@@ -514,10 +514,10 @@ footer {
     background: inherit;
 }
 .footer-cont {
-    max-width: 300px;
+    min-width: 300px;
     margin: auto;
     width: 100%;
-    height: calc(100% - 10px);
+    height: 100%;
     box-sizing: border-box;
     /* display: inline; */
     /* padding: 0px; */
@@ -540,8 +540,8 @@ footer {
     margin: 0;
 }
 .menu-button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     /* border: 1px solid; */
     margin: auto;
@@ -558,9 +558,9 @@ footer {
     position: absolute;
     /* cursor: pointer; */
     background: transparent;
-    width: 32px;
-    height: 32px;
-    font-size: 30px;
+    width: 30px;
+    height: 22px;
+    font-size: 21px;
     /* position: relative; */
     left: 0;
     right: 0;
@@ -600,6 +600,7 @@ footer {
     left: 0;
     right: 0;
     font-weight: 200;
+    display: none;
 }
 #developer a{
   color: var(--theme);
