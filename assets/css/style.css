@@ -493,7 +493,7 @@ input:checked + .slider:before {
     padding-right: 40px;
     margin: auto;
     margin-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     max-width: 800px;
     text-align: center;
 }
@@ -1234,7 +1234,7 @@ footer {
 
 #help, #sorter, #selector{
   position: fixed;
-  bottom: 80px;
+  bottom: 55px;
   font-size: 28px;
   left: 5px;
   z-index: 4;
