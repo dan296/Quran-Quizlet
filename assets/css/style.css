@@ -571,11 +571,11 @@ footer {
     transition: var(--trans);
 }
 .menu-button:hover {
-    background: color: #727272;
+    background: #727272;
     /* color: white; */
 } 
 .menu-btn-selected {
-    background: var(--theme);
+    background: var(--theme) !important;
     /* color: white; */
 }
 .menu-button:hover i, .menu-btn-selected i {
