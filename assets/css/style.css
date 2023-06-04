@@ -1055,7 +1055,7 @@ footer {
   background-size: cover;
   background: var(--theme-bg);
   color: var(--theme);
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   transition: background var(--trans), color var(--trans);
 }
 
