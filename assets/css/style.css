@@ -570,7 +570,11 @@ footer {
     text-align: center;
     transition: var(--trans);
 }
-.menu-button:hover, .menu-btn-selected {
+.menu-button:hover {
+    background: color: #727272;
+    /* color: white; */
+} 
+.menu-btn-selected {
     background: var(--theme);
     /* color: white; */
 }
@@ -1374,7 +1378,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
 }
 .ui-tooltip {
     padding: 5px;
-    color: white;
+    color: var(--theme);
     border-radius: 2px;
     font: lighter 10px var(--main-font);
     box-shadow: 0 0 7px black;
