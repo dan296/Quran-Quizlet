@@ -769,7 +769,8 @@ $('.menu-button').click(function(){
       $(".settings").hide();
       $(".decks").show();
   }else{
-    $('#goback').click();
+    //$('#goback').click();
+    goBack();
     $("#settings, #decks").removeClass("expand-settings")
     $('.menu-button').removeClass('menu-btn-selected');
     $(this).addClass('menu-btn-selected');
@@ -1394,11 +1395,11 @@ $('#readsurah').click(function(){
   
 })
 
-$('#goback').click(function(){
+function goBack() {
   $('#sound')[0].pause();
   $('#showsurah div, #showsurah h1').fadeOut(500);
   $('#showsurah').delay(500).fadeOut(500);
-})
+}
 //Animating Divs
 //$('#loadingpage h1').addClass('animated bounceInDown');
 /*$('#loadingpage h1').hide();
