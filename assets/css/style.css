@@ -314,13 +314,15 @@ input:checked + .slider:before {
   display: inline-block;
   touch-action: none;
   height: 50px;
+  background: #1d1d24;
   padding-left: 28px;
   min-width: 225px;
   margin: 10px 5px;
   text-align: left;
   background-color: none;
   border-radius: 5px;
-  border: 1px solid;
+  border: 0px;
+  box-shadow: 0px 0px 5px 0px var(--theme-bg-strong);
   cursor: pointer;
   margin-top: 0px !important;
   transition: background-color var(--trans), color var(--trans), border-color var(--trans);
@@ -491,7 +493,7 @@ input:checked + .slider:before {
     padding-left: 50px;
     padding-right: 50px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 58px;
     padding-bottom: 80px;
     text-align: center;
 }
@@ -1618,7 +1620,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     grid-column: 1 / 6;
   }
   .my-new-list{
-    margin-top: 100px;
+    margin-top: 108px;
   }
   #sorter, #selector{
     top: 90px;

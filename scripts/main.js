@@ -1516,7 +1516,7 @@ $('#switchMode').click(function(){
         if(isSun){
             $(this).prop('value',0);
             document.documentElement.style.setProperty('--theme', 'white');
-            document.documentElement.style.setProperty('--theme-bg', '#1d1d1d');
+            document.documentElement.style.setProperty('--theme-bg', '#0b0b11');
             document.documentElement.style.setProperty('--theme-strong', 'white');
             document.documentElement.style.setProperty('--theme-bg-strong', 'black');
             //$('body, footer, #settings').css({'background-color':'#313131','color':'white'});
