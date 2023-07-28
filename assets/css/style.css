@@ -555,7 +555,7 @@ footer {
     transition: var(--trans);
 }
 .buttoncontainer i {
-    color: #727272;
+    color: var(--theme-bg-light);
     position: absolute;
     /* cursor: pointer; */
     background: transparent;
@@ -572,7 +572,7 @@ footer {
     transition: var(--trans);
 }
 .menu-button:hover {
-    background: #727272;
+    background: var(--theme-bg-light);
     /* color: white; */
 } 
 .menu-btn-selected {
