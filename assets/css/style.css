@@ -1,7 +1,7 @@
 /* need to move inside index.php to initialize based on user settings? */
 :root{
   --theme: black;
-  --theme-bg: #f1f1f1;
+  --theme-bg: #e6e6e6;
   --ar-font-sz: 20pt; /* for arabic: small = 20pt, large = 30pt, english: 12pt, 16pt*/
   --ar-font-fam: "Uthmani Hafs";
   --en-font-sz: 12pt;
@@ -11,6 +11,7 @@
   --trans: 0.2s ease-in-out;
   --theme-strong: black;
   --theme-bg-strong: white;
+  --theme-bg-light: #d1d1d1;
   --main-font: "Poppins", "Helvetica" !important;
 }
 
@@ -314,7 +315,7 @@ input:checked + .slider:before {
   display: inline-block;
   touch-action: none;
   height: 50px;
-  background: #1d1d24;
+  background: var(--theme-bg-light);
   padding-left: 28px;
   min-width: 225px;
   margin: 10px 5px;
