@@ -798,8 +798,8 @@ $('.menu-button').click(function(){
       }
     }else{
         readSurah(lastSurahRead);
-        $('#showsurah').fadeIn(500);
-        $('#showsurah div, #showsurah h1').delay(500).fadeIn(500);
+        $('#showsurah').fadeIn(250);
+        $('#showsurah div, #showsurah h1').delay(250).fadeIn(250);
     }
   }
 })
@@ -1385,8 +1385,8 @@ $('#readsurah').click(function(){
   if(!$("#readbtn").parent().hasClass("menu-btn-selected")){
     $("#readbtn").click()
   }
-  $('#showsurah').fadeIn(500);
-  $('#showsurah div, #showsurah h1').delay(500).fadeIn(500);
+  $('#showsurah').fadeIn(250);
+  $('#showsurah div, #showsurah h1').delay(250).fadeIn(250);
   setTimeout(function(){
     $('#showsurah').animate({
         scrollTop: $(".ayah-text").eq(ayahnumindex).offset().top- $('#showsurah').offset().top + $('#showsurah').scrollTop() - 70
@@ -1403,8 +1403,8 @@ $('#readsurah').click(function(){
 
 function goBack() {
   $('#sound')[0].pause();
-  $('#showsurah div, #showsurah h1').fadeOut(500);
-  $('#showsurah').delay(500).fadeOut(500);
+  $('#showsurah div, #showsurah h1').fadeOut(250);
+  $('#showsurah').delay(250).fadeOut(250);
 }
 //Animating Divs
 //$('#loadingpage h1').addClass('animated bounceInDown');
