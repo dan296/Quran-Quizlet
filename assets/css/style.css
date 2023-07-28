@@ -315,13 +315,12 @@ input:checked + .slider:before {
   touch-action: none;
   height: 50px;
   padding-left: 28px;
-  width: 11%;
-  margin: 10px 2.833% 10px 2.833%;
+  min-width: 225px;
+  margin: 10px 5px;
   text-align: left;
   background-color: none;
   border-radius: 5px;
   border: 1px solid;
-  max-width: 280px;
   cursor: pointer;
   margin-top: 0px !important;
   transition: background-color var(--trans), color var(--trans), border-color var(--trans);
@@ -489,12 +488,11 @@ input:checked + .slider:before {
   transition: 0.1s ease-in-out;
 }
 .my-new-list{
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin: auto;
     margin-top: 50px;
     padding-bottom: 80px;
-    max-width: 800px;
     text-align: center;
 }
 footer {
@@ -1240,19 +1238,19 @@ footer {
   z-index: 4;
 }
 #sorter, #selector{
-  right: 10px;
+  right: 5px;
   left: auto;
   top: 50px;
   bottom: auto;
   display: inline-block;
   width: 15px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .sorted{
   transform: rotate(180deg);
 }
 #selector{
-  right: 35px;
+  right: 25px;
 }
 .deselect-all{
   text-decoration: line-through;
@@ -1602,7 +1600,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 805px) {
   .surahcont, .juzcont {
     width: calc(50% - 10px);
     margin: 10px 5px;
