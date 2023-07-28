@@ -208,7 +208,7 @@ input:checked + .slider:before {
     height: 24px;
     font-weight: 200;
 }
-#decks .setting-label{
+#deck-collection .setting-label{
   max-width: 39%;
   overflow-x:scroll;
 }
