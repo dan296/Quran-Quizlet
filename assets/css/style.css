@@ -1563,19 +1563,17 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   font-weight: 100;
   background: deepskyblue;
   margin: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 10px;
   position: relative;
 }
 #surah-selector option {
     background: var(--theme-bg);
 }
 .surah-selection .surah-label{
-  top: 1px;
-    right: 5px;
-    width: auto;
-    height: auto;
-    padding: 0px;
+    left: 8px;
+    bottom: 0px;
+    top: 8px;
 }
 #edit-deck button{
   cursor: pointer;
