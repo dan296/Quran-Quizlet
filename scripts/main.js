@@ -769,11 +769,8 @@ $('.menu-button').click(function(){
       $(".settings").hide();
       $(".decks").show();
   }else{
-    //$('#goback').click();
 
     $("#settings, #decks").removeClass("expand-settings")
-    $('.menu-button').removeClass('menu-btn-selected');
-    $(this).addClass('menu-btn-selected');
     
     if($(this).children('i').attr('id') == "startdeck"){
       goBack();
@@ -792,15 +789,18 @@ $('.menu-button').click(function(){
           $(this).removeClass('menu-btn-selected');
         }
           
-      }else{
-          alert('Please select at least one surah!');
-          $(this).removeClass('menu-btn-selected');
+      }else if(!$(this).hasClass('menu-btn-selected')){
+         alert('Please select at least one surah!');
       }
     }else{
         readSurah(lastSurahRead);
         $('#showsurah').fadeIn(250);
         $('#showsurah div, #showsurah h1').delay(250).fadeIn(250);
     }
+
+    $('.menu-button').removeClass('menu-btn-selected');
+    $(this).addClass('menu-btn-selected');
+
   }
 })
 
