@@ -1534,6 +1534,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   box-shadow: 0px 0px 20px #3d3d3d;
   z-index: 6;
   display: none;
+  position: fixed;
 }
 
 #edit-deck input{
