@@ -1593,7 +1593,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   background: var(--theme);
 }
 
-@media only screen and (max-width: 1745px) {
+@media only screen and (max-width: 1045px) {
   .surahcont, .juzcont {
     width: calc(33% - 10px);
     margin: 10px 5px;
