@@ -789,7 +789,7 @@ $('.menu-button').click(function(){
           $(this).removeClass('menu-btn-selected');
         }
           
-      }else if(!$(this).hasClass('menu-btn-selected')){
+      }else if($(this).hasClass('menu-btn-selected')){
          alert('Please select at least one surah!');
       }
     }else{
