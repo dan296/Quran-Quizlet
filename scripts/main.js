@@ -770,12 +770,13 @@ $('.menu-button').click(function(){
       $(".decks").show();
   }else{
     //$('#goback').click();
-    goBack();
+
     $("#settings, #decks").removeClass("expand-settings")
     $('.menu-button').removeClass('menu-btn-selected');
     $(this).addClass('menu-btn-selected');
     
     if($(this).children('i').attr('id') == "startdeck"){
+      goBack();
       if (numSurahsInDeck > 0) {
         var fc = parseInt($("#flashOn").val());
         var mcq = parseInt($("#mcqOn").val());
@@ -890,7 +891,11 @@ function nextFlashCard() {
   var thisCard = nextCard ? nextCard : newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   ayahnumindex = thisCard.ayahNum - 1;
   currentCard = thisCard;
-  readSurah(thisCard.surahNumber);
+  
+  if($("#surah-selector").val() !== thisCard.surahNumber){
+      $("#surah-selector").prop("value", thisCard.surahNumber);
+    readSurah(thisCard.surahNumber);
+  }
   //$("#" + thisCard.surahNumber).click(); // USED TO SHOW SURAH!!! -- can later fix by creating function to show
   //$("#" + thisCard.surahNumber).click(); // NEED TO DOUBLE CLICK TO KEEP IN LIST!!!
 
