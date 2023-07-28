@@ -345,9 +345,9 @@ $('#add-deck-btn').click(function(){
       $('.added').each(function(){
         $("#surah-deck-selection").append(
           "<div class='surah-selection'>" +
-          "<div class='surah-label'>" +
+          "<div class='surah-label'><span>" +
           (parseInt($(this).attr("id"))+1) +
-          "</div>" +
+          "</span></div>" +
           $(this).find(".surahname").html() +
           "</div>"
           );
@@ -373,9 +373,9 @@ $(document).on('click','.edit-deck-btn',function(e) {
       let srhInd = decks[editing_deck_id].surahs[i];
       $("#surah-deck-selection").append(
         "<div class='surah-selection'>" +
-        "<div class='surah-label'>" +
+        "<div class='surah-label'><span>" +
         srhInd +
-        "</div>" +
+        "</span></div>" +
         $("#"+(srhInd-1)).find(".surahname").html() +
         "</div>"
         );
