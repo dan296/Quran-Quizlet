@@ -395,7 +395,7 @@ $(document).on('click','.learn-deck-btn',function(e) {
   let this_deck = decks[$(this).attr("deck-id")];
   $('.surahcont').removeClass('added');
   for(var i = 0; i < this_deck.surahs.length; i++){
-    $("#"+(this_deck.surahs[i]-1)).click();
+    $("#"+(this_deck.surahs[i]-1)).mousedown();
   }
   $("#startdeck").click();
 })
