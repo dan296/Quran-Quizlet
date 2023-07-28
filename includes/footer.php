@@ -12,7 +12,7 @@
   
 </div><div class="separator"></div><div class="buttoncontainer">
     <div class="menu-button" title="read">
-  <i id="startdeck2" class="daybutton fas fa-book-open"></i>
+  <i id="readbtn" class="daybutton fas fa-book-open"></i>
     </div>
   
 </div><div class="separator"></div><div class="buttoncontainer" style="

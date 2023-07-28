@@ -1382,6 +1382,9 @@ function filterIt(arr, searchKey) {
 }
 var ayahnumindex = 0;
 $('#readsurah').click(function(){
+  if(!$("#readbtn").parent().hasClass("menu-btn-selected")){
+    $("#readbtn").click()
+  }
   $('#showsurah').fadeIn(500);
   $('#showsurah div, #showsurah h1').delay(500).fadeIn(500);
   setTimeout(function(){
