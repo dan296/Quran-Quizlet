@@ -891,13 +891,11 @@ function nextFlashCard() {
   var thisCard = nextCard ? nextCard : newFlashCards[Math.floor(Math.random() * newFlashCards.length)];
   ayahnumindex = thisCard.ayahNum - 1;
   currentCard = thisCard;
-  
+
   if($("#surah-selector").val() !== thisCard.surahNumber){
       $("#surah-selector").prop("value", thisCard.surahNumber);
     readSurah(thisCard.surahNumber);
   }
-  //$("#" + thisCard.surahNumber).click(); // USED TO SHOW SURAH!!! -- can later fix by creating function to show
-  //$("#" + thisCard.surahNumber).click(); // NEED TO DOUBLE CLICK TO KEEP IN LIST!!!
 
   $("#flashcard").css(
     "border-color",
