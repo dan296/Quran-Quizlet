@@ -1441,6 +1441,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     position:relative;
 }
 #search{
+  -webkit-appearance: none;
     position: relative;
     width: 100%;
     margin: auto;
