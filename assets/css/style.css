@@ -553,6 +553,7 @@ footer {
     cursor: pointer;
     bottom: 0;
     transition: var(--trans);
+    opacity: 0.5;
 }
 .buttoncontainer i {
     color: var(--theme);
@@ -618,7 +619,6 @@ footer {
   position: relative;
   margin-bottom: 10px;
   overflow: hidden;
-  opacity: 0.5;
 }
 #buttoncontainer button {
   width: 100%;
