@@ -499,7 +499,7 @@ input:checked + .slider:before {
     padding-left: 50px;
     padding-right: 50px;
     margin: auto;
-    margin-top: 58px;
+    margin-top: 50px;
     padding-bottom: 80px;
     text-align: center;
 }
@@ -1447,6 +1447,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     grid-row: 1;
     margin: 10px auto;
     grid-column: 3 / 4;
+    padding: 0px;
     padding-left: 10px;
     padding-right: 10px;
     height: 28px;
@@ -1626,7 +1627,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     grid-column: 1 / 6;
   }
   .my-new-list{
-    margin-top: 108px;
+    margin-top: 100px;
   }
   #sorter, #selector{
     top: 90px;
