@@ -224,6 +224,7 @@ input:checked + .slider:before {
     border-bottom: 1px solid;
     background: transparent;
     text-align: center;
+    border-radius: 0px;
 }
 .setting-info {
   font-weight: 200;
