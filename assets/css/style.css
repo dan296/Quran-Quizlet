@@ -11,6 +11,7 @@
   --trans: 0.2s ease-in-out;
   --theme-strong: black;
   --theme-bg-strong: white;
+  --theme-light: #1d1d24;
   --theme-bg-light: #d1d1d1;
   --main-font: "Poppins", "Helvetica" !important;
 }

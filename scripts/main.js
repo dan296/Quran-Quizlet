@@ -1519,6 +1519,7 @@ $('#switchMode').click(function(){
             document.documentElement.style.setProperty('--theme-bg', '#0b0b11');
             document.documentElement.style.setProperty('--theme-strong', 'white');
             document.documentElement.style.setProperty('--theme-bg-strong', 'black');
+            document.documentElement.style.setProperty('--theme-light', '#d1d1d1');
             document.documentElement.style.setProperty('--theme-bg-light', '#1d1d24');
             //$('body, footer, #settings').css({'background-color':'#313131','color':'white'});
             $('#buttoncontainer button').removeClass('daybutton');
@@ -1529,6 +1530,7 @@ $('#switchMode').click(function(){
             document.documentElement.style.setProperty('--theme-bg', '#e6e6e6');
             document.documentElement.style.setProperty('--theme-strong', 'black');
             document.documentElement.style.setProperty('--theme-bg-strong', 'white');
+            document.documentElement.style.setProperty('--theme-light', '#1d1d24');
             document.documentElement.style.setProperty('--theme-bg-light', '#d1d1d1');
             //$('body, footer, #settings').css({'background-color':'#f1f1f1','color':'black'});
             $('#buttoncontainer button').removeClass('nightbutton');
