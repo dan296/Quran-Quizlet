@@ -555,7 +555,7 @@ footer {
     transition: var(--trans);
 }
 .buttoncontainer i {
-    color: var(--theme-bg-light);
+    color: var(--theme);
     position: absolute;
     /* cursor: pointer; */
     background: transparent;
@@ -573,11 +573,10 @@ footer {
 }
 .menu-button:hover {
     background: var(--theme-bg-light);
-    /* color: white; */
 } 
 .menu-btn-selected {
     background: var(--theme) !important;
-    /* color: white; */
+    opacity: 1;
 }
 .menu-button:hover i, .menu-btn-selected i {
     color: var(--theme-bg);
@@ -619,6 +618,7 @@ footer {
   position: relative;
   margin-bottom: 10px;
   overflow: hidden;
+  opacity: 0.5;
 }
 #buttoncontainer button {
   width: 100%;
