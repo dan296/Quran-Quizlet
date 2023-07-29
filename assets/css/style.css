@@ -403,6 +403,11 @@ input:checked + .slider:before {
     border-radius: 4px;
     transform: rotate(45deg);
 }
+.surah-label{
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
 .juz-main-label{
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   transform: none;
@@ -573,7 +578,7 @@ footer {
     transition: var(--trans);
 }
 .menu-button:hover {
-    background: var(--theme-bg-light);
+    background: var(--theme);
 } 
 .menu-btn-selected {
     background: var(--theme) !important;
