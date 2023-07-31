@@ -704,7 +704,6 @@ footer {
 }
 #showanswer:hover, #checkcont2:hover {
   background-color: var(--theme-bg-strong);
-  color: white;
 }
 #question,
 #answercontainer {
