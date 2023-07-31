@@ -819,10 +819,13 @@ footer {
     opacity: 0.5;
     text-decoration: line-through;
 }
-
-.mcq-selected, .mcq-option:hover {
-    background: #bbb57b;
+.mcq-option:hover {
+    background: var(--theme-bg-light);
 }
+.mcq-selected{
+background: var(--theme-bg-strong);
+} 
+
 .mcq-correct{
   background: #00bb64;
   opacity: 1;
