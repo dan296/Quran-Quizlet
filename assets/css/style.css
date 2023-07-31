@@ -516,13 +516,12 @@ footer {
     width: 100%;
     text-align: center;
     /* max-width: 500px; */
-    background: #f1f1f1;
     padding: 0;
     /* white-space: nowrap; */
     overflow: hidden;
     margin: 0;
     z-index: 6;
-    background: inherit;
+    background: var(--theme-bg-strong);
 }
 .footer-cont {
     min-width: 300px;
@@ -582,11 +581,10 @@ footer {
     text-align: center;
     transition: var(--trans);
 }
-.menu-button:hover {
-    background: var(--theme);
+.menu-button:hover, .menu-btn-selected {
+    background: var(--theme-light);
 } 
 .menu-btn-selected {
-    background: var(--theme) !important;
     opacity: 1;
 }
 .menu-button:hover i, .menu-btn-selected i {
@@ -596,7 +594,7 @@ footer {
     display: inline-block;
     width: 1px;
     height: 30px;
-    background: black;
+    background: var(--theme-bg-light);
     position: absolute;
     top: 0;
     bottom: 0;
