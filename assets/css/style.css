@@ -215,7 +215,7 @@ input:checked + .slider:before {
     font-weight: 200;
 }
 #deck-collection .setting-label{
-  max-width: 70px;
+  max-width: 100px;
   overflow-x:scroll;
 }
 .setting-input{text-align: center;}
