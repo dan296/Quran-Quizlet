@@ -1597,16 +1597,16 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
 }
 #edit-deck button{
   cursor: pointer;
-    background: transparent;
-    outline: none;
-    color: inherit;
-    border: 1px solid;
-    border-radius: 5px;
-    margin: auto;
-    display: inline-block;
-    height: 30px;
-    font-size: 10pt;
-    transition: var(--trans);
+  background: var(--theme-bg-light);
+  outline: none;
+  color: inherit;
+  border: none;
+  border-radius: 4px;
+  margin: auto;
+  display: inline-block;
+  height: 30px;
+  font-size: 10pt;
+  transition: var(--trans);
 }
 #edit-deck button:hover{
   color: var(--theme-bg);
