@@ -383,7 +383,7 @@ input:checked + .slider:before {
   opacity: 1;
 }
 #surahcont{
-    padding-top: 70px;
+    padding-top: 20px;
 }
 .surahcont:hover, .juzcont:hover {
   background-color: #00bb64;
