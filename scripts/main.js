@@ -425,7 +425,7 @@ $("#save-deck").click(function(){
       }
 
       $(".surah-selection").each(function(){
-        deck.surahs.push(parseInt($(this).children().html()));
+        deck.surahs.push(parseInt($(this).children().children().html()));
       })
 
       decks.push(deck);
