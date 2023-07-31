@@ -375,9 +375,12 @@ input:checked + .slider:before {
 #surahOrJuz div:hover{
   opacity: 0.5;
 }
-#surahOrJuz div.sur-juz-selected, #surahOrJuz div:hover{
+#surahOrJuz div.sur-juz-selected{
   background: var(--theme);
   color: var(--theme-bg);
+}
+#surahOrJuz div:hover{
+  background: var(--theme-bg-light);
 }
 #surahOrJuz div.sur-juz-selected{
   opacity: 1;
