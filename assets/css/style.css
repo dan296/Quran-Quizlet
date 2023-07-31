@@ -1580,7 +1580,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   padding: 8px;
   color: white;
   font-weight: 100;
-  background: deepskyblue;
+  background: var(--theme-bg-strong);
   margin: 5px;
   padding-left: 40px;
   padding-right: 10px;
