@@ -711,7 +711,7 @@ footer {
 #question,
 #answercontainer {
   bottom: 40px;
-  height: 276px;
+  height: calc(100% - 40px);
   position: absolute;
   top: 0;
   overflow-x: hidden;

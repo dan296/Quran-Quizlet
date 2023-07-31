@@ -1190,7 +1190,7 @@ $("#checkcont2").click(function(){
 
 $("#showanswer").click(function() {
   if(mode == 1){
-    $("#answercontainer").css("height", "276px");
+    $("#answercontainer").css("height", "calc(100% - 40px)");
     $("#checkcont").css("height", "40px");
   }else if(mode==2){
     if($(".mcq-option.mcq-selected").length > 0){
