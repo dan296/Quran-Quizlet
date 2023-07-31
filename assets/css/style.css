@@ -1318,8 +1318,8 @@ footer {
     transition: background-color var(--trans);
 }
 .highlight-ayah{
-  background-color: #bbb57b;
-  color: white;
+  background-color: var(--theme-bg-strong); /*#bbb57b;*/
+  color: var(--theme);
 }
 .ayahsym{
     position: relative;
