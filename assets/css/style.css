@@ -455,9 +455,8 @@ input:checked + .slider:before {
   top: 3px;
 }
 .added {
-  background-color: #00bfff;
-  border-color: #00bfff;
-  color: white;
+  background-color: var(--theme-bg-strong);
+  color: var(--theme);
 }
 .added:hover {
   background-color: #f94f4f !important;
@@ -706,7 +705,7 @@ footer {
   line-height: 40px;
 }
 #showanswer:hover, #checkcont2:hover {
-  background-color: #00bfff;
+  background-color: var(--theme-bg-strong);
   color: white;
 }
 #question,
