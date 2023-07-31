@@ -413,7 +413,8 @@ $("#edit-deck .exit").click(function(){
 })
 
 $("#save-deck").click(function(){
-  if(editing_deck_id == -1 && decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== editing_deck_id)).length > 0 || $("#deck_name").val() == ""){
+  if(decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== editing_deck_id)).length > 0 || $("#deck_name").val() == ""){
+    console.log(decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== editing_deck_id)));
     alert("Please enter a unique Deck Name");
   }else{
 
