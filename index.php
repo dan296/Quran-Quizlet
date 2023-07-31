@@ -11,7 +11,7 @@
 <?php include("includes/decks.php") ?>
 <?php include("includes/footer.php") ?>
 <?php include("includes/flashcard.php") ?>
-<script src="scripts/main.js"></script>
+<script src="scripts/main.js?v=<?php echo rand()?>"></script>
 <script>
 <?php
 include("backend/db_connection.php");
