@@ -1570,6 +1570,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
 #surah-deck-selection{
   height: 125px;
   overflow-y: scroll;
+  margin-bottom: 10px;
 }
 #surah-deck-selection .surah-selection {
   display: inline-block;
