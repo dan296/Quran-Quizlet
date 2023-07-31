@@ -38,7 +38,7 @@
     color: inherit;
     border: none;
     text-align: center;
-    padding-right: 29px;
+    padding-right: 0px;
     text-align-last: center;
     outline: none;
     cursor: pointer;
