@@ -1551,7 +1551,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   background: var(--theme-bg);
   color: var(--theme);
   padding: 10px;
-  box-shadow: 0px 0px 20px #3d3d3d;
+  box-shadow: 0px 0px 10px 0px var(--theme-bg-strong);
   z-index: 6;
   display: none;
   position: fixed;
