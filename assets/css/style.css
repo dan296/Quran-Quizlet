@@ -347,6 +347,7 @@ input:checked + .slider:before {
   margin: 10px;
   grid-row: 1;
   grid-column: 4 / 6;
+  box-shadow: 0px 0px 10px 0px var(--theme-bg-strong);
 }
 #surahOrJuz div{
   background: var(--theme-bg);
