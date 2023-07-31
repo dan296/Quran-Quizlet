@@ -29,7 +29,7 @@
     background: var(--theme-bg);
     z-index: 1;
     width: 100%;
-    top: 0;
+    bottom: 40px;
     padding: 20px 0px;
 ">
 <i id="surah-audio" class="fas fa-play-circle ayah-audio"></i>

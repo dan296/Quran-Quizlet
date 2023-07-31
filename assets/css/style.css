@@ -1055,7 +1055,7 @@ footer {
 
 #showsurah {
   position: fixed;
-  padding-top: 20px;
+  padding-top: 0px;
   top: 0;
   height: 100%;
   width: 100%;
@@ -1069,7 +1069,7 @@ footer {
   background-size: cover;
   background: var(--theme-bg);
   color: var(--theme);
-  padding-bottom: 50px;
+  padding-bottom: 90px;
   transition: background var(--trans), color var(--trans);
 }
 
