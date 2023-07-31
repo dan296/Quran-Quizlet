@@ -728,7 +728,6 @@ footer {
   margin: auto;
   height: max-content;
   padding: 28px;
-  max-height: 276px;
 }
 .anscont {
   font-size: 20pt;
@@ -803,6 +802,9 @@ footer {
 }
 
 /* Multiple Choice MCQ*/
+.mcq-quest {
+    margin-bottom: 10px;
+}
 .mcq-option {
     transition: var(--trans);
     text-align: left;
