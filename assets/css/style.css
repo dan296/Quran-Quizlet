@@ -823,19 +823,19 @@ footer {
     background: var(--theme-bg-light);
 }
 .mcq-selected{
-background: var(--theme-bg-strong);
+background: var(--theme-bg-strong) !important;
 } 
 
 .mcq-correct{
-  background: #00bb64;
+  background: #00bb64 !important;
   opacity: 1;
   text-decoration: none;
 }
 .mcq-incorrect{
-  background: #f94f4f;
+  background: #f94f4f !important;
 }
 .mcq-correct-faded{
-  background: #00bb647d;
+  background: #00bb647d !important;
   opacity: 1;
   text-decoration: none;
 }
