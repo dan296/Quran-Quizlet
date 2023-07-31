@@ -371,12 +371,12 @@ input:checked + .slider:before {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+#surahOrJuz div:hover{
+  background: var(--theme-bg-light);
+}
 #surahOrJuz div.sur-juz-selected{
   background: var(--theme);
   color: var(--theme-bg);
-}
-#surahOrJuz div:hover{
-  background: var(--theme-bg-light);
 }
 #surahOrJuz div.sur-juz-selected{
   opacity: 1;
