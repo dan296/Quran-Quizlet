@@ -831,16 +831,15 @@ background: var(--theme-bg-strong) !important;
 } 
 
 .mcq-correct{
-  background: #00bb64 !important;
+  background: var(--green) !important;
   opacity: 1;
   text-decoration: none;
 }
 .mcq-incorrect{
-  background: #f94f4f !important;
+  background: var(--red) !important;
 }
 .mcq-correct-faded{
-  background: #00bb647d !important;
-  opacity: 1;
+  background: var(--green) !important;
   text-decoration: none;
 }
 /* MCQ end*/
@@ -1131,7 +1130,7 @@ background: var(--theme-bg-strong) !important;
   transition: background-color var(--trans);
 }
 .exit:hover .horiz-cross, .exit:hover .vert-cross{
-  background-color: #f94f4f;
+  background-color: var(--red);
 }
 
 #readsurah:hover, #goback:hover {
