@@ -992,18 +992,18 @@ function nextFlashCard() {
       if(subMode < 0.5){
         $("#flashcard #questcont").html("What is the meaning of the following ayah?<br>"
         + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
-        + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
-        + "<div class='mcq-option'>B) " + options[1].translation + "</div>"
-        + "<div class='mcq-option'>C) " + options[2].translation + "</div>"
-        + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
+        + "<div class='mcq-option' data-c='"+(options[0].translation==thisCard.translation)+"'>A) " + options[0].translation + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[1].translation==thisCard.translation)+"'>B) " + options[1].translation + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[2].translation==thisCard.translation)+"'>C) " + options[2].translation + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[3].translation==thisCard.translation)+"'>D) " + options[3].translation + "</div>" 
         );
       }else{
         $("#flashcard #questcont").html("What is the location of the following ayah?<br>"
         + "<div class='mcq-quest'>" + thisCard.ayah + "</div>"
-        + "<div class='mcq-option'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + " | " + "</div>" 
+        + "<div class='mcq-option' data-c='"+(options[0].surahNumber==thisCard.surahNumber && options[0].ayahNum==thisCard.ayahNum)+"'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[1].surahNumber==thisCard.surahNumber && options[1].ayahNum==thisCard.ayahNum)+"'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[2].surahNumber==thisCard.surahNumber && options[2].ayahNum==thisCard.ayahNum)+"'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[3].surahNumber==thisCard.surahNumber && options[3].ayahNum==thisCard.ayahNum)+"'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + "</div>" 
         );
       }
       
@@ -1032,18 +1032,18 @@ function nextFlashCard() {
       if(subMode < 0.5){
         $("#flashcard #questcont").html("Which ayah has the following meaning?<br>"
           + "<div class='mcq-quest'>" + thisCard.translation + "</div>"
-          + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
-          + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
-          + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
-          + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+          + "<div class='mcq-option' data-c='"+(options[0].ayah==thisCard.ayah)+"'>A) " + options[0].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[1].ayah==thisCard.ayah)+"'>B) " + options[1].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[2].ayah==thisCard.ayah)+"'>C) " + options[2].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[3].ayah==thisCard.ayah)+"'>D) " + options[3].ayah + "</div>" 
           );
       }else{
         $("#flashcard #questcont").html("What is the location of the following ayah translation?<br>"
         + "<div class='mcq-quest'>" + thisCard.translation + "</div>"
-        + "<div class='mcq-option'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + " | " + "</div>"
-        + "<div class='mcq-option'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + " | " + "</div>" 
+        + "<div class='mcq-option' data-c='"+(options[0].surahNumber==thisCard.surahNumber && options[0].ayahNum==thisCard.ayahNum)+"'>A) " + "Chapter " + (parseInt(options[0].surahNumber) + 1) + " | " + options[0].surahName + " | " + options[0].surahTName + " | " + options[0].surahEngName + " | Ayah No. " + options[0].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[1].surahNumber==thisCard.surahNumber && options[1].ayahNum==thisCard.ayahNum)+"'>B) " + "Chapter " + (parseInt(options[1].surahNumber) + 1) + " | " + options[1].surahName + " | " + options[1].surahTName + " | " + options[1].surahEngName + " | Ayah No. " + options[1].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[2].surahNumber==thisCard.surahNumber && options[2].ayahNum==thisCard.ayahNum)+"'>C) " + "Chapter " + (parseInt(options[2].surahNumber) + 1) + " | " + options[2].surahName + " | " + options[2].surahTName + " | " + options[2].surahEngName + " | Ayah No. " + options[2].ayahNum + "</div>"
+        + "<div class='mcq-option' data-c='"+(options[3].surahNumber==thisCard.surahNumber && options[3].ayahNum==thisCard.ayahNum)+"'>D) " + "Chapter " + (parseInt(options[3].surahNumber) + 1) + " | " + options[3].surahName + " | " + options[3].surahTName + " | " + options[3].surahEngName + " | Ayah No. " + options[3].ayahNum + "</div>" 
         );
       }
     }
@@ -1081,10 +1081,10 @@ function nextFlashCard() {
             "<br/>Ayah No. " +
             thisCard.ayahNum +
             "<br/>" + "</div>"
-          + "<div class='mcq-option'>A) " + options[0].ayah + "</div>"
-          + "<div class='mcq-option'>B) " + options[1].ayah + "</div>"
-          + "<div class='mcq-option'>C) " + options[2].ayah + "</div>"
-          + "<div class='mcq-option'>D) " + options[3].ayah + "</div>" 
+          + "<div class='mcq-option' data-c='"+(options[0].ayah==thisCard.ayah)+"'>A) " + options[0].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[1].ayah==thisCard.ayah)+"'>B) " + options[1].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[2].ayah==thisCard.ayah)+"'>C) " + options[2].ayah + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[3].ayah==thisCard.ayah)+"'>D) " + options[3].ayah + "</div>" 
           );
       }else{
         $("#flashcard #questcont").html("Which ayah translation has the following location?<br>"
@@ -1099,10 +1099,10 @@ function nextFlashCard() {
             "<br/>Ayah No. " +
             thisCard.ayahNum +
             "<br/>" + "</div>"
-          + "<div class='mcq-option'>A) " + options[0].translation + "</div>"
-          + "<div class='mcq-option'>B) " + options[1].translation + "</div>"
-          + "<div class='mcq-option'>C) " + options[2].translation + "</div>"
-          + "<div class='mcq-option'>D) " + options[3].translation + "</div>" 
+          + "<div class='mcq-option' data-c='"+(options[0].translation==thisCard.translation)+"'>A) " + options[0].translation + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[1].translation==thisCard.translation)+"'>B) " + options[1].translation + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[2].translation==thisCard.translation)+"'>C) " + options[2].translation + "</div>"
+          + "<div class='mcq-option' data-c='"+(options[3].translation==thisCard.translation)+"'>D) " + options[3].translation + "</div>" 
           );
       }
     }
