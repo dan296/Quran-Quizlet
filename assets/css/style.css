@@ -106,6 +106,9 @@ body {
 #settings::-webkit-scrollbar {
   display: none;
 }
+section.settings {
+    margin-bottom: 20px;
+}
 .expand-settings{
     right: 0px !important;
 }
@@ -659,20 +662,20 @@ footer {
   display: none;
   color: var(--theme);
   background: var(--theme-bg);
-  box-shadow: 0px 0px 20px #3d3d3d;
+  box-shadow: 0px 0px 20px var(--theme-bg-strong);
   position: fixed;
-  width: 80%;
-  height: 320px;
-  max-width: 600px;
-  border-radius: 20px;
+  width: 100%;
+  height: calc(100% - 52px);
+  /* max-width: 600px; */
+  border-radius: 0px;
   border-bottom: 5px solid;
   top: 0;
-  bottom: 0;
+  bottom: auto;
   left: 0;
   right: 0;
   margin: auto;
   overflow: hidden;
-  z-index: 2;
+  z-index: 4;
   transition: background var(--trans), border-color var(--trans);
 }
 #flashcont {
