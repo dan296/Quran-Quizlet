@@ -1593,6 +1593,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     left: 8px;
     bottom: 0px;
     top: 8px;
+    margin: unset;
 }
 #edit-deck button{
   cursor: pointer;
