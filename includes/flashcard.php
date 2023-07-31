@@ -32,6 +32,7 @@
     bottom: 50px;
     padding: 20px 0px;
     box-shadow: 0px 0px 10px 0px var(--theme-bg-strong);
+    transition: var(--trans);
 ">
 <i id="surah-audio" class="fas fa-play-circle ayah-audio"></i>
     <select id="surah-selector" style="

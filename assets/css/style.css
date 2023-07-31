@@ -63,6 +63,9 @@ body {
   text-align: center;
   display: block;
 }
+.main-logo * {
+    transition: var(--trans);
+}
 #header {
   display: grid;
   grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
@@ -524,6 +527,7 @@ footer {
     margin: 0;
     z-index: 6;
     background: var(--theme-bg-strong);
+    transition: var(--trans);
 }
 .footer-cont {
     min-width: 300px;
@@ -1533,6 +1537,7 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
   font-size: 10pt;
   width: 100%;
   text-align: center;
+  transition: var(--trans);
 }
 
 @font-face {
