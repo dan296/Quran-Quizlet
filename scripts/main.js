@@ -1745,7 +1745,7 @@ $(document).ready(function() {
           $(".surahcont").each(function(){
               addSurah($(this).attr("id"));
           })
-        }else if($(".juzcont.added").length > 0){
+        }else if(!isJuz && $(".juzcont.added").length > 0){
           $('.juzcont').removeClass("added");
           $(".juzcont").each(function(){
               //addSurah($(this).attr("id"));
