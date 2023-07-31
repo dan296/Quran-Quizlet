@@ -14,6 +14,8 @@
   --theme-light: #1d1d24;
   --theme-bg-light: #d1d1d1;
   --main-font: "Poppins", "Helvetica" !important;
+  --green: #00bb64;
+  --red: #f94f4f;
 }
 
 html{
@@ -759,11 +761,11 @@ footer {
   transition: var(--trans);
 }
 #correct:hover {
-  background-color: #41ffa7;
+  background-color: var(--green);
   color: white;
 }
 #incorrect:hover {
-  background-color: #f94f4f;
+  background-color: var(--red);
   color: white;
 }
 #answer1,
