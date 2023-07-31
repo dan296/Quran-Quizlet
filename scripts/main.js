@@ -389,6 +389,12 @@ $(document).on('click','.edit-deck-btn',function(e) {
 
 })
 
+$("#deck_name").change(function(){
+  if(editing_deck_id > -1){
+    decks[editing_deck_id].name = $(this).val();
+  }
+})
+
 
 $(document).on('click','.learn-deck-btn',function(e) {
 //$('#deck-collection .setting-info-btn').eq(1).click(function(){
@@ -410,14 +416,21 @@ $("#save-deck").click(function(){
   if(decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== editing_deck_id)).length > 0 || $("#deck_name").val() == ""){
     alert("Please enter a unique Deck Name");
   }else{
-    let deck = {
-      name: $("#deck_name").val(),
-      surahs: []
+
+    if(editing_deck_id == -1){
+
+      let deck = {
+        name: $("#deck_name").val(),
+        surahs: []
+      }
+
+      $(".surah-selection").each(function(){
+        deck.surahs.push(parseInt($(this).children().html()));
+      })
+
+      decks.push(deck);
     }
-    $(".surah-selection").each(function(){
-      deck.surahs.push(parseInt($(this).children().html()));
-    })
-    decks.push(deck);
+    
     $.ajax({
       type: "POST",
       url: './backend/db.php',
