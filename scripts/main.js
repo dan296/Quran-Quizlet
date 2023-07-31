@@ -614,8 +614,9 @@ function readSurah(surahId){
       "<i id='surah-audio' class='fas fa-play-circle ayah-audio' onclick='playAudio("+thisid+")'></i>"
   );*/
   $("#surahcont").html(bismillah);
-  $(".surah-details").eq(0).html(endata[thisid].englishNameTranslation);
-  $(".surah-details").eq(1).html(endata[thisid].ayahs.length + " ayahs");
+  $(".surah-details").eq(0).html(endata[thisid].name);
+  $(".surah-details").eq(1).html(endata[thisid].englishNameTranslation);
+  $(".surah-details").eq(2).html(endata[thisid].ayahs.length + " ayahs");
   document.getElementById("surah-audio").onclick = function() { playAudio(thisid); }
 
   for (var k = 0; k < endata[thisid].ayahs.length; k++) {
