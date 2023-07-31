@@ -413,7 +413,7 @@ $("#edit-deck .exit").click(function(){
 })
 
 $("#save-deck").click(function(){
-  if(decks.filter((e, idx) => (e.name === $("#deck_name").val() && idx !== parseInt(editing_deck_id))).length > 0 || $("#deck_name").val() == ""){
+  if(decks.filter((e, idx) => (e.name.toLowerCase() === $("#deck_name").val().toLowerCase() && idx !== parseInt(editing_deck_id))).length > 0 || $("#deck_name").val().trim() == ""){
     alert("Please enter a unique Deck Name");
   }else{
 
