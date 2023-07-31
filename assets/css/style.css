@@ -1319,7 +1319,7 @@ footer {
 }
 .highlight-ayah{
   background-color: var(--theme-bg-strong); /*#bbb57b;*/
-  color: var(--theme);
+  /*color: var(--theme);*/
 }
 .ayahsym{
     position: relative;
