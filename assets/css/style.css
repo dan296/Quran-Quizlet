@@ -1363,7 +1363,7 @@ footer {
 }
 .ayah-text span:hover, i.fas.fa-play-circle.ayah-audio:hover, i.fas.fa-pause-circle.ayah-audio:hover {
     cursor: pointer;
-    color: #03a9f4;
+    color: #4a86b5;
 }
 i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     font-size: 20pt;
