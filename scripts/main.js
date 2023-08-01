@@ -135,7 +135,7 @@ function signin(){
     $.ajax({
         type: "POST",
         url: './backend/db.php',
-        data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check').is(':checked')},
+        data: {user: $( "#signin input[type=text]" ).val(), password: $( "#signin input[type=password]" ).val(), signing_in: true, remember: $('#rem-check input').is(':checked')},
         success: function(data){
           if(data.substring(0,5) == "Error"){
               if(data.indexOf("User") > -1){
