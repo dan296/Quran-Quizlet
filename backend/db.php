@@ -36,7 +36,7 @@ if(isset($_POST["signing_up"])){
 }
 
 if(isset($_POST["signing_in"])){
-    setcookie ("member_login","dong",time()+ (10 * 365 * 24 * 60 * 60));
+    setcookie("member_login","dong",time()+ (10 * 365 * 24 * 60 * 60));
     $user = $_POST["user"];
     $pword = $_POST["password"];
     $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
