@@ -46,7 +46,7 @@ if(isset($_POST["signing_in"])){
     }else{
         $hash = $results["password"];
         if(password_verify ($pword , $hash)){
-            if($_POST["remember"] == "true") {
+            if($_POST["remember"] == true) {
         		setcookie ("member_login",$user,time()+ (10 * 365 * 24 * 60 * 60));
         	} else {
     			setcookie ("member_login","",time() - 3600);
