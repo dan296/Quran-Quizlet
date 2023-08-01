@@ -1,6 +1,6 @@
 <?php
 ob_start();
-setcookie("chick","dong",time()+ (10 * 365 * 24 * 60 * 60));
+setcookie("chick","dong",time()+ (10 * 365 * 24 * 60 * 60), '/');
 include("db_connection.php");
 
 if(isset($_POST["signing_up"])){
