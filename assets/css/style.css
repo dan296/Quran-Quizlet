@@ -515,8 +515,8 @@ input:checked + .slider:before {
   transition: 0.1s ease-in-out;
 }
 .my-new-list{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     margin: auto;
     margin-top: 50px;
     padding-bottom: 80px;
@@ -1305,7 +1305,7 @@ background: var(--theme-bg-strong) !important;
 #sorter, #selector{
   right: 5px;
   left: auto;
-  top: 50px;
+  top: 60px;
   bottom: auto;
   display: inline-block;
   width: 15px;
@@ -1689,9 +1689,9 @@ i.fas.fa-play-circle.ayah-audio, i.fas.fa-pause-circle.ayah-audio {
     grid-column: 1 / 6;
   }
   .my-new-list{
-    margin-top: 100px;
+    margin-top: 105px;
   }
   #sorter, #selector{
-    top: 90px;
+    top: 105px;
   }
 }
