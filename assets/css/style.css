@@ -1089,6 +1089,9 @@ background: var(--theme-bg-strong) !important;
   color: var(--theme);
   padding-bottom: 90px;
   transition: background var(--trans), color var(--trans);
+  background-image: url(https://dkhawaja.com/QQ/assets/pattern-4.svg);
+    background-size: 100pt;
+    background-blend-mode: color-dodge;
 }
 
 #showsurah div, #showsurah h1{
