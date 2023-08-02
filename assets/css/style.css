@@ -935,6 +935,9 @@ background: var(--theme-bg-strong) !important;
   border-radius: 5px;
   overflow: hidden;
   margin: auto;
+  box-shadow: 0px 0px 10px 0px var(--theme-bg-strong);
+  /*margin-top: calc((100vh - 350px)/2);*/
+  background: var(--theme-bg-light);
 }
 #welcome-toggle-wrap{
   margin: 10px; 
@@ -1012,7 +1015,7 @@ background: var(--theme-bg-strong) !important;
 }
 #welcome-box button{
   cursor: pointer;
-  background: var(--theme-bg-light);
+  background: var(--theme-bg);
   outline: none;
   color: inherit;
   border: none;
