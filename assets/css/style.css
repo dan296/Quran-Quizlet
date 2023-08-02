@@ -42,7 +42,7 @@ body {
   color: var(--theme);
   background-image: url(https://dkhawaja.com/QQ/assets/pattern-4.svg);
     background-size: 100pt;
-    background-blend-mode: color-dodge;
+    background-blend-mode: color-burn;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -323,7 +323,7 @@ input:checked + .slider:before {
   text-align: center;
   background-image: url(https://dkhawaja.com/QQ/assets/pattern-4.svg);
   background-size: 100pt;
-  background-blend-mode: color-dodge;
+  background-blend-mode: color-burn;
   /*background-image: url("https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   /*background: radial-gradient(#b69c4f, #7b672b, #483910);*/
 }
@@ -1091,7 +1091,7 @@ background: var(--theme-bg-strong) !important;
   transition: background var(--trans), color var(--trans);
   background-image: url(https://dkhawaja.com/QQ/assets/pattern-4.svg);
     background-size: 100pt;
-    background-blend-mode: color-dodge;
+    background-blend-mode: color-burn;
 }
 
 #showsurah div, #showsurah h1{
