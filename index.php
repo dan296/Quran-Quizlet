@@ -32,7 +32,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
-  //$results["decks"] = removeFirstAndLastChar($results["decks"], '"');
+  $results["decks"] = removeFirstAndLastChar($results["decks"], '"');
   //$results["decks"] = str_replace('"', "\'", $results["decks"]);
   ?>
   cookieSet = true;
