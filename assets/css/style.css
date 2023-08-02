@@ -1087,7 +1087,35 @@ background: var(--theme-bg-strong) !important;
 #showsurah div, #showsurah h1{
   display: none;
 }
-
+#surahcont{
+  max-width: 1200px;
+  margin: auto;
+}
+#surah_header{
+  position: fixed;
+  background: var(--theme-bg);
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  bottom: 50px;
+  padding: 20px 0px;
+  box-shadow: 0px 0px 10px 0px var(--theme-bg-strong);
+  transition: var(--trans);
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+#surah-selector{
+  background: transparent;
+    color: inherit;
+    border: none;
+    text-align: center;
+    padding-right: 0px;
+    text-align-last: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
 #surah-audio{
   position: absolute;
   top: 22px;
