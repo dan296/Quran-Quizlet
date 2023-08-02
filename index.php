@@ -33,13 +33,13 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
   //$results["decks"] = removeFirstAndLastChar($results["decks"], '"');
-  $results["decks"] = str_replace('"', "\'", $results["decks"]);
+  $results["decks"] = str_replace('"', "'", $results["decks"]);
   ?>
   cookieSet = true;
   $('#rem-check input').click();
   thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
   $('#signin input[type=text]').prop('value',thisuser);
-  let this_data = '<?php echo json_encode(str_replace('\\"', "'", $results["decks"])); ?>';
+  let this_data = '<?php echo json_encode($results["decks"]); ?>';
   let this_user_data = JSON.parse(this_data);
   $('#setting-email').html(this_user_data.email);
   $('#setting-email').attr('title', this_user_data.email);
