@@ -32,14 +32,14 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
-  $results["decks"] = removeFirstAndLastChar($results["decks"], 'n');
+  //$results["decks"] = removeFirstAndLastChar($results["decks"], 'n');
   //$results["decks"] = str_replace('"', "\'", $results["decks"]);
   ?>
   cookieSet = true;
   $('#rem-check input').click();
   thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
   $('#signin input[type=text]').prop('value',thisuser);
-  let this_data = '<?php echo $results["decks"]; //json_encode($results["decks"]); ?>';
+  let this_data = '<?php echo $results; //json_encode($results["decks"]); ?>';
   let this_user_data = JSON.parse(this_data);
   $('#setting-email').html(this_user_data.email);
   $('#setting-email').attr('title', this_user_data.email);
