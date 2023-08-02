@@ -515,10 +515,10 @@ input:checked + .slider:before {
   transition: 0.1s ease-in-out;
 }
 .my-new-list{
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 60px;
     padding-bottom: 80px;
     text-align: center;
 }
