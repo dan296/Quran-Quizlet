@@ -33,7 +33,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
   //$results["decks"] = removeFirstAndLastChar($results["decks"], '"');
-  $results["decks"] = str_replace('\\"', "'", $results["decks"]);
+  $results["decks"] = str_replace('"', "'", $results["decks"]);
   ?>
   cookieSet = true;
   $('#rem-check input').click();
