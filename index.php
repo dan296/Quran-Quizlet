@@ -33,6 +33,7 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
   ?>
+  $("#loadingpage").hide();
   cookieSet = true;
   $('#rem-check input').click();
   thisuser = '<?php echo $_COOKIE["member_login"]; ?>';
@@ -44,7 +45,6 @@ if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $('#setting-user').html(this_user_data.user_name);
   $('#signin-out-btn').html("Sign out");
   $('.setting-profile').show();
-  showMain();
   decks = this_user_data.decks !== "" ? JSON.parse(this_user_data.decks) : [];
   updateDecks();
 <? } ?>  
