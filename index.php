@@ -17,7 +17,7 @@
 include("backend/db_connection.php");
 if(isset($_COOKIE["member_login"]) && $_COOKIE["member_login"] !== ""){
   $user = $_COOKIE["member_login"];
-  $sql = "SELECT * FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
+  $sql = "SELECT JSON_QUERY(`decks`) FROM `users` WHERE `user_name`='$user' OR `email`='$user'";
   $result = $conn->query($sql);
   $results = $result -> fetch_array(MYSQLI_ASSOC);
   ?>
