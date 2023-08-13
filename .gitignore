@@ -1,0 +1,7 @@
+# Logs and databases #
+######################
+*.log
+error_log
+
+# Ignore Mac system files
+.DS_store
