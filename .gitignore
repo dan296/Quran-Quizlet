@@ -5,3 +5,4 @@ error_log
 
 # Ignore Mac system files
 .DS_store
+.DS_Store
