@@ -2,7 +2,7 @@
 <html lang="en" >
 <?php include("includes/head.php")?>
 <body>
-  <div id="test5"></div>
+  <div id="test6"></div>
 <?php include("includes/header.php") ?>
 <?php include("includes/list.php") ?>
 <i id="help" title="help" class="fa fa-question-circle guide" aria-hidden="true"></i>
