@@ -129,7 +129,7 @@ function extractVideoIdFromUrl(url) {
 $("#yt_url").change(function(){
   let vidID = extractVideoIdFromUrl($(this).val());
   console.log(vidID);
-  if(vidID != ""){
+  if(vidID != null){
     window.clearTimeout(yt_timeout);
     player.videoId = 
     player.loadVideoById(player.videoId, section.start, section.end);
