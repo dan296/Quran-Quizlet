@@ -131,7 +131,7 @@ $("#yt_url").change(function(){
   console.log(vidID);
   if(vidID != null){
     window.clearTimeout(yt_timeout);
-    player.videoId = 
+    player.videoId = vidID;
     player.loadVideoById(player.videoId, section.start, section.end);
   }
   
