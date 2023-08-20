@@ -126,6 +126,7 @@ function extractVideoIdFromUrl(url) {
 
 $("#yt_url").change(function(){
   player.videoId = extractVideoIdFromUrl($(this).val());
+  player.loadVideoById(player.videoId, section.start, section.end);
 })
 
 </script>
