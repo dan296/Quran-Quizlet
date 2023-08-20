@@ -106,14 +106,14 @@ function animate() {
 }
 
 // Welcome Box JS Begin
-$('.welcome-toggle').click(function(){
+/*$('.welcome-toggle').click(function(){
   $('.welcome-toggle').removeClass('welcome-toggle-selected');
   $(this).addClass('welcome-toggle-selected');
   $('.welcome-module').hide();
   let thisWlcmMod = $(this).html().toLowerCase().replace(/\s/g, '');
   $('#'+thisWlcmMod).show();
   $('#welcome-enter').html($(this).html().toLowerCase());
-})
+})*/
 
 $('.form-group input').on('focus', function() {
   $(this).parent().css('opacity',  1);
