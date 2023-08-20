@@ -128,6 +128,7 @@ function extractVideoIdFromUrl(url) {
 
 $("#yt_url").change(function(){
   let vidID = extractVideoIdFromUrl($(this).val());
+  console.log(vidID);
   if(vidID != ""){
     window.clearTimeout(yt_timeout);
     player.videoId = 
