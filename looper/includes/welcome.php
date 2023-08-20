@@ -11,6 +11,7 @@
           <div class="form-group">
             <label for="yt_url">YouTube URL:</label>
             <input type="text" id="yt_url" name="yt_url" placeholder="https://www.youtube.com/watch?v=Evjb_RYrxZw" />
+            <input type="hidden" id="yt_url_id" />
           </div>
           <div class="form-group param-group">
             <label for="start">Start Time (s):</label>
@@ -115,6 +116,16 @@ $(".param").keyup(function(){
     }else{
         section.end = parseInt($(this).val());
     }
+})
+
+function extractVideoIdFromUrl(url) {
+    const regex = /[?&]v=([^&#]*)/;
+    const match = url.match(regex);
+    return match && match[1] ? match[1] : null;
+}
+
+$("#yt_url").change(function(){
+  player.videoId = extractVideoIdFromUrl($(this).val());
 })
 
 </script>
