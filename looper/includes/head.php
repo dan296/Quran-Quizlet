@@ -14,7 +14,5 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js'></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<script src="./scripts/endata.js"></script>
-<script src="./scripts/versesindiv.js"></script>
 <script src="./scripts/tooltip.js"></script>
 </head>
