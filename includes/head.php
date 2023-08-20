@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="./assets/css/style.css?v=<?php echo rand()?>">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/logos-02.png">
-<link rel="apple-touch-icon" sizes="100x100" href="logos-02.png" />
+<link rel="apple-touch-icon" sizes="100x100" href="assets/logos-02.png" />
 <!-- Animate.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
