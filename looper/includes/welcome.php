@@ -91,8 +91,8 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-  $("#param_start").val(section.start);
-  $("#param_end").val(section.end);
+  $("#param_start").prop("value", section.start);
+  $("#param_end").prop("value", section.end);
   player.seekTo(section.start);
   player.playVideo();
   $('#param_start').prop("max", player.getDuration()-1);
