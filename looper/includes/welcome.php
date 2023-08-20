@@ -15,11 +15,11 @@
           </div>
           <div class="form-group param-group">
             <label for="start">Start Time (s):</label>
-            <input type="number" name="start" id="start" class="param" /></input>
+            <input type="number" name="start" id="start" class="param" min=0 /></input>
           </div>
           <div class="form-group param-group">
             <label for="start">End Time (s):</label>
-            <input type="number" name="start" id="end" class="param" /></input>
+            <input type="number" name="start" id="end" class="param" min=1 /></input>
           </div>
         </form>
         <!-- <div class="form-group" id="forgotpw">
@@ -98,12 +98,11 @@ function onPlayerReady(event) {
   $('#param_start').prop("max", player.getDuration()-1);
   $('#param_end').prop("max", player.getDuration());
 }
-var done = false;
+
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
+  if (event.data == YT.PlayerState.PLAYING) {
     var duration = section.end - section.start;
     setTimeout(restartVideoSection, duration * 1000);
-    done = true;
     console.log("start: " + section.start + " | end: " +section.end);
   }
 }
