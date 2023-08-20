@@ -334,6 +334,8 @@ input:checked + .slider:before {
     margin-left: 0;
     margin-right: 0;
     width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 .surahcont, .juzcont {
