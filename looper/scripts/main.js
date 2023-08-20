@@ -1,7 +1,7 @@
 var lastselectid = 114;
 var lastaction = true;
 //var endata = false; coming from endata.js included in html
-var filteredEnData = [...endata];
+var filteredEnData = [];
 var datachecker = false;
 var timer;
 var flashCards = [];
