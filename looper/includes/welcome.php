@@ -98,11 +98,11 @@ function onPlayerReady(event) {
   $('#param_start').prop("max", player.getDuration()-1);
   $('#param_end').prop("max", player.getDuration());
 }
-
+var yt_timeout = null;
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING) {
     var duration = section.end - section.start;
-    setTimeout(restartVideoSection, duration * 1000);
+    yt_timeout = setTimeout(restartVideoSection, duration * 1000);
     console.log("start: " + section.start + " | end: " +section.end);
   }
 }
@@ -127,6 +127,7 @@ function extractVideoIdFromUrl(url) {
 }
 
 $("#yt_url").change(function(){
+  window.clearTimeout(yt_timeout);
   player.videoId = extractVideoIdFromUrl($(this).val());
   player.loadVideoById(player.videoId, section.start, section.end);
 })
