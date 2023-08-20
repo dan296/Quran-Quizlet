@@ -1,5 +1,5 @@
 <div id='loadingpage' style="overflow-y: scroll">
-  <h1 style="margin-bottom: -10px;"><?php include("./assets/logos-01.svg") ?></h1>
+  <h1><?php include("./assets/logos-01.svg") ?></h1>
   <?php //include("./assets/loader.php") ?>
   <div id="welcome-box">
     <div id="welcome-toggle-wrap">
@@ -98,11 +98,12 @@ function onPlayerReady(event) {
   $('#param_start').prop("max", player.getDuration()-1);
   $('#param_end').prop("max", player.getDuration());
 }
-
+var done = false;
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
     var duration = section.end - section.start;
     setTimeout(restartVideoSection, duration * 1000);
+    done = true;
     console.log("start: " + section.start + " | end: " +section.end);
   }
 }
