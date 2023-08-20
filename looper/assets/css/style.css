@@ -962,7 +962,7 @@ background: var(--theme-bg-strong) !important;
 .welcome-toggle {
     width: 50%;
     display: inline-block;
-    cursor: pointer;
+    /*cursor: pointer;*/
     opacity: 0.5;
     transition: var(--trans);
 }
