@@ -127,9 +127,13 @@ function extractVideoIdFromUrl(url) {
 }
 
 $("#yt_url").change(function(){
-  window.clearTimeout(yt_timeout);
-  player.videoId = extractVideoIdFromUrl($(this).val());
-  player.loadVideoById(player.videoId, section.start, section.end);
+  let vidID = extractVideoIdFromUrl($(this).val());
+  if(vidID != ""){
+    window.clearTimeout(yt_timeout);
+    player.videoId = 
+    player.loadVideoById(player.videoId, section.start, section.end);
+  }
+  
 })
 
 </script>
