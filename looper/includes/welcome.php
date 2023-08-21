@@ -83,7 +83,7 @@ function onYouTubeIframeAPIReady() {
       width: '640',
       videoId: 'Evjb_RYrxZw',
       playerVars: {
-        'cc_load_policy': 0
+        cc_load_policy: 0
       },
       events: {
         'onReady': onPlayerReady,
