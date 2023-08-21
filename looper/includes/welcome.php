@@ -82,6 +82,9 @@ function onYouTubeIframeAPIReady() {
       height: '360',
       width: '640',
       videoId: 'Evjb_RYrxZw',
+      playerVars: {
+        'cc_load_policy': 0
+      },
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
@@ -100,8 +103,6 @@ function onPlayerReady(event) {
 }
 var yt_timeout = null;
 function onPlayerStateChange(event) {
-    player.unloadModule("captions");
-  player.unloadModule("cc");
   if (event.data == YT.PlayerState.PLAYING) {
     var duration = section.end - section.start;
     yt_timeout = setTimeout(restartVideoSection, duration * 1000);
