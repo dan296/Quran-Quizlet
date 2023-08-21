@@ -94,9 +94,9 @@ function onPlayerReady(event) {
   $("#start").prop("value", section.start);
   $("#end").prop("value", section.end);
   player.seekTo(section.start);
+  player.playVideo();
   player.unloadModule("captions");
   player.unloadModule("cc");
-  player.playVideo();
   $('#param_start').prop("max", player.getDuration()-1);
   $('#param_end').prop("max", player.getDuration());
 }
