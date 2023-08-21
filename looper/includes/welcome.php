@@ -68,8 +68,8 @@
 </script>
 <script>
 var section = {
-  start: 0,
-  end: 10
+  start: 10,
+  end: 19
 };
 
 // 3. This function creates an <iframe> (and YouTube player)
@@ -96,6 +96,8 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   $("#start").prop("value", section.start);
   $("#end").prop("value", section.end);
+  player.unloadModule("captions");
+  player.unloadModule("cc");
   player.seekTo(section.start);
   player.playVideo();
   $('#param_start').prop("max", player.getDuration()-1);
