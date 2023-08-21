@@ -95,13 +95,13 @@ function onPlayerReady(event) {
   $("#end").prop("value", section.end);
   player.seekTo(section.start);
   player.playVideo();
-  player.unloadModule("captions");
-  player.unloadModule("cc");
   $('#param_start').prop("max", player.getDuration()-1);
   $('#param_end').prop("max", player.getDuration());
 }
 var yt_timeout = null;
 function onPlayerStateChange(event) {
+    player.unloadModule("captions");
+  player.unloadModule("cc");
   if (event.data == YT.PlayerState.PLAYING) {
     var duration = section.end - section.start;
     yt_timeout = setTimeout(restartVideoSection, duration * 1000);
